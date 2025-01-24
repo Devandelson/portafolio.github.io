@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transacciones</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
+    <script src="https://kit.fontawesome.com/11d450d49a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container-all">
+        <span class="" id="span_">
+            <i class="fa-solid fa-circle-check fa-bounce" style="color: #00f400;"></i>
+        </span>
+        <header>
+          <h1>Transacciones</h1>
+
+          <div class="container-seguimiento">
+
+            <div class="btn1 btn">
+                <button>O</button>
+                <p>Cantidad</p>
+            </div>
+        
+            
+            <div class="btn1 btn2">
+                <button>O</button>
+                <p>Datos</p>
+            </div>
+
+            <div class="btn1 btn3">
+                <button>O</button>
+                <p>Metodo</p>
+            </div>
+
+            <div class="btn1 btn4">
+                <button>O</button>
+                <p>Confirmacion</p>
+            </div>
+
+          </div>
+        </header>
+
+        <div class="cuerpo">
+            <!-- Aqui va el contenido de la pagina -->
+
+            <div class="info1 info">
+                <p>Ingrese la cantidad a Transferir</p>
+                <p>Cantidad a Transferir</p>
+                <input type="text" name="cantidad" id="cantidad" placeholder="100$" class="">
+                <p class="mensaje_alerta" id="o_m_cantidad"></p>       
+            </div>
+
+            <div class="info1 info2">
+                <p>ingrese sus datos</p>
+
+                <div class="container-datos">
+
+                    <div class="info1_datos">
+                        <p>Nombre completo :</p>
+                        <input type="text" name="nombre" id="nombre" placeholder="Anderson">
+                        <p class="mensaje_alerta" id="o_m_nombre"></p>
+                    </div>
+
+                    <div class="info1_datos">
+                        <p>correo :</p>
+                        <input type="text" name="correo" id="correo" placeholder="correo@correo.com">
+                        <p class="mensaje_alerta" id="o_m_correo"></p>
+                    </div>
+
+                    <div class="info1_datos">
+                        <p>Telefono :</p>
+                        <input type="text" name="telefono" id="telefono" placeholder="+1 (809)-915-8417">
+                        <p class="mensaje_alerta" id="o_m_tel"></p>
+                    </div>
+
+                    <div class="info1_datos">
+                        <p>Numero de Tarjeta :</p>
+                        <input type="text" name="tarjeta" id="tarjeta" placeholder="1234567891011121314">
+                        <p class="mensaje_alerta" id="o_m_tarjeta"></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="info1 info3">
+
+             <p>Seleccione un Metodo</p>
+
+             <div class="container-metodo">
+                <button>
+                    <p>Debito</p>
+                    <input type="radio" name="tipo" id="tipo" class="debito" value="debito">
+                </button>
+                
+                <button>
+                    <p>credito</p>
+                    <input type="radio" name="tipo" id="tipo"
+                    class="credito" value="credito">
+                </button>
+             </div>
+
+             <p class="mensaje_alerta" id="o_m_tipo"></p>
+            </div>
+
+            <div class="info1 info4">
+                <p>Datos de Transaccion</p>
+
+                <ul>
+                    <li>Cantidad a transferir : <p class="cantidad_p">100</p></li>
+                    <li>Nombre : <p class="Nombre_p"></p></li>
+                    <li>Correo : <p class="correo_p"></p></li>
+                    <li>Telefono : <p class="telefono_p"></p></li>
+                    <li>Numero de la Tarjeta : <p class="tarjeta_p"></p></li>
+                    <li>Tipo de Metodo : <p class="tipo_p"></p></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="btn_siguiente" id="siguiente">
+                <span class="animacion"></span>
+                <p>Siguiente</p>
+                <p id="icono"><i class="fa-solid fa-arrow-right"></i></p>
+            </div>  
+        </footer>
+
+    </div>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos</title>
+    <link rel="stylesheet" href="css/producto.css" />
+    <link rel="stylesheet" href="css/animacionesjsP.css" />
+    <link rel="stylesheet" href="css/animacionesjs.css">
+    <link href="css/scroll_animacion.css" rel="stylesheet">
+    <link rel="icon" href="img/celular_icono.png" type="image/png">
+  </head>
+  <body>
+    <!-- Encabezado -->
+    <div class="contenedor_header_all">
+      <header id="header" data-aos="fade-down">
+        <div class="logo">
+          <h1><a href="index.html">TechMóvil</a></h1>
+        </div>
+
+        <div class="lista">
+          <nav>
+            <ul>
+              <li><a href="#">Sing Up</a></li>
+              <li><a href="#">Login</a></li>
+              <img src="img/usuario.png" alt="img de usuario" />
+              <img src="img/carrito-de-compras.png" alt="img de carrito" id="mostrarC"/>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <div class="info_header">
+        <div class="redes_header" data-aos="zoom-in-up">
+          <img src="img/facebook.png" alt="facebook" />
+          <img src="img/Twitter.png" alt="Twitter" />
+          <img src="img/instagram.png" alt="instagram" />
+          <img src="img/telegrama.png" alt="telegrama" />
+        </div>
+      </div>
+
+      <div class="info_header_p" data-aos="fade-up-left">
+        <p>Todo al alcance de tu mano, Que esperas!.</p>
+      </div>
+    </div>
+    <!-- fin Encabezado -->
+
+    <!-- Notificacion -->
+
+    <div class="sub_content_info">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi
+        consectetur dolorem minima quod alias incidunt iure. Quo quis sunt
+        soluta!
+      </p>
+      <button id="quitar">Aceptar Todo</button>
+      <button id="quitar">X</button>
+    </div>
+
+    <!-- fin Notificacion -->
+
+    <!-- Menu vertical -->
+
+    <div class="Menu_vertical activoM">
+        <div class="encabezado">
+            <h2>Carrito</h2>
+            <button id="mostrarC">X</button>
+        </div>
+
+        <div class="productos_C">
+            <div class="sub_content_P">
+            </div>
+        </div>
+
+        <div class="compras">
+           <p>0<span>$</span></p> <button id="calcular">Calcular</button>
+        </div>
+        <div class="pie_M" id="Comprar">
+            <button id="Comprar">Comprar</button>
+        </div>
+    </div>
+
+    <!-- fin menu vertical -->
+
+
+    <!-- Contenido Principal -->
+
+    <main>
+      <!-- Navegacion -->
+      <section class="navegacion">
+        <nav>
+          <ul>
+            <li id="novedades">Novedades</li>
+            <li id="productos">Productos</li>
+            <li id="descuento">Descuentos</li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- Productos para vender -->
+      <section class="contenedor_productos_all" data-aos="zoom-out-up">
+        <article
+          class="productos_contenedor content2P content_product_all grid"
+        >
+        <div class="card_producto" id="card1">
+            <h2>Iphone 15</h2>
+            <img src="img/iphone15.png" alt="" />
+            <p><span>40,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card2">
+            <h2>Galaxy Z Fold 3</h2>
+            <img src="img/Galaxy Z Fold 3.png" alt="" />
+            <p><span>20,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>10</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card3">
+            <h2>Google Pixel 4 XL</h2>
+            <img src="img/Google Pixel 4 XL .png" alt="" />
+            <p><span>24,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>2</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card4">
+            <h2>Huawei-Mate X3</h2>
+            <img src="img/Huawei-Mate X3.png" alt="" />
+            <p><span>23,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>3</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card5">
+            <h2>huawei-nova-9</h2>
+            <img src="img/huawei-nova-9.png" alt="" />
+            <p><span>25,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card6">
+            <h2>Rino8 Pro</h2>
+            <img src="img/Rino8 Pro.png" alt="" />
+            <p><span>15,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>16</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card7">
+            <h2>Samsung Galaxy A03s 644gb Black</h2>
+            <img src="img/Samsung Galaxy A03s 644gb Black.png" alt="" />
+            <p><span>27,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card8">
+            <h2>Celular gamer</h2>
+            <img src="img/celular gamer .png" alt="" />
+            <p><span>40,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card9">
+            <h2>Iphone 15 , negro</h2>
+            <img src="img/servicio1.png" alt="" />
+            <p><span>40,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card10">
+            <h2>HUAWEI P40 LITE</h2>
+            <img src="img/HUAWEI P40 LITE.png" alt="" />
+            <p><span>24,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card11">
+            <h2>SAMSUNG GALAXY S23 ULTRA</h2>
+            <img src="img/SAMSUNG GALAXY S23 ULTRA.png" alt="" />
+            <p><span>70,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card12">
+            <h2>SAMSUNG GALAXY-A24</h2>
+            <img src="img/SAMSUNG GALAXY-A24 .png" alt="" />
+            <p><span>14,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+        </article>
+
+        <article
+          class="novedades_contenedor content1P content_product_all none"
+        >
+        <div class="card_producto" id="card1">
+            <h2>Iphone 15</h2>
+            <img src="img/iphone15.png" alt="" />
+            <p><span>40,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card2">
+            <h2>Galaxy Z Fold 3</h2>
+            <img src="img/Galaxy Z Fold 3.png" alt="" />
+            <p><span>20,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>10</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card3">
+            <h2>Google Pixel 4 XL</h2>
+            <img src="img/Google Pixel 4 XL .png" alt="" />
+            <p><span>24,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>2</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card4">
+            <h2>Huawei-Mate X3</h2>
+            <img src="img/Huawei-Mate X3.png" alt="" />
+            <p><span>23,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>3</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card5">
+            <h2>huawei-nova-9</h2>
+            <img src="img/huawei-nova-9.png" alt="" />
+            <p><span>25,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card6">
+            <h2>Rino8 Pro</h2>
+            <img src="img/Rino8 Pro.png" alt="" />
+            <p><span>15,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>16</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card7">
+            <h2>Samsung Galaxy A03s 644gb Black</h2>
+            <img src="img/Samsung Galaxy A03s 644gb Black.png" alt="" />
+            <p><span>27,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card8">
+            <h2>Celular gamer</h2>
+            <img src="img/celular gamer .png" alt="" />
+            <p><span>40,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card9">
+            <h2>Iphone 15 , negro</h2>
+            <img src="img/servicio1.png" alt="" />
+            <p><span>40,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+        </article>
+
+        <article
+          class="Descuentos_contenedor content3P content_product_all none"
+        >
+        <div class="card_producto" id="card1">
+            <h2>Iphone 15</h2>
+            <img src="img/iphone15.png" alt="" />
+            <p><span>40,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card2">
+            <h2>Galaxy Z Fold 3</h2>
+            <img src="img/Galaxy Z Fold 3.png" alt="" />
+            <p><span>20,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>10</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card3">
+            <h2>Google Pixel 4 XL</h2>
+            <img src="img/Google Pixel 4 XL .png" alt="" />
+            <p><span>24,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>2</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card4">
+            <h2>Huawei-Mate X3</h2>
+            <img src="img/Huawei-Mate X3.png" alt="" />
+            <p><span>23,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>3</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card5">
+            <h2>huawei-nova-9</h2>
+            <img src="img/huawei-nova-9.png" alt="" />
+            <p><span>25,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>4</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+
+          <div class="card_producto" id="card6">
+            <h2>Rino8 Pro</h2>
+            <img src="img/Rino8 Pro.png" alt="" />
+            <p><span>15,000</span>$ Pesos</p>
+            <div class="estrellas">
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+              <img src="img/estrella.png" alt="img de estrella" />
+            </div>
+            <p>Disponible : <span>16</span></p>
+
+            <button id="cardbtn">Obtener</button>
+          </div>
+        </article>
+      </section>
+
+      <!-- variedad de productos para mostrar -->
+      <section class="contenedor_productos_V">
+         <article>
+           <div class="izquierda">
+              <img src="img/Huawei-Mate X3.png" alt="img de celular">
+           </div> 
+
+           <div class="derecha">
+             <h2>Iphone</h2>
+             <div class="estrella">
+                <img src="img/estrella.png" alt="estrella">
+                <img src="img/estrella.png" alt="estrella">
+                <img src="img/estrella.png" alt="estrella">
+                <img src="img/estrella.png" alt="estrella">
+             </div>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eligendi ab libero perspiciatis. Mollitia ex esse at, rem repellat et?</p>
+
+             <p>Disponible: 20</p>
+             <p>Vendido: 18</p>
+
+             <button>Obtener</button>
+           </div>
+
+         </article>
+
+         <article>
+
+              <div class="contenido_p_v">
+                <img src="img/celular gamer .png" alt="img de celular">
+                <div class="texto_p_v">
+                    <h2>Iphone 15</h2>
+                    <p>435$ Pesos</p>
+                </div>
+              </div>
+
+              <div class="contenido_p_v">
+                <img src="img/Galaxy Z Fold 3.png" alt="img de celular">
+                <div class="texto_p_v">
+                    <h2>Iphone 15</h2>
+                    <p>435$ Pesos</p>
+                </div>
+              </div>
+
+              <div class="contenido_p_v">
+                <img src="img/huawei-nova-9.png" alt="img de celular">
+                <div class="texto_p_v">
+                    <h2>Iphone 15</h2>
+                    <p>435$ Pesos</p>
+                </div>
+              </div>
+
+              <div class="contenido_p_v">
+                <img src="img/Google Pixel 4 XL .png" alt="img de celular">
+                <div class="texto_p_v">
+                    <h2>Iphone 15</h2>
+                    <p>435$ Pesos</p>
+                </div>
+              </div>
+         </article>
+      </section>
+    </main>
+
+    <!-- Fin Contenido Principal -->
+
+
+    <!-- Pie de pagina -->
+    <footer>
+        <div class="contenedor_info_footer">
+            <article>
+                <h2>Sobre Nosotros</h2>
+    
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, ut aliquam praesentium dolorem illo quidem veniam assumenda qui obcaecati, incidunt a vel debitis eveniet, velit numquam quasi! Quidem dolore nulla nostrum? Deleniti praesentium nisi a laudantium sed sapiente reprehenderit est aliquid aliquam quidem amet ea, nostrum voluptatem ex commodi harum!</p>
+            </article>
+            
+            <article>
+                <h2>Contacto</h2>
+                <div class="red">
+                    <img src="img/facebook.png" alt="img de Facebook">
+                    <p><a href="#">Facebook</a></p>
+                </div>
+    
+                <div class="red">
+                    <img src="img/instagram.png" alt="img de Instagram">
+                    <p><a href="#">Instagram</a></p>
+                </div>
+    
+                <div class="red">
+                    <img src="img/telegrama.png" alt="img de Telegram">
+                    <p><a href="#">Telegram</a></p>
+                </div>
+
+                <div class="red">
+                    <img src="img/Twitter.png" alt="img de Twitter">
+                    <p><a href="#">Twitter</a></p>
+                </div>
+
+                <div class="red">
+                    <img src="img/youtube.png" alt="img de YouTube">
+                    <p><a href="#">YouTube</a></p>
+                </div>
+            </article>
+    
+            <article>
+                <h2>Terminos y Condiciones</h2>
+                <p>Aceptamos los siguientes metodos de pago</p>
+                <hr>
+                <div class="metodos_pagos">
+                    <div class="metodo">
+                        <img src="img/paypal.png" alt="PayPal">
+                        <p>paypal</p>
+                    </div>
+                    <div class="metodo">
+                        <img src="img/debito.png" alt="debito">
+                        <p>debito</p>
+                    </div>
+                    <div class="metodo">
+                        <img src="img/tarjeta-de-credito.png" alt="credito">
+                        <p>credito</p>
+                    </div>
+                    <div class="metodo">
+                        <img src="img/cuota.png" alt="cuota">
+                        <p>cuota</p>
+                    </div>                    
+                </div>
+            </article>
+        </div>
+    </footer>
+
+    <script src="js/producto.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+  </body>
+</html>

@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    width: auto;
+}
+
+body{
+    height: 100vh;
+    position: relative;
+    width: 100%;
+}
+
+/*grid principal*/
+
+.contenedor-principal{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(auto , 1fr);
+    grid-template-rows: auto minmax(auto,1fr);
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+/* grid secundaria para la parte de abajo */
+
+.sub-contenedor{
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(auto , 1fr);
+    grid-template-rows: 1fr;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+/* titulo de la pagina */
+
+header{
+    position: relative;
+    background: orange;
+    box-shadow: 0px 0px 50px orange;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    align-items: center;
+}
+
+header > .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    position: relative;
+    padding: 10px;
+}
+
+header > .logo > img {
+    aspect-ratio: 1;
+    width: 45px;
+    margin-right: 10px;
+}
+
+header > .lista ,
+header > .lista > nav{
+  position: relative;
+  height: auto;
+}
+
+header > .lista > nav > ul{
+    display: flex;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    height: auto;
+}
+
+header > .lista > nav > ul > li {
+    margin-left: 10px;
+    position: relative;
+    transition: all 300ms ease;
+
+}
+
+header > .lista > nav > ul > li:nth-child(2) > i{
+  font-size: 30px;
+  transition: all 300ms ease;
+}
+
+header > .lista > nav > ul > li:nth-child(2):active{
+    background: transparent;
+}
+
+header > .lista > nav > ul > li:nth-child(2) > i:hover{
+    transition: all 300ms ease;
+    transform: scale(1.1) rotate(360deg);
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+header > .lista > nav > ul > li:active{
+    background: red;
+}
+
+header > .lista > nav > ul > li:hover {
+    transition: all 300ms ease;
+    transform: scale(1.1) rotate(360deg);
+    cursor: pointer;
+}
+
+header > .lista > nav > ul > li > img{
+    width: 32px;
+    aspect-ratio: 1;
+}
+
+/* cuerpo */
+
+main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* modulos */
+
+main > .modulo{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    flex-shrink: 0;
+    padding: 30px;
+    transition: all 300ms ease;
+}
+
+/* registro de empleados */
+
+main > .registro_empleados {
+  position: relative;
+  background: rgb(54, 52, 52);
+  color: white;
+}
+
+/* registro de empleados : campos */
+
+.registro_empleados > .informacion{
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4,minmax(auto,1fr));
+    grid-template-rows: repeat(2,minmax(auto,1fr));
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.registro_empleados > .informacion > .campo{
+    font-size: 20px;
+}
+
+.registro_empleados > .informacion > .campo > input{
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.registro_empleados > .informacion > .campo > input:focus{
+    outline: none;
+    box-shadow: 0px 0px 5px white;
+    transition: all 300ms ease;
+    border: 1px solid black;
+}
+
+.registro_empleados > .informacion > .campo > select{
+    padding: 5px;
+    font-size: 15px;
+    background: white;
+    border-radius: 5px;
+}
+
+/* registro de empleados : botones */
+
+.registro_empleados > .btn-registro {
+    padding: 20px 10px;
+    margin-top: 10px;
+
+}
+
+.registro_empleados > .btn-registro > button{
+    background: transparent;
+    border: 1px solid white;
+    transition: all 300ms ease;
+    font-size: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    transition: all 300ms ease;
+    color: white;
+}
+
+.registro_empleados > .btn-registro > button:active{
+    background: red;
+}
+
+.registro_empleados > .btn-registro > button:hover{
+    transition: all 300ms ease;
+    box-shadow: 5px 5px 5px black;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* registro de empleados : tabla */
+
+.registro_empleados > .tabla-registro {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 10px;
+}
+
+.registro_empleados > .tabla-registro > table{
+    width: 100%;
+    height: auto;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+.registro_empleados > .tabla-registro > table > thead {
+    margin-left: 10px;
+    transition: all 300ms ease;
+}
+
+.registro_empleados > .tabla-registro > table > thead > tr {
+    transition: all 300ms ease;
+}
+
+
+
+.registro{
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: all 300ms ease;
+    color: black;
+    animation: 5s movee ease;
+}
+
+@keyframes movee {
+    0%{
+        transform: scale(1);
+    }25%{
+        transform: scale(1.5);
+    }50%{
+        transform: scale(1);
+    }75%{
+        transform: scale(1.5);
+    }100%{
+        transform: scale(1);
+    }
+}
+
+.registro_empleados > .tabla-registro > table > thead > tr > .Titulo{
+    background: black;
+    color: white;
+    padding: 10px 7px;
+    margin-left: 10px;
+}
+
+/* //registro de renumeracion */
+  
+/* botones renumeracion */
+
+.renumeracion_empleados > .btn-registro_r {
+    padding: 20px 10px;
+    margin-top: 10px;
+
+}
+
+.renumeracion_empleados > .btn-registro_r > button{
+    background: transparent;
+    border: 1px solid white;
+    transition: all 300ms ease;
+    font-size: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    transition: all 300ms ease;
+    color: white;
+}
+
+.renumeracion_empleados > .btn-registro_r > button:active{
+    background: red;
+}
+
+.renumeracion_empleados > .btn-registro_r > button:hover{
+    transition: all 300ms ease;
+    box-shadow: 5px 5px 5px black;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* tabla renumeracion */
+
+.renumeracion_empleados > .tabla-registro_r {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 10px;
+}
+  
+.renumeracion_empleados > .tabla-registro_r > table{
+    width: 100%;
+    height: auto;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+.renumeracion_empleados > .tabla-registro_r > table > thead {
+    margin-left: 10px;
+    transition: all 300ms ease;
+}
+
+.renumeracion_empleados > .tabla-registro_r > table > thead > tr {
+    transition: all 300ms ease;
+}
+
+@keyframes movee {
+    0%{
+        transform: scale(1);
+    }25%{
+        transform: scale(1.5);
+    }50%{
+        transform: scale(1);
+    }75%{
+        transform: scale(1.5);
+    }100%{
+        transform: scale(1);
+    }
+}
+
+.Titulo {
+    background: black;
+    color: white;
+    padding: 10px 7px;
+    margin-left: 10px;
+}
+
+/*  )   */
+
+.select {
+    box-shadow: 0px 0px 10px black;
+    color: white;
+    transition: all 300ms ease;
+    border-radius: 0px;
+}
+
+.activo{
+    transition: all 300ms ease;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* lista de modulos */
+
+.contenedor_modulo{
+    position: relative;
+    background: rgb(34, 32, 32);
+    box-shadow: 5px 5px 5px rgb(34, 32, 32 , 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    height: 100%;
+}
+
+.contenedor_modulo > button{
+    padding: 10px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms ease;
+    position: relative;
+    filter: blur(10px);
+}
+
+.contenedor_modulo > button:active{
+    background: red;
+}
+
+.contenedor_modulo > button:hover{
+    transition: all 300ms ease;
+    padding: 30px;
+    filter: blur(0px);
+    cursor: pointer;
+    color: black;
+    box-shadow: 5px 0px 5px 2px white;
+    z-index: 2;
+
+}
+
+.contenedor_modulo > button > p{
+    margin-right: 10px;
+    color: white;
+    max-width: 150px;
+    font-size: 20px;
+    text-align: left;
+
+}
+
+.contenedor_modulo > button > i{
+    font-size: 40px;
+}
+
+/*animaciones de modulos de jc*/
+
+.move1{
+ margin-left: 0%;
+ transition: all 300ms ease;
+}
+
+.move2{
+    margin-left: -100%;
+    transition: all 300ms ease;
+}
+
+/*otros de jc*/
+
+.select{
+ transition: all 300ms ease;
+ background: rgb(10 , 10 , 10);
+}
+
+

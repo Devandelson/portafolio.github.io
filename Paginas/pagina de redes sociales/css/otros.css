@@ -1,0 +1,96 @@
+.C_oculto {
+  filter: blur(10px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.C_oculto_C {
+  filter: blur(10px);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 1s ease;
+}
+
+.none {
+  display: none;
+}
+
+.activoLike {
+  transform: scale(1.1);
+  transition: all 400ms ease;
+  background: dodgerblue;
+  color: white;
+  cursor: pointer;
+}
+
+/* adaptabilidad */
+
+@media screen and (max-width: 1094px) {
+  main > .contenedor_social {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: minmax(auto, 1fr);
+    grid-template-rows: auto minmax(auto, 1fr) auto;
+  }
+
+  .perfil {
+    padding: 0px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px black;
+  }
+
+  .perfil > .contenedor_perfil {
+    position: relative;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .perfil > .contenedor_perfil > div > img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .perfil > .contenedor_perfil > div {
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    flex-flow: initial;
+    margin-top: 5px;
+  }
+
+  
+  .contacto {
+    padding: 0px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px black;
+  }
+  
+  .contacto > .contenedor_C {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: auto;
+  }
+  
+  .contacto > .contenedor_C > .encabezado_C{
+     padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 629px) {
+    .perfil > .contenedor_perfil {
+        justify-content: center;
+      }
+
+      .perfil > .contenedor_perfil > div {
+        padding: 5px;
+        margin-top: 5px;
+        margin-right: 10px;
+      }
+}
+

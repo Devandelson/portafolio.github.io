@@ -1,0 +1,188 @@
+.archivo > .header {
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 0px 5px black;
+  background: var(--color3);
+  z-index: 2;
+  transition: all 350ms ease;
+  flex-wrap: wrap;
+  margin-top: 10px;
+
+
+  >.logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-left: 10px;
+      transition: all 250ms ease;
+
+      >h2 {
+          font-size: 35px;
+          color: white;
+      }
+  }
+}
+
+
+.archivo > .buscador{ 
+  width: 100%;
+  max-width: 90%;
+  height: auto;
+  display: grid;
+  grid-template-columns: auto minmax(auto , 1fr) auto;
+  gap: 20px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 auto;
+  background: var(--color3);
+  margin-top: 20px;
+
+  > img{
+    width: 50px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  > input{
+    font-size: 20px;
+    padding: 5px;
+    width: 100%;
+    border: none;
+    border-bottom: 3px solid var(--color1);
+    background: transparent;
+    outline: none;
+    color: white;
+    caret-color: var(--color1);
+}
+
+> input:active{
+    transform: scale(1.020);
+}
+
+> input::placeholder{
+    transition: all 300ms ease;
+    color: white;
+}
+
+> input:hover::placeholder{
+    filter: blur(10px);
+    opacity: 0;
+}
+
+
+}
+
+.archivo > .lita_documentos{
+  width: 100%;
+  max-width: 90%;
+  height: auto;
+  overflow: hidden;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  > table{
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: 10px;
+    background: var(--color3);
+    padding: 10px;
+    gap: 0px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    border-collapse: collapse;
+
+    > thead{
+      background: var(--color2);
+    }
+
+    > tbody{
+      > tr > th{
+        background: var(--color1);
+      }
+    }
+  }
+
+  > table th{
+    text-align: left;
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    font-weight: 100;
+
+
+    > a{
+      text-decoration: none;
+      color: white;
+    }
+
+    > a:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+/* adaptador */
+
+
+@media screen and (max-width: 776px) {
+  .archivo > .header {
+    >.logo {
+        margin-left: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 586px) {
+  .archivo > .buscador{ 
+    grid-template-columns: none;
+    grid-template-areas: "texto"
+                         "img2";
+    gap: 15px;
+
+  
+    > img{
+      display: none;
+    }
+  
+    > input{
+      grid-area: texto;
+    }
+
+    > button{
+      grid-area: img2;
+    }
+  }  
+}
+
+@media screen and (max-width: 358px) {
+  .archivo > .buscador{ 
+    grid-template-areas: "texto texto"
+    "img2 img2";
+
+    > img{
+      display: none;
+    }
+
+    input{
+      width: 100%;
+    }
+
+    > button{
+      width: 100%;
+    }
+  }  
+}

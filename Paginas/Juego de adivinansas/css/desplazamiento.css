@@ -1,0 +1,49 @@
+.ancla{
+    transition: all 4s ease;
+    margin-left: 0%;
+}
+
+.ancla2{
+    transition: all 4s ease;
+    margin-left: -100%;
+}
+
+.ancla3{
+    transition: all 4s ease;
+    margin-left: -200%;
+}
+
+.ancla4{
+    transition: all 4s ease;
+    margin-left: -300%;
+}
+
+.ancla5{
+    transition: all 4s ease;
+    margin-left: -400%;
+}
+
+.ancla6{
+    transition: all 4s ease;
+    margin-left: -500%;
+}
+
+.ancla7{
+    transition: all 4s ease;
+    margin-left: -600%;
+}
+
+.ancla8{
+    transition: all 4s ease;
+    margin-left: -700%;
+}
+
+.ancla9{
+    transition: all 4s ease;
+    margin-left: -800%;
+}
+
+.ancla10{
+    transition: all 4s ease;
+    margin-left: -900%;
+}

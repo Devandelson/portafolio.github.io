@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redes Sociales</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/otros.css" />
+
+    <script src="js/script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/11d450d49a.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+
+    <link rel="shortcut icon" href="img/logop.png" type="image/x-icon">
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <i class="fa-solid fa-star"></i>
+        <h1>Red social escolar</h1>
+        <input type="text" placeholder="Buscar..." />
+      </div>
+      <div class="lista">
+        <nav>
+          <ul>
+            <li>
+              <i class="fa-solid fa-bars"></i>
+              <span>Menu</span>
+            </li>
+            <li>
+              <i class="fa-brands fa-facebook-messenger"></i>
+              <span>Messenger</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-bell"></i>
+              <span>Notificaciones</span>
+            </li>
+            <li>
+              <img src="img/usuario.png" alt="" />
+              <span>Tu</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="contenedor_social">
+        <section class="perfil">
+          <div class="contenedor_perfil">
+            <div>
+              <img src="img/usuario.png" alt="" />
+              <h2>Tu</h2>
+            </div>
+            <div>
+              <img src="img/amigo.png" alt="" />
+              <h2>Buscar amigo</h2>
+            </div>
+            <div>
+              <img src="img/video.png" alt="" />
+              <h2>Video</h2>
+            </div>
+            <div>
+              <img src="img/paginas.png" alt="" />
+              <h2>Pagina</h2>
+            </div>
+            <div>
+              <img src="img/evento.png" alt="" />
+              <h2>Evento</h2>
+            </div>
+          </div>
+        </section>
+
+        <section class="contenido">
+
+          <div class="publicacion">
+            <div class="encabezado">
+              <img src="img/usuario.png" alt="" id="IMG"/>
+
+              <div class="inputbox">
+                <input required="required" type="text" id="nombreusuario" />
+                <span>Tu nombre</span>
+                <i></i>
+              </div>
+            </div>
+
+            <div class="contenido_p">
+              <textarea id="comentarioPublic">Hola mundo!</textarea>
+            </div>
+
+            <div class="interactividad">
+              <button id="publicar">Publicar</button>
+              <input
+                type="file"
+                name=""
+                id="buscarimg"
+                accept="
+              image/*"
+              />
+            </div>
+
+            <img src="img/defaultimg.jpg" alt="" class="activa" id="imgg" />
+          </div>
+
+          <div class="Info_Publicacion">
+
+            <!-- <div class="contendio_p">
+
+              <div class="encabesado_contenido">
+                <img src="img/usuario.png" alt="">
+                <p>Anderson</p>
+              </div>
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Sapiente voluptatibus numquam amet facere iure esse odio,
+                repellendus minima cum. Illum debitis reprehenderit quam labore
+                molestias adipisci suscipit ut excepturi recusandae?
+              </p>
+
+              <img src="" alt="" />
+
+              <div class="interactividad_P">
+                <button id="eliminarP">
+                  <span class="circle1"></span>
+                  <span class="circle2"></span>
+                  <span class="circle3"></span>
+                  <span class="circle4"></span>
+                  <span class="circle5"></span>
+                  <span class="text">Eliminar</span>
+                </button>
+
+                <i class="fa-regular fa-thumbs-up" id="like"></i>
+
+                <p>0</p>
+
+                <button id="comentar">
+                  <span class="circle1"></span>
+                  <span class="circle2"></span>
+                  <span class="circle3"></span>
+                  <span class="circle4"></span>
+                  <span class="circle5"></span>
+                  <span class="text">Comentar</span>
+                </button>
+
+                <button class="mostrarC">
+                  <span class="circle1"></span>
+                  <span class="circle2"></span>
+                  <span class="circle3"></span>
+                  <span class="circle4"></span>
+                  <span class="circle5"></span>
+                  <span class="text">Mostrar</span>
+                </button>
+              </div>
+
+              <div class="comentarios_p acitvoC C_oculto_C none">
+                <div class="comentarP C_oculto none">
+                  <div class="bg"></div>
+                  <div class="bg bg2"></div>
+                  <div class="bg bg3"></div>
+
+                  <h2>Comentar</h2>
+                  <div class="usuario">
+                    <img src="img/usuario.png" alt="" />
+                    <input type="text" placeholder="Nombre" id="NombreC" />
+                  </div>
+
+                  <textarea id="comentarioC"></textarea>
+
+                  <button id="comentarP">
+                    <span class="circle1"></span>
+                    <span class="circle2"></span>
+                    <span class="circle3"></span>
+                    <span class="circle4"></span>
+                    <span class="circle5"></span>
+                    <span class="text">Comentar</span>
+                  </button>
+                </div>
+
+                <div class="comentarP comentarPM">
+                  <div class="usuario">
+                    <img src="img/usuario.png" alt="" />
+                    <p>Usuario</p>
+                  </div>
+
+                  <p class="activa_p">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                    commodi, laborum at molestias ea quaerat praesentium tempore
+                    aperiam delectus dolorem minus consequatur suscipit quibusdam
+                    tempora beatae veritatis error ipsum perspiciatis.
+                  </p>
+                </div>
+              </div>
+            </div> -->
+
+          </div>
+        </section>
+
+        <section class="contacto">
+          <div class="contenedor_C">
+            <div class="encabezado_C">
+              <h2>Contacto</h2>
+
+              <div class="opciones_C">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="C_contacto">
+              <img src="img/usuario.png" alt="" />
+              <h2>Yarqui domingo pera</h2>
+            </div>
+
+            <div class="C_contacto">
+              <img src="img/usuario.png" alt="" />
+              <h2>La tina de lo monte</h2>
+            </div>
+
+            <div class="C_contacto">
+              <img src="img/usuario.png" alt="" />
+              <h2>Se fue la luz</h2>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    perspective: 3000px;
+    position: relative;
+
+
+    > h1{
+        font-size: 90px;
+        font-weight: bold;
+        text-shadow: 2px 1px 2px rgb(228, 221, 221),
+                     2px 2px 2px rgb(228, 221, 221),
+                     2px 3px 2px rgb(228, 221, 221),
+                     2px 4px 2px rgb(228, 221, 221),
+                     2px 5px 2px rgb(228, 221, 221),
+                     2px 6px 2px rgb(228, 221, 221),
+                     2px 7px 2px rgb(228, 221, 221),
+                     2px 8px 2px rgb(228, 221, 221),
+                     2px 9px 2px rgb(228, 221, 221),
+                     2px 10px 2px rgb(228, 221, 221);
+        margin-bottom: 30px;
+        animation: 500ms ani-entrada ease;
+        animation-delay: 2.1s;
+    }
+
+    > .fondo{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        animation: 700ms ani-entrada ease;
+        animation-delay: 2.1s;
+
+        > img{
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position:  center center;    
+            object-fit: cover;
+        }
+    }
+}
+
+.home > .buscador{
+    width: 100%;
+    max-width: 60%;
+    padding: 5px 10px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-items: stretch;
+    gap: 10px;
+    margin-bottom: 30px;
+    padding: 5px 10px;
+    animation: 1s ani-entrada ease;
+    animation-delay: 2.1s;
+
+    > input{
+        width: 100%;
+        box-shadow: 0px 0px 0px var(--color5);
+    }
+
+    > img{
+        width: 40px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+
+    > button{
+        position: relative;
+        transition: all 50ms linear;
+    }
+}
+
+.home > .pages{
+   width: max-content;
+   max-width: 50%;
+   height: auto;
+   position: relative;
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 30px;
+   animation: 1.3s ani-entrada ease;
+   animation-delay: 2.1s;
+
+   > .item_page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 100ms linear;
+    color: white;
+    text-shadow: 0px 0px 15px black;
+    border-radius: 10px;
+
+    max-width: 110px;
+    min-width: 80px;
+    flex-grow: 1;
+    height: auto;
+
+    > .img{
+        position: relative;
+        padding: 3px 7px;
+        background: var(--color1);
+        width: 64px;
+        aspect-ratio: 1/1;
+        border-radius: 7px;
+
+        > img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: all 100ms linear;
+        }
+    }
+
+    > p{
+        font-size: 24px;
+        position: relative;
+        padding: 5px;
+        width: max-content;
+        transition: all 150ms linear;
+        pointer-events: none;
+    }
+   }
+
+   > .item_page:hover{
+    transform: translateY(-5px) scale(1.020);
+    cursor: pointer;
+
+    > .img{
+        box-shadow: 0px 0px 10px var(--color2);
+        > img{
+            transform: scale(1.060);
+        }
+    }
+   }
+
+   > .item_page:active{
+    transform: scale(0.95);
+
+    > .img{
+        > img{
+            transform: scale(1);
+        }
+    }
+   }
+}
+
+/* ANIMACION ENTRADA */
+@keyframes ani-entrada {
+    0%{
+        transform: scale(1.2);
+        transform-style: preserve-3d;
+    }100%{
+        transform: scale(1);
+        transform-style: preserve-3d;
+    }
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 850px) {   
+.home {
+    > .pages{
+        display: flex;
+        grid-template-columns: none;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    > .buscador{
+        display: flex;
+        grid-template-columns: none;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+    
+
+        > img{
+            display: none;
+        }
+    }  
+} 
+}
+
+
+@media screen and (max-width: 546px) {
+    .home{   
+        > h1{
+            font-size: 70px;
+        }
+
+        > .pages{
+            width: 90%;
+        }
+    }
+}

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Andelson González</title>
+    <link rel="icon" href="IMG/logo_portafolio.png" type="image/x-png">
+    <!--== CSS personalizado ==-->
+
+    <link rel="stylesheet" href="CSS/configuration.css">
+    <link rel="stylesheet" href="CSS/archivo.css">
+    <link rel="stylesheet" href="CSS/proyecto.css">
+    <link rel="stylesheet" href="CSS/sobre_mi.css">
+    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/general.css">
+    <link rel="stylesheet" href="CSS/adaptador.css">
+    <link rel="stylesheet" href="CSS/normalize.css">
+</head>
+
+<body>
+    <span id="btn_musica" class="btn_musica btn_musica_pause"></span>
+    <video id="musica" controls>
+        <source src="musica_ambiente1.mp3" type="audio/mp3">
+    </video>
+    
+
+    <!--==  ==-->
+    <!--== contenedor de carga ==-->
+    <section class="contenedor_carga carga" id="carga">
+        <svg class="loader" width="240" height="240" viewBox="0 0 240 240">
+            <circle class="loader-ring loader-ring-a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+            <circle class="loader-ring loader-ring-b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+            <circle class="loader-ring loader-ring-c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+            <circle class="loader-ring loader-ring-d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+        </svg>
+    </section>
+
+    <!--== header ==-->
+    <header>
+        <section class="acciones">
+            <article>
+                <span></span>
+                <span></span>
+                <span></span>
+            </article>
+
+            <article>
+                <div class="item_img" id="btn_configuracion">
+                    <img src="IMG/configuracion.png" alt="" class="img_header_accion">
+                </div>
+
+                <div class="item_img" id="btn_desplazamiento_menu">
+                    <img src="IMG/ventana.png" alt="" class="img_header_accion">
+                </div>
+
+                <div class="item_img" id="btn_actualizar">
+                    <img src="IMG/actualizar.png" alt="" class="img_header_accion">
+                </div>
+            </article>
+        </section>
+
+        <section class="barra_navegacion">
+            <article class="url">
+                <div class="candado">
+                    <img src="IMG/candado.png" alt="">
+                </div>
+
+                <input type="text" placeholder="Buscador" list="lista_modulus" id="url_input">
+            </article>
+        </section>
+
+        <section class="enlaces_paginas">
+            <nav>
+                <ul id="lista_opciones_frm">
+                    <li title="Inicio" id="inicio_frm_btn">
+                        <img src="IMG/casa.png" alt="img_item_header">
+                        <p>Inicio</p>
+                        <img src="IMG/casa.png" alt="img_item_header" class="none">
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    <!-- |fin header| -->
+
+    <!--== main ==-->
+    <main>
+
+        <span id="btn_desplazamiento_menu2" class="oculto_ani_btn_menu"><img src="IMG/ventana.png" alt="" class="img_header_accion"></span>
+        <span class="indicador_movimiento" id="indicador_movimiento">1</span>
+
+        <div class="container_all_modulus">
+            <div class="container_slider_modulus" id="slider_modulus">
+                <!--== Pantalla de inicio ==-->
+                <section class="home" id="home">
+                    <div class="fondo" id="fondo_home"><img src="IMG/fondo4_portafolio.jpg" alt=""></div>
+                    
+                    <h1>Portafolio</h1>
+                    <article class="buscador">
+                        <img src="IMG/lupa.png" alt="img_buscador">
+
+                        <input type="text" id="page_select" class="input1" placeholder="busca tu pagina" list="lista_modulus">
+
+                        <datalist id="lista_modulus">
+                            <option value="Sobre Mi">Sobre Mi</option>
+                            <option value="Proyectos">Proyectos</option>
+                            <option value="Archivos">Archivos</option>
+                        </datalist>
+
+                        <button class="btn3" id="btn_buscar">Buscar</button>
+                    </article>
+
+                    <article class="pages" id="pages">
+                        <div class="item_page">
+                            <div class="img">
+                                <img src="IMG/casa.png" alt="">
+                            </div>
+                            <p>Inicio</p>
+                        </div>
+
+                        <div class="item_page">
+                            <div class="img">
+                                <img src="IMG/Sobre Mi.png" alt="">
+                            </div>
+
+                            <p>Sobre Mi</p>
+                        </div>
+
+                        <div class="item_page">
+                            <div class="img">
+                                <img src="IMG/Archivos.png" alt="">
+                            </div>
+                       
+                            <p>Archivos</p>
+                        </div>
+
+                        <div class="item_page">
+                            <div class="img">
+                                <img src="IMG/Proyectos.png" alt="">
+                            </div>
+                       
+                            <p>Proyectos</p>
+                        </div>
+                    </article>
+                </section>
+
+                <!--== Sobre mi ==-->
+                <section class="sobre_mi none" id="Sobre_Mi">
+                    <!-- Contenedor oculto (vista de publicaciones) -->
+                    <article class="vista_publicacion inactivo_vista_publicacion" id="vista_publicacion_sm">
+                        <span class="btn7" id="btn_cerrar_vista_publicacion_sm">X</span>
+
+                        <div class="item_publicacion">
+                            <div class="contenedor_slider">
+                                <div class="slider" id="slider_img_sobre_mi">
+                                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
+                                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
+                                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
+                                </div>
+
+                                <i class="fa-solid fa-chevron-left"
+                                id="btn_slider_publicacion_izquierdo"></i>
+
+                                <i class="fa-solid fa-chevron-right" id="btn_slider_publicacion_derecho"></i>                   
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="vista-logro inactivo-vista-logro" id="vista-logro">
+                        <img src="IMG/app_simulacion1.png">
+                        <span class="btn7" id="btn-cerrar-vista">X</span>
+                    </div>
+                    <!-- fin contenedor oculto (vista de publicaciones)  -->
+
+                    <!-- Banner  -->
+                    <article class="banner">
+                        <span></span>
+                        <article class="contenedor_info_banner">
+                            <div class="info_bannner">
+                                <h2>Andelson Gonzalez</h2>
+                                <h3>Dev. Full Stack (Junior)</h3>
+                            </div>
+                            <div class="contenedor_logo">
+                                <img src="IMG/Mi foto(3).jpg" alt="img_sobre_mi" class="img_p" />
+                            </div>
+                        </article>
+                       
+                        <!-- contenedor de btns de accion  -->
+                        <article class="controles" id="controles_frm_sm">
+                            <p class="active btn7">
+                                <i class="fa-solid fa-timeline"></i>
+                                Historia
+                            </p>
+                            <p class="btn7">
+                                <i class="fa-solid fa-star"></i>
+                                Logros
+                            </p>
+                            <p class="btn7">
+                                <i class="fa-solid fa-microchip"></i>
+                                Tecnologias
+                            </p>
+                            <p class="btn7">
+                                <i class="fa-solid fa-address-book"></i>
+                                Contacto
+                            </p>
+                        </article>
+                    </article>
+
+                    <!-- Contenedor de todas las secciones  -->
+                    <div class="contenedor_areas" id="areas_sm">
+                        <!-- Historia  -->
+                        <article class="historia seleted" id="historia_sm">
+                            <div class="fondo">
+                                <!-- Generar spans con diferentes propiedades -->
+                                <script>
+                                    // variables
+                                    let fondo = document.querySelectorAll('.fondo');
+                                    const colors = ['#FF5733', '#FFC300', '#DAF7A6', '#581845', '#33FFCE', '#C70039', '#900C3F', '#FF5733'];
+                        
+                                    // bucle para generar los cuadros en posiciones random
+                                    for (let i = 0; i < 50; i++) {
+                                        // creando el elemento
+                                        const span = document.createElement('span');
+                    
+                                        // colocando sus propiedades random
+                                        span.style.setProperty('--pos-x', Math.random()); // Posición horizontal aleatoria
+                                        span.style.setProperty('--duration', `${Math.random() * 2 + 0.5}s`); // Duración aleatoria entre 3-5 segundos
+                                        span.style.setProperty('--color', colors[Math.floor(Math.random() * colors.length)]); // Color aleatorio
+                    
+                                        // para al final agregarlo
+                                        fondo.forEach((fnd) => {
+                                            fnd.appendChild(span);
+                                        })      
+                                    }
+                                </script>
+                            </div>
+
+                            <article class="info">
+                                <h4>¿Quién soy?</h4>
+                                <p>
+                                    Soy Andelson Gonzalez Genao, un estudiante de 18 años apasionado por la informática. Mi portafolio refleja un crecimiento constante y un compromiso firme con la innovación. Cada proyecto que realizo es una fusión entre tecnología y creatividad.
+                                </p>
+                            </article>
+
+                            <article class="publicacion">
+                                <h2>Publicaciones</h2>
+                                <hr>
+
+                                <div class="item_publicacion">
+                                    <div class="encabezado">
+                                        <div class="contenedor_info">
+                                            <img src="IMG/Sobre Mi.png" alt="">
+                                            <div class="info">
+                                                <p>Andelson</p>
+                                                <p>6/6/2024</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="controles">
+                                            <img src="IMG/maximize.png" alt="" id="btn_visualizar_sm">
+                                        </div>
+                                    </div>
+
+                                    <div class="detalle">
+                                        <p>
+                                            ¡Hola a todos! ¡Les presento mi proyecto: una tienda en línea creada con HTML, CSS y JavaScript! Diseñada con cuidado para brindar una experiencia de compra increíblemente intuitiva. ¡Descubre la magia de cada clic en mi portafolio! ¡Te invito a explorar y disfrutar de un carrito de compras funcional y sorprendente!.
+                                        </p>
+
+                                        <div class="slider_img">
+                                            <img src="IMG/store1.JPG" alt="">
+                                            <img src="IMG/store2.PNG" alt="">
+                                            <img src="IMG/store3.JPG" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item_publicacion">
+                                    <div class="encabezado">
+                                        <div class="contenedor_info">
+                                            <img src="IMG/Sobre Mi.png" alt="">
+                                            <div class="info">
+                                                <p>Andelson</p>
+                                                <p>13/12/2024</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="detalle">
+                                        <p>
+                                            Creé esta app de notas pensando en facilitar la organización de tus ideas y tareas de una manera personalizada y práctica. Con ella, puedes crear notas de manera sencilla, personalizarlas a tu gusto, agregar imágenes, enlaces y mucho más. 
+                                        </p>
+
+                                        <div class="slider_img">
+                                            <img src="IMG/noticia_flexo.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item_publicacion">
+                                    <div class="encabezado">
+                                        <div class="contenedor_info">
+                                            <img src="IMG/Sobre Mi.png" alt="">
+                                            <div class="info">
+                                                <p>Andelson</p>
+                                                <p>18/1/2025</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="controles">
+                                            <img src="IMG/maximize.png" alt="" id="btn_visualizar_sm">
+                                        </div>
+                                    </div>
+
+                                    <div class="detalle">
+                                        <p>
+                                            Disfruta del clásico juego de Piedra, Papel o Tijera en su versión interactiva, desarrollado en JavaScript como parte del curso Semillero Digital Intro (OPTIC). Juega solo contra la computadora o reta a un amigo en modo de dos jugadores. ¡Pon a prueba tu habilidad y estrategias en cada partida!
+                                        </p>
+
+                                        <div class="slider_img">
+                                            <img src="IMG/juego-mano2.png" alt="">
+                                            <img src="IMG/juego-mano1.JPG" alt="">
+                                            <img src="IMG/juego-mano3.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </article>
+
+                        <!-- Logros  -->
+                        <article class="logros">
+                            <h3>Certificados</h3>
+                            <article class="contenedor_logros" id="L">
+                                <article class="sub_contenedor_logros">
+
+                                    <div class="item_logro punto1">
+                                        <div class="info">
+                                            <h3>Estudiante sobre saliente en</h3>
+                                            <p> Portales web, Base de datos, Análisis y Diseño de sistemas</p>
+                                        </div>
+
+                                        <img src="IMG/Logro1.jpg">
+                                        <button class="maximizar-img" id="maximizar-img">
+                                            <i class="fa-solid fa-compress"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="item_logro">
+                                        <div class="info">
+                                            <h3>Certificado</h3>
+                                            <p>
+                                                De Desarrollo y Administración de aplicaciones informaticas.
+                                            </p>
+                                        </div>
+
+                                        <img src="IMG/Logro2.jpg" alt="">
+                                        <button class="maximizar-img" id="maximizar-img">
+                                            <i class="fa-solid fa-compress"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="item_logro punto1">
+                                        <div class="info">
+                                            <h3>Certificado</h3>
+                                            <p>
+                                                De ofimática por completar satisfactoriamente los requisitos
+                                                curriculares correspondiente al programa del cuso de ofimática 2021 -
+                                                2022.
+                                            </p>
+                                        </div>
+
+                                        <img src="IMG/Logro3.jpg" alt="">
+                                        <button class="maximizar-img" id="maximizar-img">
+                                            <i class="fa-solid fa-compress"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="item_logro">
+                                        <div class="info">
+                                            <h3>Medalla</h3>
+                                            <p>
+                                                Medalla por ser bueno en el área.
+                                            </p>
+                                        </div>
+
+                                        <img src="IMG/Logro4.jpg" alt="">
+                                        <button class="maximizar-img" id="maximizar-img">
+                                            <i class="fa-solid fa-compress"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="item_logro">
+                                        <div class="info">
+                                            <h3>Certificado</h3>
+                                            <p>
+                                                Del itla de la mama tingo en donde complete un curso satisfactoriamente.
+                                            </p>
+                                        </div>
+                                        <img src="IMG/Itla.png" alt="">
+                                        <button class="maximizar-img" id="maximizar-img">
+                                            <i class="fa-solid fa-compress"></i>
+                                        </button>
+                                    </div>
+                                </article>
+                            </article>
+                        </article>
+
+                        <!-- Tecnologias  -->
+                        <article class="tecnologias">
+                            <p>Descubre los lenguajes y tecnologías más innovadoras que he dominado para crear soluciones efectivas y proyectos impactantes.
+                            </p>
+            
+                            <ul>
+                                <li><i class="fa-solid fa-circle-up"></i> adquiriendo conocimientos</li>
+                            </ul>
+
+                            <div class="contenedor_lenguajes">
+                                <div class="item_lenguaje">
+                                    <img src="IMG/VB.png" alt="VB" />
+                                </div>
+
+                                <div class="item_lenguaje">
+                                    <img src="IMG/css.png" alt="CSS" />
+                                </div>
+
+                                <div class="item_lenguaje">
+                                    <img src="IMG/html-5.png" alt="HTML" />
+                                </div>
+
+                                <div class="item_lenguaje">
+                                    <img src="IMG/base-de-datos.png" alt="SQL" />
+                                </div>
+
+                                <div class="item_lenguaje">
+                                    <img src="IMG/mysql.png" alt="My Sql" />
+                                </div>
+
+                                <div class="item_lenguaje">
+                                    <img src="IMG/js.png" alt="JS" />
+                                </div>
+
+                                <div class="item_lenguaje">
+                                    <img src="IMG/xampp.png" alt="Xampp" />
+                                    <i class="fa-solid fa-circle-up"></i>
+                                </div>
+
+                                <div class="item_lenguaje">
+                                    <img src="IMG/php.png" alt="PHP" />
+                                    <i class="fa-solid fa-circle-up"></i>
+                                </div>      
+                                
+                                <div class="item_lenguaje select">
+                                    <img src="IMG/figma.png" alt="Figma" />
+                                </div>  
+
+                                <div class="item_lenguaje select">
+                                    <img src="IMG/boostrap_icono.png" alt="Boostrap" />
+                                </div>  
+
+                                <div class="item_lenguaje">
+                                    <img src="IMG/react.png" alt="REACT" />
+                                    <i class="fa-solid fa-circle-up"></i>
+                                </div>      
+                            </div>
+                        </article>
+
+                        <!-- Contacto  -->
+                        <article class="contacto" id="C">
+                            <h2>Contactame aquí</h2>
+
+                            <form class="form" method="post" action="https://formspree.io/f/mdorrlgp">
+                                <input placeholder="Nombre" type="text" class="input1 t1" name="nombre" required
+                                    data-aos="fade-up">
+
+                                <input placeholder="Apellido" type="text" class="input1 t2" name="apellido" required
+                                    data-aos="fade-up">
+
+                                <input placeholder="Email" type="email" class="input1 t3" name="email" required
+                                    data-aos="fade-up">
+
+                                <textarea data-aos="fade-up" placeholder="Mensaje" rows="10" cols="30" id="message"
+                                    name="mensaje" class="input1 t4" required></textarea>
+
+                                <div class="button-container">
+                                    <input class="btn3 t5" type="submit" value="Enviar"></input>
+                                </div>
+                            </form>
+                        </article>
+                    </div>
+                </section>
+
+                <!--== Proyecto ==-->
+                <section class="proyecto none" id="Proyectos">
+                    <article class="banner">
+                        <img src="IMG/fondo7_portafolio.jpg" alt="">
+                        <h2>Proyectos</h2>
+                    </article>
+
+                    <div class="titulo">
+                        <h3><i class="fa-solid fa-star"></i> Destacados</h3>
+                        <div class="buscador">
+                            <input type="text" id="destacado_input" placeholder="Buscador de destacado">
+                            <div class="img">
+                                <img src="IMG/lupa2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <article class="destacado" id="D">
+
+                        <div class="item_proyecto item_destacado">
+                            <div class="front">
+                                <img src="IMG/juego-mano1.JPG" alt="">
+                                <h2>Piedra, Papel o Tijera en JS</h2>
+                                <span></span>
+                            </div>
+
+                            <div class="back">
+                                <p>Juega al clásico Piedra, Papel o Tijera contra la computadora, creado en JavaScript durante el curso Semillero Digital Intro (OGTIC). ¡Desafía tus reflejos!</p>
+
+                                <div class="lenguajes">
+                                    <img src="IMG/html-5.png" alt="">
+                                    <img src="IMG/css.png" alt="">
+                                    <img src="IMG/js.png" alt="">
+                                </div>
+
+                                <button class="btn3"><a href="Paginas/Juego de manos/index.html" target="_blank">Visualizar</a></button>
+                            </div>  
+                        </div>
+
+                        <div class="item_proyecto item_destacado">
+                            <div class="front">
+                                <img src="IMG/ponse_img_proyecto.PNG" alt="">
+                                <h2>Periódico escolar</h2>
+                                <span></span>
+                            </div>
+
+                            <div class="back">   
+                                <p> Desarrollado por mí y un amigo, este proyecto fue creado para solucionar el problema de comunicación que existía en nuestra escuela al interactuar con el resto del mundo. Además, te invito a visitar el portafolio de mi amigo en <a style="color: rgb(255, 255, 255);" href="https://ariscortico.github.io/portafolio/">ariscortico.com</a>.
+                                </p>
+
+                                <div class="lenguajes">
+                                    <img src="IMG/html-5.png" alt="">
+                                    <img src="IMG/css.png" alt="">
+                                    <img src="IMG/js.png" alt="">
+                                    <img src="IMG/php.png" alt="">
+                                </div>
+
+                                <button class="btn3"><a href="https://ponse.atwebpages.com" target="_blank">Visualizar</a></button>
+                            </div>  
+                        </div>
+
+                        <div class="item_proyecto item_destacado">
+                            <div class="front">
+                                <img src="IMG/fondo_app_nota.JPG" alt="">
+                                <h2>App de notas</h2>
+                                <span></span>
+                            </div>
+
+                            <div class="back">   
+                                <p> 
+                                    Una app de notas personalizable y eficiente, desarrollada mientras curso Semillero Digital Intro de OGTIC, diseñada para crear, organizar y buscar notas de manera flexible y efectiva.
+                                </p>
+
+                                <div class="lenguajes">
+                                    <img src="IMG/html-5.png" alt="">
+                                    <img src="IMG/css.png" alt="">
+                                    <img src="IMG/js.png" alt="">
+                                    <img src="IMG/php.png" alt="">
+                                </div>
+
+                                <button class="btn3"><a href="https://flexo.infinityfreeapp.com/index.php" target="_blank">Visualizar</a></button>
+                            </div>  
+                        </div>
+                    </article>
+
+                    <div class="titulo titulo2">
+                        <h3><i class="fa-solid fa-pager"></i> Proyectos</h3>
+                        <div class="buscador">
+                            <input type="text" id="proyecto_input" placeholder="Buscador de Proyectos">
+
+                            <div class="img">
+                                <img src="IMG/lupa2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <article class="all_proyects" id="P">
+                        <div class="item_proyecto item_normal">
+                            <div class="front">
+                                <img src="IMG/adivinansas.png" alt="">
+                                <h2>Juego de adivinanzas</h2>
+                                <span></span>
+                            </div>
+
+                            <div class="back">
+                                <p>Creado durante un curso en el ITLA.</p>
+
+                                <div class="lenguajes">
+                                    <img src="IMG/html-5.png" alt="">
+                                    <img src="IMG/css.png" alt="">
+                                    <img src="IMG/js.png" alt="">
+                                </div>
+
+                                <button class="btn3"><a href="Paginas/Juego de adivinansas/index.html" target="_blank">Visualizar</a></button>
+                            </div>  
+                        </div>
+
+                        <div class="item_proyecto item_normal">
+                            <div class="front">
+                                <img src="IMG/sistema_F.png" alt="">
+                                <h2>Sistema de farmacia</h2>
+                                <span></span>
+                            </div>
+
+                            <div class="back">
+                                <p>Desarrollé este sistema optimizar la gestión de inventario, ventas y otras operaciones en farmacias. Si deseas conocer más detalles, ¡no dudes en contactarme!</p>
+
+                                <div class="lenguajes">
+                                    <img src="IMG/VB.png" alt="">
+                                    <img src="IMG/mysql3.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item_proyecto item_normal">
+                            <div class="front">
+                                <img src="IMG/RRHH.png" alt="">
+                                <h2>Sistema de recursos humanos</h2>
+                                <span></span>
+                            </div>
+
+                            <div class="back">
+                                <p>Desarrollé este sistema optimizar la gestión de empleados, renumeración y otras operaciones de recursos humanos. Si deseas conocer más detalles, ¡no dudes en contactarme!.</p>
+
+                                <div class="lenguajes">
+                                    <img src="IMG/VB.png" alt="">
+                                    <img src="IMG/access.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item_proyecto item_normal">
+                            <div class="front">
+                                <img src="IMG/Sistema_Escolar.png" alt="">
+                                <h2>Sistema Escolar</h2>
+                                <span></span>
+                            </div>
+
+                            <div class="back">
+                                <p>Desarrollé este sistema optimizar la gestión de estudiantes, calificaciones , profesores , merito y otras operaciones escolares. Si deseas conocer más detalles, ¡no dudes en contactarme!.</p>
+
+                                <div class="lenguajes">
+                                    <img src="IMG/VB.png" alt="">
+                                    <img src="IMG/base-de-datos.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item_proyecto item_normal">
+                            <div class="front">
+                                <img src="IMG/app_simulacion1.png" alt="">
+                                <h2>APP Web simulación</h2>
+                                <span></span>
+                            </div>
+
+                            <div class="back">
+                                <p>Completamente funcional con js actuando como si fuera un lenguaje para base de datos.</p>
+
+                                <div class="lenguajes">
+                                    <img src="IMG/html-5.png" alt="">
+                                    <img src="IMG/css.png" alt="">
+                                    <img src="IMG/js.png" alt="">
+                                </div>
+
+                                <button class="btn3"><a href="Paginas/app web simulacion/index.html" target="_blank">Visualizar</a></button>
+                            </div>
+                        </div>
+
+                        <div class="item_proyecto item_normal">
+                            <div class="front">
+                                <img src="IMG/store1.JPG" alt="">
+                                <h2>Tienda de celulares</h2>
+                                <span></span>
+                            </div>
+
+                            <div class="back">     
+                                <p>Hecho a través de Html, Css y Js. Donde cada detalle ofrecer una experiencia de compra intuitiva y emocionante.</p>
+                                
+                                <div class="lenguajes">
+                                    <img src="IMG/html-5.png" alt="">
+                                    <img src="IMG/css.png" alt="">
+                                    <img src="IMG/js.png" alt="">
+                                </div>
+
+                                <button class="btn3"><a href="Paginas/Tienda celulares Anderson/index.html" target="_blank">Visualizar</a></button>
+                            </div>  
+                        </div>
+
+                        <div class="item_proyecto item_normal">
+                            <div class="front">
+                                <img src="IMG/transacciones.png" alt="">
+                                <h2>Página de transacciones</h2>
+                                <span></span>
+                            </div>
+
+                            <div class="back">     
+                                <p>Simulación de una página de transacciones inspirada por un youtuber, desarrollada completamente por mí. ¡Descubre mi trabajo de principio a fin!</p>
+                                
+                                <div class="lenguajes">
+                                    <img src="IMG/html-5.png" alt="">
+                                    <img src="IMG/css.png" alt="">
+                                    <img src="IMG/js.png" alt="">
+                                </div>
+
+                                <button class="btn3"><a href="Paginas/Transacciones/index.html" target="_blank">Visualizar</a></button>
+                            </div>  
+                        </div>
+                    </article>
+                </section>
+
+                <!--== Archivo ==-->
+                <section class="archivo none" id="Archivos">
+                    <div class="header">
+                        <div class="logo">
+                            <img src="IMG/Archivos.png" alt="">
+                            <h2>Archivos</h2>
+                        </div>
+                    </div>
+
+                    <article class="buscador">
+                        <img src="IMG/lupa_blanca.png" alt="">
+                        <input type="text" name="" placeholder="Buscar archivo">
+                        <button class="btn3">Buscar</button>
+                    </article>
+
+                    <article class="lita_documentos">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre del archivo</th>
+                                    <th>Fecha</th>
+                                    <th>Tamaño</th>
+                                    <th>Controles</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Curriculum</th>
+                                    <th>27/04/2024</th>
+                                    <th>1.58MB</th>
+                                    <th><a href="Archivos/Andelson gonzalez genao.pdf" download>Descargar</a></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                </section>
+
+                 <!--== contenedor_de_configuracion ==-->
+                <section class="configuration_container none" id="configuration_container">
+                    <div class="container_all">
+                        <article class="header">
+                            <h2>Configuración del portafolio</h2>
+                        </article>
+    
+                        <article class="home_container">
+                            <h2>Fonde de pantalla de inicio</h2>
+                            <div class="home_subcontainer" id="fondo_contenedor">
+                                <div class="img select_fondo"><img src="IMG/fondo4_portafolio.jpg" alt="img_fondo_inicio"></div>
+                                <div class="img"><img src="IMG/fondo6_portafolio.jpg" alt="img_fondo_inicio"></div>
+                                <div class="img"><img src="IMG/fondo3_portafolio.jpg" alt="img_fondo_inicio"></div>
+                                <div class="img"><img src="IMG/fondo2_portafolio.jpeg" alt="img_fondo_inicio"></div>
+                                <div class="img"><img src="IMG/fondo7_portafolio.jpg" alt="img_fondo_inicio"></div>
+                                <div class="img"><img src="IMG/fondo1_portafolio.jpeg" alt="img_fondo_inicio"></div>
+                            </div>
+                        </article>
+    
+                        <article class="themes_container">
+                            <h2>Temas de colores</h2>
+                            <div class="themes_subcontainer" id="contenedor_temas">
+                                <span class="select_color"></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </article>
+                        
+                        <article class="movimiento_container">
+                            <h2>Tipo de movimiento</h2>
+                            <div class="movimiento_subcontainer" id="contenedor_movimiento">
+                                <span class="select_ani" onclick="cambio_movimiento(1)">
+                                    <span></span>
+                                </span>
+                                <span onclick="cambio_movimiento(2)"><span></span></span>
+                                <span onclick="cambio_movimiento(3)"><span></span></span>
+                                <span onclick="cambio_movimiento(4)"><span></span></span>
+                                <span onclick="cambio_movimiento(5)"><span></span></span>
+                                <span onclick="cambio_movimiento(6)"><span></span></span>
+                                <span onclick="cambio_movimiento(7)"><span></span></span>
+                            </div>
+                        </article>
+                    </div>         
+                </section>
+                <!--== fin contenedor_de_configuracion ==-->
+            </div>
+        </div>
+    </main>
+    <!--== fin main ==-->
+
+    <!--== JS ==-->
+    <script src="JS/card_proyecto.js"></script>
+    <script src="JS/sobre_mi.js"></script>
+    <script src="JS/animaciones.js"></script>
+    <script src="JS/movimiento_frm.js"></script>
+    <script src="JS/configuration.js"></script>
+
+   <!--== Font awesome ==-->
+    <script src="https://kit.fontawesome.com/7881bda97f.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

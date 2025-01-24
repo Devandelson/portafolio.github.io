@@ -1,0 +1,273 @@
+header{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    position: relative;
+    background: var(--color2);
+    z-index: 3;
+    transition: all 250ms ease; 
+    max-width: 250px;
+    padding: 5px;
+}
+
+/* acciones */
+header > .acciones{
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px;
+
+    > article{
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        > span{
+            background: var(--color1);
+            width: 24px;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        > .item_img{
+            width: 25px;
+            aspect-ratio: 1/1;
+            transition: all 100ms ease;
+            position: relative;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            > img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        > .item_img:hover{
+            transform: scale(1.3);
+            background: var(--color3);
+            transition: all 100ms ease;
+            cursor: pointer;
+            padding: 2px;
+        }
+
+        > .item_img:active{
+            transform: scale(1.1);
+        }
+    }
+}
+
+/* tads del header (enlaces_paginas) */
+header > .enlaces_paginas > nav{
+   position: relative;
+   height: auto;
+   width: 100%;
+   overflow: hidden;
+   padding: 10px;
+
+   > ul{
+        list-style: none;
+        position: relative;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        > li{
+            width: 100%;
+            padding: 10px 15px;
+            color: white;
+            cursor: pointer;
+            gap: 15px;
+            margin-top: 5px;
+            position: relative;
+            transition: all 50ms linear;
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: auto minmax(auto , 1fr) auto;
+            align-items: center;
+            border-radius: 7px;
+            background: var(--color3);
+            box-shadow: 0px 2px 0px var(--color3);
+
+            > img{
+                width: 32px;
+                aspect-ratio: 1/1;
+                font-size: 25px;
+                position: relative;
+                background-size: cover;
+            }
+
+            > p{
+                font-size: 22px;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                white-space: nowrap;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: scroll;
+                scrollbar-width: none;
+                color: white;
+            }
+        
+
+            > img:nth-child(3){
+                width: 22px;
+                aspect-ratio: 1/1;
+                border-radius: 100%;
+                background: url(../IMG/x.png);
+                background-size: cover;
+                transition: all 200ms linear;
+                z-index: 2;
+            }
+
+            > img:nth-child(3):hover{
+                width: 25px;
+                transition: all 200ms linear;
+                cursor: pointer;
+            }
+
+            > img:nth-child(3):active{
+                width: 20px;
+            }
+        }
+
+        > li:nth-child(n+2)::after{
+            left: 0;
+            border: 2px solid var(--color1);
+            height: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 5px;
+        }
+
+        > li:hover{
+            background: var(--color1);
+            box-shadow: 0px 7px 0px var(--color3);
+            transform: translateY(-5px);
+        }
+
+        > li:active{
+            transform: translateY(0px);
+            box-shadow: 0px 0px 0px var(--color3);
+        }
+   }
+}
+
+/* URL */
+header > .barra_navegacion{
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 10px;
+
+    > .url{
+        position: relative;
+        border-radius: 30px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        background: var(--color3);
+        border-radius: 5px;
+        padding: 10px;
+        
+       > .candado {
+        position: relative;
+        transition: all 300ms ease;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+
+        > img{
+            width: 32px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+       }
+
+       > input:focus{
+            border: 2px solid var(--color3);
+       }
+
+       > input{
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        font-size: 20px;
+        background: var(--color3);
+        color: white;
+        outline-color: var(--color3);
+       }
+    }
+}
+
+
+/* btn del menu */
+header > article > img{
+    transition: all 200ms linear;
+    width: 32px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    position: relative;
+}
+
+header > article > img:hover{
+    width: 40px;
+    padding: 5px;
+    background: var(--color1);
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 200ms linear;
+    box-shadow: 0px 0px 5px var(--color1);
+}
+
+header > article > img:active{
+    width: 37px;
+}
+
+
+/* adaptador */
+@media screen and (max-width: 546px) {
+    /* tads del header */
+    header {       
+        > nav{
+        overflow: hidden;
+        
+        > ul{
+                width: 100%;
+                flex-shrink: 0;
+                overflow-x: scroll;
+                scrollbar-width: none;
+                > li{
+                    max-width: 210px;
+                    width: max-content;
+                    flex-shrink: 0;
+                }
+            }
+        }
+
+        > .barra_navegacion{
+        > .url{
+            > input:nth-child(2){
+            display: none;
+            }
+        }
+        }
+    }
+}

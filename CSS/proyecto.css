@@ -1,0 +1,198 @@
+.proyecto{
+    position: relative;
+
+    > h3{
+        font-size: 40px;
+        color: white;
+        padding: 0px 30px;
+        position: relative;
+        margin-top: 30px;
+        max-width: 1300px;
+        margin: 10px auto;
+        display: block;
+    }
+}
+
+.proyecto > .titulo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    margin-top: 30px;
+    gap: 40px;
+    position: relative;
+
+    > h3{
+        font-size: 40px;
+        color: white;
+        position: relative;
+        display: block;
+
+        > i{
+            color: yellow;
+        }
+    }
+
+    .buscador {
+        display: flex;
+        align-items: center;
+        position: relative;
+        flex-grow: 1;
+        border: 3px solid var(--color3);
+        border-radius: 7px;
+        overflow: hidden;
+        transition: all 100ms linear;
+        box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.164);
+
+        > input{
+            font-size: 20px;
+            padding: 9px;
+            width: 100%;
+            display: block;
+            background: transparent;
+            outline: none;
+            color: white;
+            border: none;
+        }
+
+        > .img{
+            background: var(--color3);
+            padding: 5px 7px;
+
+            > img{
+                width: 30px;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+            }
+        }
+
+        &:has(> input:focus){
+            border: 4px solid var(--color2);
+           box-shadow: inset 0px 0px 15px rgba(255, 255, 255, 0.164);
+        }
+    }
+}
+
+.proyecto > .titulo2{
+    margin-top: 70px;
+}
+
+.proyecto > .banner{
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    > h2{
+        font-size: 100px;
+        text-align: center;
+        color: white;
+        z-index: 2;
+        text-shadow: 1px 2px 1px rgb(66, 64, 64),
+                    1px 4px 1px rgb(66, 64, 64),
+                    1px 6px 1px rgb(66, 64, 64),
+                    1px 8px 1px rgb(66, 64, 64),
+                    1px 10px 1px rgb(66, 64, 64);
+    }
+}
+
+.proyecto > .destacado{
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 950px;
+    margin: 0 auto;
+    margin-top: 5px;
+    gap: 20px;
+
+    > .item_proyecto{
+        flex-grow: 1;
+        width: 250px;
+        max-width: 400px;
+        transition: all 150ms ease;
+        border: 5px solid var(--color1);
+    }
+}
+
+.proyecto > .all_proyects{
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 20px;
+    max-width: 950px;
+    margin: 0 auto;
+    margin-top: 10px;
+    gap: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    > .item_proyecto{
+        flex-grow: 1;
+        width: 250px;
+        max-width: 400px;
+        border: 5px solid var(--color3);
+        transition: all 150ms ease;
+    }
+}
+
+/* adaptador */
+
+/* cards */
+@media screen and (max-width: 947px) {
+    .proyecto > .destacado{
+        grid-template-columns: repeat(2, minmax(auto , 1fr));
+    }
+    
+    .proyecto > .all_proyects{
+        grid-template-columns: repeat(2, minmax(auto , 1fr));
+    }
+}
+
+@media screen and (max-width: 591px) {
+    .proyecto > .destacado{
+        grid-template-columns: 1fr;
+    }
+    
+    .proyecto > .all_proyects{
+        grid-template-columns: 1fr;
+    }
+
+    .proyecto > .banner{
+        > h2{
+            font-size: 70px;
+        }
+    }
+}
+
+/* buscador */
+@media screen and (max-width: 708px) {
+    .proyecto > .titulo{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+    
+        > h3{
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.opacity {
+  opacity: 0;
+  transition: all 500ms ease;
+}
+
+.margen1 {
+  margin-left: 0%;
+}
+
+.margen2 {
+  margin-left: -100%;
+}
+
+.margen3 {
+  margin-left: -200%;
+}
+
+.none{
+  display: none;
+}
+
+.grid{
+  display: grid;
+}
+
+.scale{
+  transform: scale(0);
+  transition: all 500ms ease;
+}
+
+.activoM{
+  right: -100%;
+  transition: all 500ms ease;
+}
+
+.quitate{
+  margin-left: 120%;
+  transition: all 500ms ease;
+}

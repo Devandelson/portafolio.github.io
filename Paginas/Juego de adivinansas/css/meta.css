@@ -1,0 +1,20 @@
+.meta{
+    width: max-content;
+    height: auto;
+    padding: 10px;
+    border-radius: 7px;
+    background: rgb(42,129,198);
+    background: linear-gradient(90deg, rgba(42,129,198,0.8148902266288952) 0%, rgba(14,66,83,0.7610658640226629) 56%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    color: white;
+    font-size: 25px;
+
+    > i{
+      color: rgb(255, 255, 255);
+    }
+}

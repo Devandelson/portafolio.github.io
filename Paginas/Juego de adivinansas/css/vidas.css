@@ -1,0 +1,19 @@
+.vidas{
+    width: max-content;
+    height: auto;
+    padding: 10px;
+    border-radius: 7px;
+    background: rgba(219, 61, 75, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: white;
+    font-size: 25px;
+
+    > i{
+      color: rgb(219, 61, 74);
+    }
+}

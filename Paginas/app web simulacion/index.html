@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script defer src="jc/index.js"></script>
+    <script defer src="jc/movimiento.js"></script>
+  
+    <script src="https://kit.fontawesome.com/11d450d49a.js" crossorigin="anonymous"></script>
+</head>
+<body class="final">
+
+    <div class="contenedor-principal">
+   <!-- Cabeza -->
+    <header>
+
+        <div class="logo">
+        <img src="img/Logo4.png" alt="">
+        <h1>APP Web simulacion</h1>
+        </div>
+
+        <div class="lista">
+        <nav>
+            <ul>
+                <li class="quitar"><img src="img/X2.png" alt=""></li>
+                <li class="reiniciar"><i class="fa-solid fa-rotate" style="color: #000000;"></i></li>
+            </ul>
+        </nav>
+        </div>
+
+    </header>
+
+   <!-- cuerpo -->
+    <div class="sub-contenedor">
+
+   <!-- modulos contenedor -->
+
+    <div class="contenedor_modulo">
+
+    <button class="btn_registro">
+    <p>Registro de empleados</p>
+    <i class="fa-solid fa-users-gear fa-bounce" style="color: #ffffff;"></i>
+    </button>
+
+    <button class="btn_renumeracion">
+    <p>Registro de renumericion
+    de empleados
+    </p>
+    <i class="fa-solid fa-sack-dollar fa-bounce" style="color: #ffffff;"></i>
+    </button>
+
+    </div>
+
+    <!-- cuerpo de los contenedores -->
+    <main>
+            
+    <div class="modulo registro_empleados">
+
+    <!-- cuerpo de registro -->
+
+    <div class="informacion">
+
+    <div class="campo">
+        <p>ID:</p>
+        <input type="text" name="id" id="id">
+    </div>
+
+    <div class="campo">
+        <p>Nombre:</p>
+        <input type="text" name="nombre" id="nombre">
+        </div>
+
+        <div class="campo">
+        <p>Apellido:</p>
+        <input type="text" name="apellido" id="apellido">
+        </div>
+
+        <div class="campo">
+        <p>Correo:</p>
+        <input type="text" name="correo" id="correo">
+        </div>
+
+        <div class="campo">
+        <p>Telefono:</p>
+        <input type="text" name="tel" id="tel">
+        </div>
+
+        <div class="campo">
+        <p>Perfil:</p>
+        <select name="rol" id="rol">
+        <option value="Desarrollador Web" id="d_w">Desarrollador Web</option>
+        <option value="Diseñador Gráfico" id="d_g">Diseñador Gráfico</option>
+        <option value="Analista De Sistemas" id="a_s">Analista De Sistemas</option>
+        <option value="Desarrollador de escritorio" id="a_s">Desarrollador de escritorio</option>
+        <option value="Desarrollador de Roblox" id="a_s">ADesarrollador de Roblox</option>
+        </select>
+        </div>
+
+        <div class="campo">
+        <p>Direccion:</p>
+        <input type="text" name="direccion" id="direccion">
+        </div>
+
+        <div class="campo">
+        <p>Fecha de nacimiento:</p>
+        <input type="text" name="f_n" id="f_n">
+        </div>
+
+
+    </div>
+
+    <!-- botones de registro -->
+
+    <div class="btn-registro">
+     <button class="guardar_registro">Guardar</button>
+     <button class="eliminar_registro">Eliminar</button>
+     <button class="modificar_registro">Modificar</button>
+     <button class="nuevo_registro">Nuevo Registro</button>
+    </div>
+
+    <!-- //botones de registro -->
+
+    <!-- tabla de registro -->
+
+    <div class="tabla-registro">
+        <table align='center' class="tablaRE">
+            <thead>
+                <tr>
+                    <th class="Titulo"><h2>ID</h2></th>
+                    <th class="Titulo"><h2>Nombre</h2></th>
+                    <th class="Titulo"><h2>Apellido</h2></th>
+                    <th class="Titulo"><h2>Correo</h2></th>
+                    <th class="Titulo"><h2>Telefono</h2></th>
+                    <th class="Titulo"><h2>Perfil</h2></th>
+                    <th class="Titulo"><h2>Direccion</h2></th>
+                    <th class="Titulo"><h2>Fecha de nacimiento</h2></th>
+                </tr>
+                
+            </thead>
+        </table>
+    </div>
+
+    <!-- //cuerpo de registro -->
+    </div>
+
+        <div class="modulo registro_empleados renumeracion_empleados">
+
+        <!-- cuerpo de renumeriacion -->
+        <div class="informacion">
+
+            <div class="campo">
+                <p>ID:</p>
+                <input type="text" name="id" id="id_r">
+            </div>
+        
+            <div class="campo">
+                <p>Nombre:</p>
+                <input type="text" name="nombre" id="nombre_r">
+                </div>
+        
+                <div class="campo">
+                <p>Apellido:</p>
+                <input type="text" name="apellido" id="apellido_r">
+                </div>
+        
+                <div class="campo">
+                <p>tiempos extras:</p>
+                <input type="text" name="tiempo" id="tiempo">
+                </div>
+        
+                <div class="campo">
+                <p>bonificacion:</p>
+                <input type="text" name="bonificacion" id="bonificacion">
+                </div>
+        
+                <div class="campo">
+                <p>numero de tarjeta:</p>
+                <input type="text" name="tarjeta" id="tarjeta">
+                </div>
+        
+                <div class="campo">
+                <p>monto Total:</p>
+                <input type="text" name="monto" id="monto">
+                </div>
+        
+                <div class="campo">
+                <p>correo:</p>
+                <input type="text" name="correo" id="correo_r">
+                </div>
+        
+        
+            </div>
+        
+            <!-- botones de registro -->
+        
+            <div class="btn-registro_r">
+            <button class="guardar_registro_r">Guardar</button>
+            <button class="eliminar_registro_r">Eliminar</button>
+            <button class="modificar_registro_r">Modificar</button>
+            <button class="nuevo_registro_r">Nuevo Registro</button>
+            <button class="buscar_id">Buscar ID</button>
+            </div>
+        
+            <!-- //botones de registro -->
+        
+            <!-- tabla de registro -->
+        
+            <div class="tabla-registro">
+                <table align='center' class="tablaRE_E">
+                    <thead>
+                        <tr class="tr">
+                            <th class="Titulo"><h2>ID</h2></th>
+                            <th class="Titulo"><h2>Nombre</h2></th>
+                            <th class="Titulo"><h2>Apellido</h2></th>
+                            <th class="Titulo"><h2>Tiempo Extra</h2></th>
+                            <th class="Titulo"><h2>bonificacion</h2></th>
+                            <th class="Titulo"><h2>tarjeta</h2></th>
+                            <th class="Titulo"><h2>monto</h2></th>
+                            <th class="Titulo"><h2>correo</h2></th>
+                        </tr>
+                        
+                    </thead>
+                </table>
+            </div>
+        <!-- //cuerpo de renumeriacion -->
+
+        </div>
+
+        <!-- //cuerpo fin -->
+        </main>
+    
+
+        </div>    
+        </div>
+</body>
+</html>

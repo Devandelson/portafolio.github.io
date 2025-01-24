@@ -1,0 +1,27 @@
+/* Estructura */
+@media screen and (max-width: 776px) {
+    /* header */
+    header{
+        position: absolute;
+        top: 0;
+        left: 0px;
+        transform: translateX(-100%);
+        width: 250px; 
+        z-index: 15;
+    }
+
+    .oculto_ani_btn_menu{
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0px);
+        transition: all 250ms ease; 
+        pointer-events: inherit;
+    }
+
+    
+    .ani_ancho{
+        width: 250px;
+        transform: translateX(0px);
+        transition: all 350ms ease;
+    }
+}

@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    position: relative;
+    animation: 5s animacion ease-in-out;
+}
+
+@keyframes animacion {
+
+    0%{transform: scale(0) rotate(360deg) rotateY(360deg);}
+    10%{transform: scale(0) rotate(360deg) rotateY(360deg);}
+
+    15%{transform: scale(1) rotate(0deg) rotateY(0deg);}
+    25%{transform: scale(1) rotate(0deg) rotateY(0deg);}
+
+    30%{margin-top: -100%;}
+    40%{margin-top: -100%;}
+
+    45%{margin-left: -100%;}
+    55%{margin-left: -100%;}
+
+    60%{margin-top: 0%;}
+    70%{margin-top: 0%;}
+
+    75%{margin-left: 0%; transform: skew(10deg);}
+
+    100%{transform: skew(0deg);} 
+}
+
+header{
+    width: 100%;
+    height: auto;
+}
+
+header > .logo{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+header > .lista ,
+header > .lista > nav{
+width: 100%;
+height: auto;
+position: relative;
+background: rgb(0,74,151);
+}
+
+header > .lista > nav > ul {
+    display: flex;
+    position: relative;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    flex-flow: wrap;
+}
+
+header > .lista > nav > ul > li{
+    padding: 10px 15px;
+    position: relative;
+    margin-right: 20px;
+    font-size: 20px;
+    color: white;
+    transition: all 300ms ease;
+    border: 1px solid white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+header > .lista > nav > ul > li:hover{
+    transform: scale(0.8);
+    cursor: pointer;
+}
+
+header > .lista > nav > ul > li::after{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+    top: 0px;
+    left: 0px;
+    transition: all 300ms ease;
+}
+
+header > .lista > nav > ul > li:hover::after{
+    transition: all 300ms ease;
+    transform: scale(1.2);
+}
+
+main{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+main > .introduccion{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+main > .introduccion > img{
+    width: 100%;
+    position: relative;
+}
+
+main > section > .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    flex-direction: column;
+}
+
+main > section > .titulo > h2{
+  font-size: 50px;
+  color: green;
+}
+
+main > section > .titulo > p{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+main >  section > .imagenes{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: auto;
+    flex-flow: wrap;
+}
+
+main >  section > .imagenes > .contenedor_img{
+    width: 400px;
+    height: auto;
+    position: relative;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    transition: all 500ms ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+main >  section > .imagenes > .contenedor_img:hover{
+    background: black;
+    box-shadow: 0px 0px 10px white;
+    color: white;
+    transform: scale(1.1);
+    border-radius: 20px;
+    transition: all 500ms ease;
+}
+
+main >  section > .imagenes > .contenedor_img:hover img{
+    transform: rotate(360deg);
+    transition: all 500ms ease;
+    border-radius: 20px;
+}
+
+main >  section > .imagenes > .contenedor_img > img{
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+    transition: all 500ms ease;
+}
+
+main >  section > .imagenes > .contenedor_img > h2{
+    font-size: 30px;
+}
+
+footer{
+    background: black;
+    padding: 5px 20px;
+    color: white;
+    font-size: 25px;
+}
