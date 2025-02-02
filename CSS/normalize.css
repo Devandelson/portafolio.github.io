@@ -353,7 +353,7 @@
   div,section,article,
   p,h1,h2,h3,h4,h5,h6,a,
   img,ul,li,ol,nav,header,main,
-  footer,span,input{
+  footer,span,input,form,textarea{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
