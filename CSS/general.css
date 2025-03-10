@@ -75,6 +75,9 @@ body {
     /* 800 */
     --color5: #163964;
     /* 900 */
+
+    --color6: #c7d640;  /* Naranja medio complementario */
+    --color7: #d36a2d;  /* Naranja cálido complementario */
 }
 
 
@@ -587,21 +590,20 @@ main {
     background-color: var(--color2);
     font-size: 20px;
     transition: all 50ms linear;
-    box-shadow: var(--color3) 0px 5px 0px 0px;
     color: hsl(0, 0%, 100%);
     cursor: pointer;
 }
 
 .btn3:hover {
-    box-shadow: var(--color3) 0px 7px 0px 0px;
-    transform: translateY(-2px);
+    box-shadow: var(--color3) 0px 6px 0px 0px;
+    transform: translateY(-3px);
 }
 
 .btn3:active {
     background-color: var(--color2);
     /*50, 168, 80*/
     box-shadow: var(--color3) 0px 0px 0px 0px;
-    transform: translateY(5px);
+    transform: translateY(0px);
 }
 
 .btn4 {

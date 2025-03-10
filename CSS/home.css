@@ -73,6 +73,8 @@
                 width: 100px;
                 flex-grow: 1;
                 box-shadow: 0px 0px 0px var(--color5);
+                background: transparent;
+                outline: none;
             }
         
             > img{
@@ -87,6 +89,7 @@
                 max-width: max-content;
                 position: relative;
                 transition: all 50ms linear;
+                padding: 10px;
             }
         }
 

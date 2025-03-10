@@ -44,6 +44,9 @@ function contenedor_temas() {
                     root.setProperty('--color3', '#14539a'); // 700
                     root.setProperty('--color4', '#144378'); // 800
                     root.setProperty('--color5', '#163964'); // 900
+                    root.setProperty('--color6', '#c7d640'); 
+                    root.setProperty('--color7', '#d36a2d'); 
+
                 } else if (i == 1){
                     // Cambiando el valor de las variable CSS personalizada
                     root.setProperty('--color1', '#1dafac'); // 500
@@ -51,6 +54,8 @@ function contenedor_temas() {
                     root.setProperty('--color3', '#147171'); // 700
                     root.setProperty('--color4', '#15585a'); // 800
                     root.setProperty('--color5', '#164a4b'); // 900
+                    root.setProperty('--color6', '#f1b42d'); /* Amarillo cálido */
+                    root.setProperty('--color7', '#d24e1c'); /* Naranja rojizo */                 
                 } else if (i == 2){
                     // Cambiando el valor de las variable CSS personalizada
                     root.setProperty('--color1', '#b08a42'); // 500
@@ -58,6 +63,8 @@ function contenedor_temas() {
                     root.setProperty('--color3', '#79542f'); // 700
                     root.setProperty('--color4', '#66452d'); // 800
                     root.setProperty('--color5', '#593b2a'); // 900
+                    root.setProperty('--color6', '#d1e56b'); /* Verde claro */
+                    root.setProperty('--color7', '#f09f3d'); /* Amarillo anaranjado */
                 } else if (i == 3){
                     // Cambiando el valor de las variable CSS personalizada
                     root.setProperty('--color1', '#95a53d'); // 500
@@ -65,6 +72,9 @@ function contenedor_temas() {
                     root.setProperty('--color3', '#596526'); // 700
                     root.setProperty('--color4', '#485123'); // 800
                     root.setProperty('--color5', '#3e4621'); // 900
+                    root.setProperty('--color6', '#f0c92e'); /* Amarillo cálido */
+root.setProperty('--color7', '#d1773b'); /* Naranja suave */
+
                 } else if (i == 4){
                     // Cambiando el valor de las variable CSS personalizada
                     root.setProperty('--color1', '#da8305'); // 500
@@ -72,6 +82,9 @@ function contenedor_temas() {
                     root.setProperty('--color3', '#92470e'); // 700
                     root.setProperty('--color4', '#783b0f'); // 800
                     root.setProperty('--color5', '#451e03'); // 900
+                    root.setProperty('--color6', '#ffcf47'); /* Amarillo dorado */
+root.setProperty('--color7', '#7b4c3a'); /* Rojo terracota suave */
+
                 } else if (i == 5){
                     // Cambiando el valor de las variable CSS personalizada
                     root.setProperty('--color1', '#517397'); // 500
@@ -79,6 +92,8 @@ function contenedor_temas() {
                     root.setProperty('--color3', '#374f6d'); // 700
                     root.setProperty('--color4', '#31435b'); // 800
                     root.setProperty('--color5', '#2c3a4e'); // 900
+                    root.setProperty('--color6', '#ffba44'); /* Amarillo cálido */
+root.setProperty('--color7', '#d75e5e'); /* Rojo coral suave */
                 }
             });
         }

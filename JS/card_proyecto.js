@@ -12,7 +12,6 @@ function card_proyecto() {
     // funcionalidad de busqueda (destacado) y (proyectos (normal))
     document.addEventListener("keyup" ,(e) => {
         if (e.target.matches("#destacado_input")){
-            console.log(e.target.value.toLocaleLowerCase());
             document.querySelectorAll(".item_destacado").forEach((item) => {
                 item.children[0].children[1].innerHTML.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()) ? item.classList.remove("foco") : item.classList.add("foco");
             });
