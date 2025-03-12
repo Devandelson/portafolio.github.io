@@ -13,6 +13,104 @@
     }
 }
 
+.proyecto > .vista_publicacion{
+    position: fixed;
+    width: 80%;
+    height: 80vh;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: var(--color3);
+    z-index: 10;
+    border-radius: 10px;
+    transition: all 500ms ease;
+    display: grid;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    max-width: 1000px;
+    max-height: 1000px;
+
+    > span{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+        padding: 7px 13px;
+    }
+
+    > .item_publicacion{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-radius: 7px;
+        padding: 8px;
+        display: grid;
+
+        .contenedor_slider{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+
+            /* slider */
+            > .slider{
+                width: 300%;
+                display: grid;
+                grid-template-columns: repeat(3, minmax(auto , 1fr));
+                grid-row: 1fr;
+                height: 100%;
+                position: relative;
+                transition: all 700ms cubic-bezier(.11,0,.58,1.6);
+                background: rgb(37, 37, 37);
+
+                > img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    position: relative;
+                }
+            }
+
+            > i{
+                font-size: 50px;
+                position: absolute;
+                top: 50%;
+                left: 20px;
+                transform: translateY(-50%);
+                z-index: 2;
+                color: white;
+                text-shadow: 0px 0px 5px rgb(0, 0, 0);
+                transition: all 50ms linear;
+            }
+
+            > i:hover{
+                transform: scale(1.1) translateY(-50%);
+                text-shadow: 0px 0px 10px rgba(0, 0, 0);
+                cursor: pointer;
+            }
+
+            > i:nth-child(3){
+                left: inherit;
+                right: 20px;
+            }
+
+            > i:active{
+                transform: scale(0.95) translateY(-50%);
+                text-shadow: 0px 0px 0px rgb(158, 155, 155),
+                0px 0px 20px black!important;
+            }
+        }
+    }
+}
+
+.inactivo_vista_publicacion{
+    pointer-events: none;
+    filter: blur(10px);
+    opacity: 0;
+    top: -100%!important;
+}
+
+
 .proyecto > .titulo{
     display: flex;
     align-items: center;

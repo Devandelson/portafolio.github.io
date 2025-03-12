@@ -9,72 +9,95 @@
     <link rel="stylesheet" href="css/animacionesjs.css"> 
     <link href="css/scroll_animacion.css" rel="stylesheet">
     <link rel="icon" href="img/celular_icono.png" type="image/png">
+
+    
 </head>
 
 <body>
 
     <!-- Encabezado -->
     <div class="contenedor_encabezado_all">
-      
         <header data-aos="zoom-in-down">
             <nav>
                 <ul>
                     <li><a href="#">Inicio</a></li>
                     <li><a href="#N">Novedades</a></li>
-                </ul>
 
-            </nav>
-            <h1>TechMóvil</h1>
-            <nav>
-                <ul>
+                    <h1>TechMóvil</h1>
+
                     <li><a href="productos.html">Productos</a></li>
                     <li><a href="#S">Servicios</a></li>
                 </ul>
             </nav>
         </header>
 
-        <div class="info_encabezado" data-aos="zoom-in-left">
+        <div class="info_encabezado" data-aos="zoom-in-up">
             <div class="parallax_img"></div>
             <h2>Bienvenido</h1>
-            <button class="button type1">Haora!!</button>
+            <a href="#" class="button type1">
+                Ahoraaaa
+            </a>
         </div>
-
     </div>
 
     <!-- contenido principal -->
     <main>
 
         <!-- informacion de la pagina -->
-        <section class="contenedor_info_intro">
-            <article class="card">
-                <img src="img/envio.png" alt="imagen de pago seguro">
-                <div class="card__content">
-                  <p class="card__title">Pago Seguro</p>
-                  <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                </div>
-              </article>  
-              
-              <article class="card">
-                <img src="img/entrega-rapida.png" alt="imagen de envio rapido">
-                <div class="card__content">
-                  <p class="card__title">Envio rapido</p>
-                  <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                </div>
-              </article>  
+        <section class="contenedor_info_intro" id="S">
+            <h2><i class="fa-solid fa-people-carry-box"></i> Servicios</h2> 
 
-              <article class="card">
-                <img src="img/conveniencia.png" alt="imagen de conveniencia">
-                <div class="card__content">
-                  <p class="card__title">Conveniencia</p>
-                  <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                </div>
-              </article>  
+            <div class="contenedor_servicios">
+                <article class="item_servicio">
+                    <div class="img">
+                        <img src="img/pago.jpg" alt="">
+
+                        <span>
+                            <i class="fa-solid fa-car-side"></i>
+                        </span>
+                    </div>
+
+                    <div class="info">
+                        <h3>Pago seguro</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sapiente quasi veniam deserunt expedita asperiores in omnis sequi, sunt praesentium? Libero soluta, atque eligendi adipisci illum ducimus earum esse ullam.</p>
+                    </div>
+                </article>
+    
+                <article class="item_servicio">
+                    <div class="img">
+                        <img src="img/envio.jpg" alt="">
+
+                        <span>
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </span>
+                    </div>
+                    <div class="info">
+                        <h3>Envío rapido</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sapiente quasi veniam deserunt expedita asperiores in omnis sequi, sunt praesentium? Libero soluta, atque eligendi adipisci illum ducimus earum esse ullam.</p>
+                    </div>
+                </article>
+    
+                <article class="item_servicio colum3">
+                    <div class="img">
+                        <img src="img/conveniencia.jpg" alt="">
+                        
+                        <span>
+                            <i class="fa-solid fa-thumbs-up"></i>
+                        </span>
+                    </div>
+    
+                    <div class="info">
+                        <h3>Conveniencia</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sapiente quasi veniam deserunt expedita asperiores in omnis sequi, sunt praesentium? Libero soluta, atque eligendi adipisci illum ducimus earum esse ullam.</p>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <!-- Novedades -->
         <section class="novedades">
 
-            <article>
+            <article class="info">
                 <img src="img/n3.jpg" alt="imagen de fondo novedades" class="parallax_img_left">
                 <div class="info_novedades">
                     <h2>NOVEDADES <br>
@@ -86,8 +109,7 @@
                 <div class="button-borders">
                     <button class="primary-button">VER
                     </button>
-                  </div>
-
+                </div>
             </article>
 
             <article>
@@ -194,47 +216,77 @@
             <button><a href="productos.html">Ver mas productos</a></button>
         </section>
 
-        <!-- Servicios que ofrecemos -->
-
-        <section class="info_servicio_1" id="S">
-
-            <img src="img/servicio1.png" alt="celular imagen"
-            data-aos="zoom-in-up">
-            <div class="contenedor_info_S">
-                <h2>Servicios</h2>
-                <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur odio, voluptatem vero quas a similique temporibus dolorum obcaecati natus. Laboriosam a ducimus cupiditate sit quae doloremque, suscipit error maxime temporibus asperiores! Labore, ullam omnis. Autem, illum dolorum. Est, dolores rem illo aut accusantium cum optio quis repellendus in porro similique voluptatibus et minima deleniti vero magni vitae nesciunt ipsa, consectetur facilis aspernatur. Quidem non deleniti eligendi vero voluptas vel ut sequi accusantium officiis quod nihil, minus quos unde, itaque atque eum earum nam reprehenderit! Quas omnis commodi asperiores laborum nihil tempore praesentium, enim veritatis voluptatum ipsum! Odit assumenda cumque sit.</p>
-            </div>
-
-        </section>
-
-        <section class="info_servicio_2">
-            <article class="card_info_S">
-                <h2>servicio1</h2>     
-                <div class="contenedor_info_card_info">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde tenetur quidem recusandae corporis incidunt maxime, sapiente totam minima vel neque, culpa optio doloremque quis mollitia itaque? Fugiat delectus incidunt quibusdam ipsam consectetur eius, optio eveniet in repellendus et deserunt quo itaque! Corrupti eligendi animi in beatae quibusdam quod saepe velit!</p>
-                </div>        
-            </article>
-            <article class="card_info_S">
-                <h2>servicio2</h2>
-                <div class="contenedor_info_card_info">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde tenetur quidem recusandae corporis incidunt maxime, sapiente totam minima vel neque, culpa optio doloremque quis mollitia itaque? Fugiat delectus incidunt quibusdam ipsam consectetur eius, optio eveniet in repellendus et deserunt quo itaque! Corrupti eligendi animi in beatae quibusdam quod saepe velit!</p>
-                </div>    
-            </article>
-            <article class="card_info_S">
-                <h2>servicio3</h2>
-                <div class="contenedor_info_card_info">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde tenetur quidem recusandae corporis incidunt maxime, sapiente totam minima vel neque, culpa optio doloremque quis mollitia itaque? Fugiat delectus incidunt quibusdam ipsam consectetur eius, optio eveniet in repellendus et deserunt quo itaque! Corrupti eligendi animi in beatae quibusdam quod saepe velit!</p>
-                </div>    
-            </article>
-            <article class="card_info_S">
-                <h2>servicio4</h2>
-                <div class="contenedor_info_card_info">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde tenetur quidem recusandae corporis incidunt maxime, sapiente totam minima vel neque, culpa optio doloremque quis mollitia itaque? Fugiat delectus incidunt quibusdam ipsam consectetur eius, optio eveniet in repellendus et deserunt quo itaque! Corrupti eligendi animi in beatae quibusdam quod saepe velit!</p>
-                </div>    
-            </article>
-        </section>
-
+        <!-- Comentarios -->
+        <section class="testimonial-section">
+            <!-- Pequeña etiqueta encima del título principal -->
+            <p class="testimonial-label">Testimonial</p>
+            <!-- Título principal de la sección -->
+            <h2 class="testimonial-heading">Transformative Client Experiences</h2>
+        
+            <!-- Contenedor principal de tarjetas -->
+            <div class="testimonial-container">
+              
+              <!-- Tarjeta 1 -->
+              <article class="testimonial-card">
+                <!-- Cita -->
+                <blockquote class="testimonial-quote">
+                 <i class="fa-solid fa-message"></i>
+                  Impressed by the professionalism and attention to detail.
+                </blockquote>
+                <!-- Info del usuario -->
+                <div class="testimonial-user">
+                  <img 
+                  src="img/usuario.png" 
+                    alt="Foto de perfil de Guy Hawkins" 
+                    class="testimonial-avatar"
+                  >
+                  <div>
+                    <p class="testimonial-name">Guy Hawkins</p>
+                    <p class="testimonial-username">@guyhawkins</p>
+                  </div>
+                </div>
+              </article>
+        
+              <!-- Tarjeta 2 -->
+              <article class="testimonial-card">
+                <blockquote class="testimonial-quote">
+                 <i class="fa-solid fa-message"></i>
+                  A seamless experience from start to finish. Highly recommend!
+                </blockquote>
+                <div class="testimonial-user">
+                  <img 
+                    src="img/usuario.png" 
+                    alt="Foto de perfil de Karla Lynn" 
+                    class="testimonial-avatar"
+                  >
+                  <div>
+                    <p class="testimonial-name">Karla Lynn</p>
+                    <p class="testimonial-username">@karlynn98</p>
+                  </div>
+                </div>
+              </article>
+        
+              <!-- Tarjeta 3 -->
+              <article class="testimonial-card">
+                <blockquote class="testimonial-quote">
+                 <i class="fa-solid fa-message"></i>
+                  Reliable and trustworthy. Made my life so much easier!
+                </blockquote>
+                <div class="testimonial-user">
+                  <img 
+                    src="img/usuario.png" 
+                    alt="Foto de perfil de Jane Cooper" 
+                    class="testimonial-avatar"
+                  >
+                  <div>
+                    <p class="testimonial-name">Jane Cooper</p>
+                    <p class="testimonial-username">@janecooper</p>
+                  </div>
+                </div>
+              </article>
+        
+            </div> <!-- fin testimonial-container -->
+          </section>
     </main>
 
     <!-- Pie de pagina -->
@@ -248,29 +300,31 @@
             
             <article>
                 <h2>Contacto</h2>
-                <div class="red">
-                    <img src="img/facebook.png" alt="img de Facebook">
-                    <p><a href="#">Facebook</a></p>
-                </div>
+                <div class="contenedor_redes">
+                    <div class="red">
+                        <img src="img/facebook.png" alt="img de Facebook">
+                        <p><a href="#">Facebook</a></p>
+                    </div>
+        
+                    <div class="red">
+                        <img src="img/instagram.png" alt="img de Instagram">
+                        <p><a href="#">Instagram</a></p>
+                    </div>
+        
+                    <div class="red">
+                        <img src="img/telegrama.png" alt="img de Telegram">
+                        <p><a href="#">Telegram</a></p>
+                    </div>
     
-                <div class="red">
-                    <img src="img/instagram.png" alt="img de Instagram">
-                    <p><a href="#">Instagram</a></p>
-                </div>
+                    <div class="red">
+                        <img src="img/Twitter.png" alt="img de Twitter">
+                        <p><a href="#">Twitter</a></p>
+                    </div>
     
-                <div class="red">
-                    <img src="img/telegrama.png" alt="img de Telegram">
-                    <p><a href="#">Telegram</a></p>
-                </div>
-
-                <div class="red">
-                    <img src="img/Twitter.png" alt="img de Twitter">
-                    <p><a href="#">Twitter</a></p>
-                </div>
-
-                <div class="red">
-                    <img src="img/youtube.png" alt="img de YouTube">
-                    <p><a href="#">YouTube</a></p>
+                    <div class="red">
+                        <img src="img/youtube.png" alt="img de YouTube">
+                        <p><a href="#">YouTube</a></p>
+                    </div>
                 </div>
             </article>
     
@@ -279,10 +333,6 @@
                 <p>Aceptamos los siguientes metodos de pago</p>
                 <hr>
                 <div class="metodos_pagos">
-                    <div class="metodo">
-                        <img src="img/paypal.png" alt="PayPal">
-                        <p>paypal</p>
-                    </div>
                     <div class="metodo">
                         <img src="img/debito.png" alt="debito">
                         <p>debito</p>
@@ -298,20 +348,14 @@
                 </div>
             </article>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Novedades</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Servicios</a></li>
-            </ul>
-        </nav>
     </footer>
 
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
-      </script>
+    </script>
+
+    <script src="https://kit.fontawesome.com/7881bda97f.js" crossorigin="anonymous"></script>
 </body>
 </html>

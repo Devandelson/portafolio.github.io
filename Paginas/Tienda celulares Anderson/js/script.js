@@ -1,8 +1,5 @@
 /* animacion de scroll js */
-
 let parallaxElements = document.getElementsByClassName("parallax_img");
-
-let parallaxLeftElement = document.querySelector(".parallax_img_left");
 
 function scroll() {
     let pixelesAbajo = document.documentElement.scrollTop;
@@ -12,9 +9,6 @@ function scroll() {
         let element = parallaxElements[i];
         element.style.transform = `translateY(${pixelesAbajo * -0.1}px) translateX(${pixelesAbajo * 0.1}px)`;
     }
-
-    // Aplica el estilo al elemento con la clase "parallax_img_left"
-    parallaxLeftElement.style.transform = `translateY(${pixelesAbajo * -0.2}px) translateX(${pixelesAbajo * -0.2}px)`;
 }
 
 // Escucha el evento de desplazamiento y llama a la función scroll

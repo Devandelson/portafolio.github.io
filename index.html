@@ -24,17 +24,11 @@
     <video id="musica" controls>
         <source src="musica_ambiente1.mp3" type="audio/mp3">
     </video>
-    
 
     <!--==  ==-->
     <!--== contenedor de carga ==-->
     <section class="contenedor_carga carga" id="carga">
-        <svg class="loader" width="240" height="240" viewBox="0 0 240 240">
-            <circle class="loader-ring loader-ring-a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
-            <circle class="loader-ring loader-ring-b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
-            <circle class="loader-ring loader-ring-c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
-            <circle class="loader-ring loader-ring-d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
-        </svg>
+        <span class="bola_carga"></span>
     </section>
 
     <!--== header ==-->
@@ -547,6 +541,27 @@
 
                 <!--== Proyecto ==-->
                 <section class="proyecto none" id="Proyectos">
+                    <!-- Contenedor oculto (vista de publicaciones) -->
+                    <article class="vista_publicacion inactivo_vista_publicacion" id="vista_publicacion_p">
+                        <span class="btn7" id="btn_cerrar_vista_publicacion_pr">X</span>
+
+                        <div class="item_publicacion">
+                            <div class="contenedor_slider">
+                                <div class="slider" id="slider_img_proyecto">
+                                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
+                                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
+                                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
+                                </div>
+
+                                <i class="fa-solid fa-chevron-left"
+                                id="btn_slider_pr_izquierdo"></i>
+
+                                <i class="fa-solid fa-chevron-right" id="btn_slider_pr_derecho"></i>                   
+                            </div>
+                        </div>
+                    </article>
+                    <!-- fin contenedor oculto (vista de publicaciones)  -->
+
                     <article class="banner">
                         <img src="IMG/fondo7_portafolio.jpg" alt="">
                         <h2>Proyectos</h2>
@@ -676,6 +691,14 @@
                                     <img src="IMG/VB.png" alt="">
                                     <img src="IMG/mysql3.png" alt="">
                                 </div>
+
+                                <div class="contenedor_img">
+                                    <img src="IMG/F_factura.png" alt="">
+                                    <img src="IMG/F_inicio.png" alt="">
+                                    <img src="IMG/F_registro.png" alt="">
+
+                                    <button id="vista_img_proyecto" class="btn3"><i class="fa-solid fa-images"></i> Ver mas</button>
+                                </div>
                             </div>
                         </div>
 
@@ -693,6 +716,14 @@
                                     <img src="IMG/VB.png" alt="">
                                     <img src="IMG/access.png" alt="">
                                 </div>
+
+                                <div class="contenedor_img">
+                                    <img src="IMG/R_inicio.png" alt="">
+                                    <img src="IMG/R_registro.png" alt="">
+                                    <img src="IMG/R_control.png" alt="">
+
+                                    <button id="vista_img_proyecto" class="btn3"><i class="fa-solid fa-images"></i> Ver mas</button>
+                                </div>
                             </div>
                         </div>
 
@@ -704,13 +735,24 @@
                             </div>
 
                             <div class="back">
-                                <p>Desarrollé este sistema optimizar la gestión de estudiantes, calificaciones , profesores , merito y otras operaciones escolares. Si deseas conocer más detalles, ¡no dudes en contactarme!.</p>
+                                <p>Desarrollé este sistema optimizar la gestión de estudiantes, calificaciones , profesores , merito y otras operaciones escolares.</p>
 
                                 <div class="lenguajes">
                                     <img src="IMG/VB.png" alt="">
                                     <img src="IMG/base-de-datos.png" alt="">
                                 </div>
+
+                                <div class="contenedor_img">
+                                    <img src="IMG/I_calificacion.png" alt="">
+                                    <img src="IMG/I_estudiante.png" alt="">
+                                    <img src="IMG/I_NL.png" alt="">
+
+                                    <button id="vista_img_proyecto" class="btn3"><i class="fa-solid fa-images"></i> Ver mas</button>
+                                </div>
                             </div>
+
+
+
                         </div>
 
                         <div class="item_proyecto item_normal">

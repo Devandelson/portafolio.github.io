@@ -1,116 +1,17 @@
-/* animaciones de scroll */
-
-let menuScroll = document.querySelector("#header");
-
-function Scroll() {
-    let topscroll = document.documentElement.scrollTop;
-    let limiteM = 50;
-
-    if (topscroll > limiteM) {
-        menuScroll.style.background = "#282828";
-    } else {
-        menuScroll.style.background = "transparent";
-    }
-
-}
-
-window.addEventListener('scroll', Scroll);
-
 /* navegacion de productos funcionalidad */
-
-let producto = document.querySelector("#productos");
-producto.addEventListener("click", () => {
-    let padre = document.querySelectorAll(".content_product_all");
-
-    let elementos = Array.from(padre);
-    elementos.forEach((item) => {
-        item.classList.add("opacity");
-
-        setTimeout(() => {
-            item.classList.remove("opacity");
-        }, 500);
-    });
-
-    let elementoP = document.querySelector(".content2P");
-    elementoP.classList.remove("none");
-    elementoP.classList.add("grid");
-
-    let elementoP2 = document.querySelector(".content1P");
-    elementoP2.classList.add("none");
-    elementoP2.classList.remove("grid");
-
-    let elementoP3 = document.querySelector(".content3P");
-    elementoP3.classList.add("none");
-    elementoP3.classList.remove("grid");
-
-});
-
-let novedad = document.querySelector("#novedades");
-novedad.addEventListener("click", () => {
-    let padre = document.querySelectorAll(".content_product_all");
-
-    let elementos = Array.from(padre);
-    elementos.forEach((item) => {
-        item.classList.add("opacity");
-
-        setTimeout(() => {
-            item.classList.remove("opacity");
-        }, 500);
-    });
-
-    let elementoP = document.querySelector(".content2P");
-    elementoP.classList.add("none");
-    elementoP.classList.remove("grid");
-
-    let elementoP2 = document.querySelector(".content1P");
-    elementoP2.classList.remove("none");
-    elementoP2.classList.add("grid");
-
-    let elementoP3 = document.querySelector(".content3P");
-    elementoP3.classList.add("none");
-    elementoP3.classList.remove("grid");
-});
-
-let descuento = document.querySelector("#descuento");
-descuento.addEventListener("click", () => {
-    let padre = document.querySelectorAll(".content_product_all");
-
-    let elementos = Array.from(padre);
-    elementos.forEach((item) => {
-        item.classList.add("opacity");
-
-        setTimeout(() => {
-            item.classList.remove("opacity");
-        }, 500);
-    });
-
-    let elementoP = document.querySelector(".content2P");
-    elementoP.classList.add("none");
-    elementoP.classList.remove("grid");
-
-    let elementoP2 = document.querySelector(".content1P");
-    elementoP2.classList.add("none");
-    elementoP2.classList.remove("grid");
-
-    let elementoP3 = document.querySelector(".content3P");
-    elementoP3.classList.remove("none");
-    elementoP3.classList.add("grid");
+let btn_desplazamiento_productos = document.querySelectorAll("#btn_desplazamiento_productos");
+btn_desplazamiento_productos.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        let ancla_productos = document.getElementById("ancla_productos");
+        ancla_productos.style.marginLeft = `-${index}00%`;    
+    });  
 });
 
 let quitar = document.querySelectorAll("#quitar");
-let elementoQ = Array.from(quitar);
-elementoQ.forEach((item) => {
+quitar.forEach((item) => {
     item.addEventListener("click", () => {
-
-
-        let padre = item.parentElement.parentElement;
-        let suppadre = item.parentElement;
-        suppadre.classList.add("scale");
-
-        setTimeout(() => {
-            padre.removeChild(suppadre);
-        }, 500);
-
+        let padre = item.closest(".sub_content_info");
+        padre.classList.add("scale_content_info");
     });
 });
 
@@ -128,7 +29,6 @@ elementosbtn.forEach((item) => {
 /* ahora el codigo de comprar c: */
 
 /* funcion de crear el elemento */
-
 let creacion = function (titulo, dinero, imagen) {
 
     let padretodo = document.createElement("div");
@@ -152,14 +52,20 @@ let creacion = function (titulo, dinero, imagen) {
     controladoresC.setAttribute("class", "controles_p");
 
     let btn1 = document.createElement("button");
-    btn1.innerHTML = "+"
-    btn1.id = "mas";
+    let btn1_i = document.createElement("i");
+    btn1_i.classList.add("fa-solid" , "fa-plus");
+    btn1.append(btn1_i);
+
     let btn2 = document.createElement("button");
-    btn2.innerHTML = "-"
-    btn2.id = "menos";
+    let btn2_i = document.createElement("i");
+    btn2_i.classList.add("fa-solid" , "fa-minus");
+    btn2.append(btn2_i);
+
     let btn3 = document.createElement("button");
-    btn3.innerHTML = "X"
-    btn3.id = "quitarC";
+
+    let btn3_i = document.createElement("i");
+    btn3_i.classList.add("fa-solid" , "fa-trash");
+    btn3.append(btn3_i);
 
     parrafo.append(dineroP, texto);
     controladoresC.append(btn1, btn2, btn3)
@@ -169,68 +75,31 @@ let creacion = function (titulo, dinero, imagen) {
     let padreTodoo = document.querySelector(".sub_content_P");
     padreTodoo.appendChild(padretodo);
 
-    let mas = document.querySelectorAll("#mas");
-    let masE = Array.from(mas);
-    masE.forEach((item) => {
-        item.addEventListener("click", () => {
-            let padreTodooo = item.parentElement.parentElement;
-            let dinero = padreTodooo.children[1].children[0].innerHTML;
+    // Update total price when item is added
+    let totalPriceElement = document.getElementById("Comprar");
+    let currentTotal = parseInt(totalPriceElement.innerText.replace("$", "").replace(",", ""));
+    let itemPrice = parseInt(dinero.replace(",", ""));
+    totalPriceElement.innerText = (currentTotal + itemPrice) + "$";
 
-            // Eliminar la coma de la cadena
-            let valorSinComa = dinero.replace(",", "");
-
-            // Convertir la cadena en un número entero
-            let numeroEntero = parseInt(valorSinComa, 10);
-            numeroEntero += numeroEntero;
-
-            padreTodooo.children[1].children[0].innerHTML = numeroEntero + "$";
-
-        });
+    btn1.addEventListener("click", () => {
+        // Increase the price
+        let currentTotal = parseInt(totalPriceElement.innerText.replace("$", "").replace(",", ""));
+        totalPriceElement.innerText = (currentTotal + itemPrice) + "$";
     });
 
-    let menos = document.querySelectorAll("#menos");
-    let menosE = Array.from(menos);
-    let valorfijo = 0;
-    let valorfijofijo = dineroP.innerHTML;
-    menosE.forEach((item) => {
-        item.addEventListener("click", () => {
-            let padreTodooo = item.parentElement.parentElement;
-            let dinero = padreTodooo.children[1].children[0].innerHTML;
-
-            // Eliminar la coma de la cadena
-            let valorSinComa = dinero.replace(",", "");
-            // Eliminar la coma de la cadena
-            let valorSinComa2 = valorfijofijo.replace(",", "");
-
-            // Convertir la cadena en un número entero
-            let numeroEntero = parseInt(valorSinComa, 10);
-            // Convertir la cadena en un número entero
-            let numeroEntero2 = parseInt(valorSinComa2, 10);
-            valorfijo = numeroEntero;
-
-            numeroEntero -= numeroEntero2;
-            if (numeroEntero == 0) {
-                console.log("numero");
-                numeroEntero = valorfijo;
-            } else { }
-
-            padreTodooo.children[1].children[0].innerHTML = numeroEntero + "$";
-        });
+    btn2.addEventListener("click", () => {
+        // Decrease the price
+        let currentTotal = parseInt(totalPriceElement.innerText.replace("$", "").replace(",", ""));
+        if (currentTotal > itemPrice) {
+            totalPriceElement.innerText = (currentTotal - itemPrice) + "$";
+        }
     });
 
-    let quitarr = document.querySelectorAll("#quitarC");
-    elementosQui = Array.from(quitarr);
-    elementosQui.forEach((item) => {
-        item.addEventListener("click", () => {
-            let padre = item.parentElement.parentElement.parentElement;
-
-            let padretodo = document.querySelector(".sub_content_P");
-
-            padre.classList.add("quitate");
-            setTimeout(() => {
-                padreTodoo.removeChild(padre);
-            }, 500);
-        });
+    btn3.addEventListener("click", () => {
+        // Remove the item and update the total price
+        let currentTotal = parseInt(totalPriceElement.innerText.replace("$", "").replace(",", ""));
+        totalPriceElement.innerText = (currentTotal - itemPrice) + "$";
+        padretodo.remove();
     });
 }
 
@@ -238,9 +107,9 @@ let btnComprar = document.querySelectorAll("#cardbtn");
 let elementobtnC = Array.from(btnComprar);
 elementobtnC.forEach((item) => {
     item.addEventListener('click', () => {
-        let padre = item.parentElement;
+        let padre = item.closest(".card_producto");
         let titulo = padre.children[0].innerHTML;
-        let dinero = padre.children[2].children[0].innerHTML;
+        let dinero = padre.querySelector(".precio").children[0].children[0].innerHTML;
         let img = padre.children[1].src;
 
         creacion(titulo, dinero, img);
@@ -260,28 +129,4 @@ Comprar.addEventListener("click", () => {
         }, 500);
     });
 
-});
-
-let Calcular = document.querySelector("#calcular");
-Calcular.addEventListener("click", () => {
-
-    let card_p = document.querySelectorAll(".card_P");
-    let elementoP = Array.from(card_p);
-    let numero = 0;
-    elementoP.forEach((item) => {
-       let dinero = item.children[1].children[1].children[0].innerHTML;
-
-        // Eliminar la coma de la cadena
-        let valorSinComa = dinero.replace(",", "");
-
-        // Convertir la cadena en un número entero
-        let numeroEntero = parseInt(valorSinComa, 10);
-        // Convertir la cadena en un número entero
-        numero += numeroEntero;
-    });
-
-    let cpr = document.querySelector(".compras");
-    cpr.children[0].innerHTML = numero + "$";
-
-    numero = 0;
 });
