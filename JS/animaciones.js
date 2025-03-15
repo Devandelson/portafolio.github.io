@@ -2,16 +2,6 @@
 setTimeout(() => {
     let contenedor_carga = document.querySelector(".contenedor_carga");
     contenedor_carga.style.animation = "ani_cierre 1s ease forwards";
-    
-    setTimeout(() => {
-        const elemento = document.getElementById("pages").children[1];
-        const eventoClick = new MouseEvent('click', {
-          view: window,
-          bubbles: true,
-          cancelable: true
-        });
-        elemento.dispatchEvent(eventoClick);
-    }, 1500); 
 }, 3800);  
 
 
