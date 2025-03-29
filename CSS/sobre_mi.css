@@ -673,6 +673,12 @@
                             }
                         }
 
+                        > .contain{
+                            > img{
+                                object-fit: contain!important;
+                            }
+                        }
+
                         > .item_lenguaje:nth-child(3){
                             border-radius: 5px;
                         }
