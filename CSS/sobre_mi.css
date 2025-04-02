@@ -168,11 +168,12 @@
                 height: 100%;
                 position: relative;
                 transition: all 700ms cubic-bezier(.11,0,.58,1.6);
+                background: rgb(19, 18, 18);
 
                 > img{
                     width: 100%;
                     height: 100%;
-                    object-fit: cover;
+                    object-fit: contain;
                     position: relative;
                 }
             }
@@ -428,6 +429,7 @@
                         border-radius: 7px;
                         display: flex;
                         position: relative;
+                        background: rgb(29, 29, 28);
 
                         > img{
                             width: 100%;    

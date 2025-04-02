@@ -802,11 +802,22 @@ main {
           border: 1px solid white;
           border-radius: 5px;
         }
+
+        > .contain_img{
+          object-fit: contain!important;
+        }
       }
 
       button{
         font-size: 20px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
         > a{
+          display: flex;
+          align-items: center;
+          gap: 7px;
           text-decoration: none;
           color: white;
         }
