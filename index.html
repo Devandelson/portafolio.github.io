@@ -25,7 +25,36 @@
         <source src="musica_ambiente1.mp3" type="audio/mp3">
     </video>
 
-    <!--==  ==-->
+    <!--== Elementos oculto ==-->
+
+    <!-- Contenedor oculto (vista de publicaciones - proyecto) -->
+    <article class="vista_publicacion_proyecto inactivo_vista_publicacion_proyecto" id="vista_publicacion_p">
+        <span class="btn7" id="btn_cerrar_vista_publicacion_pr">X</span>
+
+        <div class="item_publicacion">
+            <div class="slider" id="slider_img_proyecto">
+                <div class="container_img_slider">
+                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
+                </div>
+                <div class="container_img_slider">
+                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
+                </div>
+                <div class="container_img_slider">
+                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="contenedor_slider">
+                <i class="fa-solid fa-chevron-left"
+                id="btn_slider_pr_izquierdo"></i>
+
+                <i class="fa-solid fa-chevron-right" id="btn_slider_pr_derecho"></i>                   
+            </div>
+        </div>
+    </article>
+    <!-- fin contenedor oculto (vista de publicaciones)  -->
+
+
     <!--== contenedor de carga ==-->
     <section class="contenedor_carga carga" id="carga">
         <span class="bola_carga"></span>
@@ -240,13 +269,75 @@
                             <article class="info">
                                 <h4>¿Quién soy?</h4>
                                 <p>
-                                    Soy Andelson Gonzalez Genao, un dev FULL - STACK. Mi portafolio refleja un crecimiento constante y un compromiso firme con la innovación. Cada proyecto que realizo es una fusión entre tecnología y creatividad.
+                                    Soy Andelson Gonzalez Genao, un dev Front - End con habilidades adiciones de Back - End. Mi portafolio refleja un crecimiento constante y un compromiso firme con la innovación. Cada proyecto que realizo es una fusión entre tecnología y creatividad.
                                 </p>
                             </article>
 
                             <article class="publicacion">
                                 <h2>Publicaciones</h2>
-                                <hr>              
+                                <hr> 
+
+                                <div class="item_publicacion">
+                                    <div class="encabezado">
+                                        <div class="contenedor_info">
+                                            <img src="IMG/Sobre Mí.png" alt="">
+                                            <div class="info">
+                                                <p>Andelson</p>
+                                                <p>8/4/2025</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="controles">
+                                            <img src="IMG/maximize.png" alt="" id="btn_visualizar_sm">
+                                        </div>
+                                    </div>
+
+                                    <div class="detalle">
+                                        <p>
+                                            Duplicado de classrroom, una página web que permite a los estudiantes interactuar con sus compañeros y profesores. Esta plataforma facilita la comunicación y el intercambio de información entre los miembros de la comunidad educativa. Hecha con HTML, CSS , JavaScript, MYSQL, PHP y AJAX.
+                                        </p>
+
+                                        <div class="slider_img">
+                                            <img src="./IMG/f1_clasroom.png" alt="">
+                                            <img src="./IMG/f2_clasroom.png" alt="">
+                                            <img src="./IMG/f3_clasroom.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>       
+                                
+                                <div class="item_publicacion">
+                                    <div class="encabezado">
+                                        <div class="contenedor_info">
+                                            <img src="IMG/Sobre Mí.png" alt="">
+                                            <div class="info">
+                                                <p>Andelson</p>
+                                                <p>2/4/2025</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="controles">
+                                            <img src="IMG/maximize.png" alt="" id="btn_visualizar_sm">
+                                        </div>
+                                    </div>
+
+                                    <div class="detalle">
+                                        <p>
+                                            ¡Organiza tus tareas como nunca antes! 🚀 Presento mi primer proyecto con Oracle: un potente gestor de tareas desarrollado con PHP y Oracle. Clasifica, prioriza y gestiona cada actividad de forma eficiente e intuitiva.
+                                        </p>
+
+                                        <div class="slider_img">
+                                            <img src="IMG/inicio_oracle.png" alt="">
+                                            <img src="IMG/eliminacion_oracle.png" alt="">
+                                            <img src="IMG/modificacion_oracle.png" alt="">
+                                        </div>
+                                    </div>
+
+                                    <button class="btn3">
+                                        <a href="https://github.com/Devandelson/Gestor-de-tareas" target="_blank">
+                                            <i class="fa-brands fa-github"></i>  Ver mas
+                                        </a>
+                                    </button>
+                                </div> 
 
                                 <div class="item_publicacion">
                                     <div class="encabezado">
@@ -271,40 +362,6 @@
 
                                     <button class="btn3">
                                         <a href="https://devandelson.github.io/firts-proyect-react/" target="_blank">
-                                            <i class="fa-solid fa-link"></i>  Ver mas
-                                        </a>
-                                    </button>
-                                </div>
-
-                                <div class="item_publicacion">
-                                    <div class="encabezado">
-                                        <div class="contenedor_info">
-                                            <img src="IMG/Sobre Mí.png" alt="">
-                                            <div class="info">
-                                                <p>Andelson</p>
-                                                <p>18/1/2025</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="controles">
-                                            <img src="IMG/maximize.png" alt="" id="btn_visualizar_sm">
-                                        </div>
-                                    </div>
-
-                                    <div class="detalle">
-                                        <p>
-                                            Disfruta del clásico juego de Piedra, Papel o Tijera en su versión interactiva, desarrollado en JavaScript como parte del curso Semillero Digital Intro (OPTIC). Juega solo contra la computadora o reta a un amigo en modo de dos jugadores. ¡Pon a prueba tu habilidad y estrategias en cada partida!
-                                        </p>
-
-                                        <div class="slider_img">
-                                            <img src="IMG/juego-mano2.png" alt="">
-                                            <img src="IMG/juego-mano1.JPG" alt="">
-                                            <img src="IMG/juego-mano3.png" alt="">
-                                        </div>
-                                    </div>
-
-                                    <button class="btn3">
-                                        <a href="Paginas/Juego de manos/index.html" target="_blank">
                                             <i class="fa-solid fa-link"></i>  Ver mas
                                         </a>
                                     </button>
@@ -344,6 +401,40 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="item_publicacion">
+                                    <div class="encabezado">
+                                        <div class="contenedor_info">
+                                            <img src="IMG/Sobre Mí.png" alt="">
+                                            <div class="info">
+                                                <p>Andelson</p>
+                                                <p>18/1/2025</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="controles">
+                                            <img src="IMG/maximize.png" alt="" id="btn_visualizar_sm">
+                                        </div>
+                                    </div>
+
+                                    <div class="detalle">
+                                        <p>
+                                            Disfruta del clásico juego de Piedra, Papel o Tijera en su versión interactiva, desarrollado en JavaScript como parte del curso Semillero Digital Intro (OPTIC). Juega solo contra la computadora o reta a un amigo en modo de dos jugadores. ¡Pon a prueba tu habilidad y estrategias en cada partida!
+                                        </p>
+
+                                        <div class="slider_img">
+                                            <img src="IMG/juego-mano2.png" alt="">
+                                            <img src="IMG/juego-mano1.JPG" alt="">
+                                            <img src="IMG/juego-mano3.png" alt="">
+                                        </div>
+                                    </div>
+
+                                    <button class="btn3">
+                                        <a href="Paginas/Juego de manos/index.html" target="_blank">
+                                            <i class="fa-solid fa-link"></i>  Ver mas
+                                        </a>
+                                    </button>
+                                </div>                           
 
                                 <div class="item_publicacion">
                                     <div class="encabezado">
@@ -407,39 +498,7 @@
                                     </button>
                                 </div>    
                                 
-                                <div class="item_publicacion">
-                                    <div class="encabezado">
-                                        <div class="contenedor_info">
-                                            <img src="IMG/Sobre Mí.png" alt="">
-                                            <div class="info">
-                                                <p>Andelson</p>
-                                                <p>2/4/2025</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="controles">
-                                            <img src="IMG/maximize.png" alt="" id="btn_visualizar_sm">
-                                        </div>
-                                    </div>
-
-                                    <div class="detalle">
-                                        <p>
-                                            ¡Organiza tus tareas como nunca antes! 🚀 Presento mi primer proyecto con Oracle: un potente gestor de tareas desarrollado con PHP y Oracle. Clasifica, prioriza y gestiona cada actividad de forma eficiente e intuitiva.
-                                        </p>
-
-                                        <div class="slider_img">
-                                            <img src="IMG/inicio_oracle.png" alt="">
-                                            <img src="IMG/eliminacion_oracle.png" alt="">
-                                            <img src="IMG/modificacion_oracle.png" alt="">
-                                        </div>
-                                    </div>
-
-                                    <button class="btn3">
-                                        <a href="https://github.com/Devandelson/Gestor-de-tareas" target="_blank">
-                                            <i class="fa-brands fa-github"></i>  Ver mas
-                                        </a>
-                                    </button>
-                                </div> 
+                                
                             </article>
                         </article>
 
@@ -581,12 +640,16 @@
                                             </div>    
 
                                             <div class="item_lenguaje contain">
-                                                <img src="IMG/oracle.png" alt="PHP" />
+                                                <img src="IMG/oracle.png" alt="Oracle" />
                                             </div>   
 
                                             <div class="item_lenguaje contain">
-                                                <img src="IMG/pl oracle.JPG" alt="PHP" />
-                                            </div>   
+                                                <img src="IMG/pl oracle.JPG" alt="PL/Oracle" />
+                                            </div>  
+                                            
+                                            <div class="item_lenguaje contain">
+                                                <img src="IMG/ajax.png" alt="" alt="AJAX">
+                                            </div>                                        
                                         </div>  
                                     </div> 
                                 </div>
@@ -646,27 +709,6 @@
 
                 <!--== Proyecto ==-->
                 <section class="proyecto none" id="Proyectos">
-                    <!-- Contenedor oculto (vista de publicaciones) -->
-                    <article class="vista_publicacion inactivo_vista_publicacion" id="vista_publicacion_p">
-                        <span class="btn7" id="btn_cerrar_vista_publicacion_pr">X</span>
-
-                        <div class="item_publicacion">
-                            <div class="contenedor_slider">
-                                <div class="slider" id="slider_img_proyecto">
-                                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
-                                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
-                                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
-                                </div>
-
-                                <i class="fa-solid fa-chevron-left"
-                                id="btn_slider_pr_izquierdo"></i>
-
-                                <i class="fa-solid fa-chevron-right" id="btn_slider_pr_derecho"></i>                   
-                            </div>
-                        </div>
-                    </article>
-                    <!-- fin contenedor oculto (vista de publicaciones)  -->
-
                     <article class="banner">
                         <img src="IMG/fondo7_portafolio.jpg" alt="">
                         <h2>Proyectos</h2>
@@ -685,21 +727,32 @@
                     <article class="destacado" id="D">
                         <div class="item_proyecto item_destacado">
                             <div class="front">
-                                <img src="IMG/juego-mano1.JPG" alt="">
-                                <h2>Piedra, Papel o Tijera en JS</h2>
+                                <img src="IMG/f1_clasroom.png" alt="">
+                                <h2>Duplicado de Classroom</h2>
                                 <span></span>
                             </div>
 
                             <div class="back">
-                                <p>Juega al clásico Piedra, Papel o Tijera contra la computadora, creado en JavaScript durante el curso Semillero Digital Intro (OGTIC). ¡Desafía tus reflejos!</p>
+                                <p>¡Explora este increíble proyecto inspirado en Classroom! Una plataforma donde los estudiantes se conectan, comparten y crean asignaciones de forma interactiva. ¡Desliza para ver cómo la educación cobra vida con cada funcionalidad!</p>
 
                                 <div class="lenguajes">
                                     <img src="IMG/html-5.png" alt="">
                                     <img src="IMG/css.png" alt="">
                                     <img src="IMG/js.png" alt="">
+                                    <img src="IMG/php.png" alt="">
+                                    <img src="IMG/mysql.png" alt="">
+                                    <img src="IMG/ajax.png" alt="" class="contain_img">
                                 </div>
 
-                                <button class="btn3"><a href="Paginas/Juego de manos/index.html" target="_blank"><i class="fa-solid fa-link"></i> Visualizar</a></button>
+                                <div class="contenedor_img">
+                                    <img src="IMG/f1_clasroom.png" alt="">
+                                    <img src="IMG/f2_clasroom.png" alt="">
+                                    <img src="IMG/f3_clasroom.png" alt="">
+                                    <img src="IMG/f4_clasroom.png" alt="">
+                                    <img src="IMG/f5_clasroom.png" alt="">
+
+                                    <button id="vista_img_proyecto" class="btn3"><i class="fa-solid fa-images"></i> Ver mas</button>
+                                </div>
                             </div>  
                         </div>
 
@@ -781,6 +834,26 @@
                     </div>
 
                     <article class="all_proyects" id="P">
+                        <div class="item_proyecto item_normal">
+                            <div class="front">
+                                <img src="IMG/juego-mano1.JPG" alt="">
+                                <h2>Piedra, Papel o Tijera en JS</h2>
+                                <span></span>
+                            </div>
+
+                            <div class="back">
+                                <p>Juega al clásico Piedra, Papel o Tijera contra la computadora, creado en JavaScript durante el curso Semillero Digital Intro (OGTIC). ¡Desafía tus reflejos!</p>
+
+                                <div class="lenguajes">
+                                    <img src="IMG/html-5.png" alt="">
+                                    <img src="IMG/css.png" alt="">
+                                    <img src="IMG/js.png" alt="">
+                                </div>
+
+                                <button class="btn3"><a href="Paginas/Juego de manos/index.html" target="_blank"><i class="fa-solid fa-link"></i> Visualizar</a></button>
+                            </div>  
+                        </div>
+
                         <div class="item_proyecto item_normal">
                             <div class="front">
                                 <img src="IMG/inicio_oracle.png" alt="">
@@ -991,7 +1064,7 @@
                                 <tr>
                                     <th>Curriculum</th>
                                     <th>27/04/2024</th>
-                                    <th>1MB</th>
+                                    <th>0.99MB</th>
                                     <th><a href="Archivos/Andelson gonzalez genao.pdf" download target="_blank">Descargar</a></th>
                                 </tr>
                             </tbody>

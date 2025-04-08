@@ -25,78 +25,82 @@ function card_proyecto() {
     })
 }
 
+let slider_proyecto = document.getElementById("vista_publicacion_p").querySelector(".item_publicacion").querySelector("#slider_img_proyecto");
+let total_imagenes = slider_proyecto.children.length;
+
 // mostrar publicacion proyecto
 function mostrar_visualizador_proyecto() {
     let vista_img_proyecto = document.querySelectorAll("#vista_img_proyecto");
     vista_img_proyecto.forEach((btn) => {
         btn.addEventListener("click" , () => {
             // copiando el contenedor las rutas de las imagenes
-   
             let padre_slider_contenedor = btn.closest(".contenedor_img");
 
             // direcciones
             let direcciones = [];
-            for (let i = 1; i < padre_slider_contenedor.children.length; i++){
-                direcciones.push(padre_slider_contenedor.children[i - 1].src);
+            for (let i = 0; i < padre_slider_contenedor.children.length; i++){
+                if (padre_slider_contenedor.children[i].tagName === 'IMG') {
+                    direcciones.push(padre_slider_contenedor.children[i].src);
+                }
             }
 
             // colocando imagenes en el visualizador
-            let vista_publicacion_p = document.querySelectorAll("#vista_publicacion_p");
-            vista_publicacion_p.forEach((vista) => {
-                let slider = vista.children[1].children[0].children[0];
-                // bucle para colocar las imagenes en cada una
-                for (let a = 0; a < slider.children.length; a++){1
-                    slider.children[a].src = direcciones[a];
-                }
+            let vista = document.getElementById("vista_publicacion_p");
+            let slider = vista.querySelector(".item_publicacion").querySelector("#slider_img_proyecto");
 
-                // animacion para que se vea
-                vista.classList.toggle("inactivo_vista_publicacion");
+            slider.innerHTML = "";   
+
+            direcciones.forEach((direccion) => {
+                let container_img = document.createElement("div");
+                container_img.classList.add("container_img_slider");
+            
+                let img_slider = document.createElement("img");
+                img_slider.src = direccion;
+
+                container_img.append(img_slider);
+
+                slider.append(container_img);
             });
+
+            total_imagenes = slider.children.length;
+
+            // animacion para que se vea
+            vista.classList.toggle("inactivo_vista_publicacion_proyecto");
         });
     });
 }
 
 // mover imagenes en el visualizador
-function mover_imagenes_proyecto() {
-    // Selecciona todos los elementos de slider
-    let sliders_img = document.querySelectorAll("#slider_img_proyecto");
+// Obtén los botones dentro de cada slider
+let btn_slider_publicacion_izquierdo = document.getElementById("btn_slider_pr_izquierdo");
+let btn_slider_publicacion_derecho = document.getElementById("btn_slider_pr_derecho");
 
-    sliders_img.forEach((slider) => {
-        // Obtén los botones dentro de cada slider
-        let btn_slider_publicacion_izquierdo = slider.parentElement.querySelector("#btn_slider_pr_izquierdo");
-        let btn_slider_publicacion_derecho = slider.parentElement.querySelector("#btn_slider_pr_derecho");
+let contador_movimiento_img = 0;
 
-        let contador_movimiento_img = 0;
-        const total_imagenes = slider.children.length; // Suponiendo que cada hijo es una imagen
+// Evento para el botón derecho
+btn_slider_publicacion_derecho.addEventListener("click", () => {
+    // Mueve el contador hacia la derecha
+    if (contador_movimiento_img < total_imagenes - 1) {
+        contador_movimiento_img++;
+    }
+    console.log(contador_movimiento_img);
+    // Actualiza el margen izquierdo para mover el slider
+    slider_proyecto.children[0].style.marginLeft = `-${contador_movimiento_img}00%`;
+});
 
-        // Evento para el botón derecho
-        btn_slider_publicacion_derecho.addEventListener("click", () => {
-            // Mueve el contador hacia la derecha
-            if (contador_movimiento_img < total_imagenes - 1) {
-                contador_movimiento_img++;
-            }
-            // Actualiza el margen izquierdo para mover el slider
-            slider.style.marginLeft = `-${contador_movimiento_img * 100}%`;
-        });
+// Evento para el botón izquierdo
+btn_slider_publicacion_izquierdo.addEventListener("click", () => {
+    // Mueve el contador hacia la izquierda
+    if (contador_movimiento_img > 0) {
+        contador_movimiento_img--;
+    }
+    // Actualiza el margen izquierdo para mover el slider
+    slider_proyecto.children[0].style.marginLeft = `-${contador_movimiento_img}00%`;
+});
 
-        // Evento para el botón izquierdo
-        btn_slider_publicacion_izquierdo.addEventListener("click", () => {
-            // Mueve el contador hacia la izquierda
-            if (contador_movimiento_img > 0) {
-                contador_movimiento_img--;
-            }
-            // Actualiza el margen izquierdo para mover el slider
-            slider.style.marginLeft = `-${contador_movimiento_img * 100}%`;
-        });
-    });
-}
 
-function cerrar_visualizador_pr() {
-    let btn_cerrar_vista_publicacion_pr = document.querySelectorAll("#btn_cerrar_vista_publicacion_pr");
-    btn_cerrar_vista_publicacion_pr.forEach((btn) => {
-        btn.addEventListener("click" , () => {
-            let vista_publicacion_sm2 = btn.parentElement;
-            vista_publicacion_sm2.classList.toggle("inactivo_vista_publicacion");
-        });
-    })
-}
+let btn_cerrar_vista_publicacion_pr = document.getElementById("btn_cerrar_vista_publicacion_pr");
+btn_cerrar_vista_publicacion_pr.addEventListener("click" , () => {
+    let vista_publicacion_sm2 = btn_cerrar_vista_publicacion_pr.parentElement;
+    vista_publicacion_sm2.classList.toggle("inactivo_vista_publicacion_proyecto");
+});

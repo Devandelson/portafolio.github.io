@@ -131,8 +131,6 @@ for(let i = 1; i< pages.children.length; i++){
             if (texto_frm_seleccionado == "Proyectos"){
                 card_proyecto();
                 mostrar_visualizador_proyecto();
-                mover_imagenes_proyecto();
-                cerrar_visualizador_pr();
             } else if (texto_frm_seleccionado == "Sobre_Mí") {
                 movimiento_frm();
                 altura_contenedor_area();
