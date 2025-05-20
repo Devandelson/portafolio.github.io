@@ -70,7 +70,7 @@
 
             <article>
                 <div class="item_img" id="btn_configuracion">
-                    <img src="IMG/configuracion.png" alt="" class="img_header_accion">
+                    <img src="IMG/Configuración.png" alt="" class="img_header_accion">
                 </div>
 
                 <div class="item_img" id="btn_desplazamiento_menu">
@@ -94,7 +94,7 @@
         <section class="enlaces_paginas">
             <nav>
                 <ul id="lista_opciones_frm">
-                    <li title="Inicio" id="inicio_frm_btn">
+                    <li title="Inicio" id="inicio_frm_btn" onclick="move_frm(0)">
                         <img src="IMG/casa.png" alt="img_item_header">
                         <p>Inicio</p>
                         <img src="IMG/casa.png" alt="img_item_header" class="none">
@@ -125,6 +125,10 @@
                     <div class="fondo" id="fondo_home"><img src="IMG/fondo4_portafolio.jpg" alt=""></div>
 
                     <div class="contenedor_contenido">
+                        <div class="avatar_programador">
+                            <img src="IMG/programador.png" alt="avatar programador">
+                        </div>
+
                         <h1>Portafolio</h1>
                         <article class="buscador">
                             <img src="IMG/lupa.png" alt="img_buscador">
@@ -133,7 +137,7 @@
                                 list="lista_modulus">
 
                             <datalist id="lista_modulus">
-                                <option value="Sobre Mi">Sobre Mí</option>
+                                <option value="Sobre_Mí">Sobre Mí</option>
                                 <option value="Proyectos">Proyectos</option>
                                 <option value="Archivos">Archivos</option>
                             </datalist>
@@ -142,14 +146,7 @@
                         </article>
 
                         <article class="pages" id="pages">
-                            <div class="item_page">
-                                <div class="img">
-                                    <img src="IMG/casa.png" alt="">
-                                </div>
-                                <p>Inicio</p>
-                            </div>
-
-                            <div class="item_page">
+                            <div class="item_page" onclick="crearContenedor('Sobre_Mí', 'Sobre mí')">
                                 <div class="img">
                                     <img src="IMG/Sobre Mí.png" alt="">
                                 </div>
@@ -157,7 +154,7 @@
                                 <p>Sobre Mí</p>
                             </div>
 
-                            <div class="item_page">
+                            <div class="item_page" onclick="crearContenedor('Archivos', 'Archivos')">
                                 <div class="img">
                                     <img src="IMG/Archivos.png" alt="">
                                 </div>
@@ -165,7 +162,7 @@
                                 <p>Archivos</p>
                             </div>
 
-                            <div class="item_page">
+                            <div class="item_page" onclick="crearContenedor('Proyectos', 'Proyectos')">
                                 <div class="img">
                                     <img src="IMG/Proyectos.png" alt="">
                                 </div>
@@ -209,7 +206,7 @@
                         <article class="contenedor_info_banner">
                             <div class="info_bannner">
                                 <h2>Andelson González</h2>
-                                <h3>Dev. Full - Stack</h3>
+                                <h3>Dev. Front - End</h3>
                             </div>
                             <div class="contenedor_logo">
                                 <img src="IMG/Mi foto(3).jpg" alt="img_sobre_mi" class="img_p" />
@@ -658,6 +655,20 @@
                                             <i class="fa-solid fa-compress"></i>
                                         </button>
                                     </div>
+
+                                    <div class="item_logro">
+                                        <div class="info">
+                                            <h3>Certificado de alto impacto</h3>
+                                            <p>
+                                                Un certificado de parte de la OGTIC de RD en donde me complace decir que
+                                                fui uno de los mas destacados.
+                                            </p>
+                                        </div>
+                                        <img src="IMG/graduacion-certificado.jpg" alt="">
+                                        <button class="maximizar-img" id="maximizar-img">
+                                            <i class="fa-solid fa-compress"></i>
+                                        </button>
+                                    </div>
                                 </article>
                             </article>
                         </article>
@@ -799,15 +810,43 @@
 
                     <div class="titulo">
                         <h3><i class="fa-solid fa-star"></i> Destacados</h3>
-                        <div class="buscador">
-                            <input type="text" id="destacado_input" placeholder="Buscador de destacado">
-                            <div class="img">
-                                <img src="IMG/lupa2.png" alt="">
-                            </div>
-                        </div>
                     </div>
 
                     <article class="destacado" id="D">
+                        <div class="item_proyecto item_destacado">
+                            <div class="front">
+                                <img src="IMG/rutafit1.png" alt="">
+                                <h2>RutaFit optimizador de rutas.</h2>
+                                <span></span>
+                            </div>
+
+                            <div class="back">
+                                <p>Un proyecto innovador que calcula rutas automáticamente mediante una API y cuenta con
+                                    una excelente automatización. Fue desarrollado en el curso de la OGTIC (Semillero
+                                    Digital Intro) para la institución FITMOVIT, dedicada a fideos y comiso, donde tuve
+                                    el honor de liderar el equipo.</p>
+
+                                <div class="lenguajes">
+                                    <img src="IMG/html-5.png" alt="">
+                                    <img src="IMG/css.png" alt="">
+                                    <img src="IMG/js.png" alt="">
+                                    <img src="IMG/php.png" alt="">
+                                    <img src="IMG/mysql.png" alt="">
+                                    <img src="IMG/ajax.png" alt="" class="contain_img">
+                                </div>
+
+                                <div class="contenedor_img">
+                                    <img src="IMG/rutafit1.png" alt="">
+                                    <img src="IMG/rutafit2.png" alt="">
+                                    <img src="IMG/rutafit3.png" alt="">
+                                    <img src="IMG/rutafit4.png" alt="">
+
+                                    <button class="btn3"><a href="https://rutafit.free.nf/" target="_blank"><i
+                                                class="fa-solid fa-link"></i> Visualizar</a></button>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="item_proyecto item_destacado">
                             <div class="front">
                                 <img src="IMG/f1_clasroom.png" alt="">
@@ -920,13 +959,6 @@
 
                     <div class="titulo titulo2">
                         <h3><i class="fa-solid fa-pager"></i> Proyectos</h3>
-                        <div class="buscador">
-                            <input type="text" id="proyecto_input" placeholder="Buscador de Proyectos">
-
-                            <div class="img">
-                                <img src="IMG/lupa2.png" alt="">
-                            </div>
-                        </div>
                     </div>
 
                     <article class="all_proyects" id="P">
@@ -1268,7 +1300,7 @@
     <script src="JS/card_proyecto.js"></script>
     <script src="JS/sobre_mi.js"></script>
     <script src="JS/animaciones.js"></script>
-    <script src="JS/movimiento_frm.js"></script>
+    <script src="JS/gestion_frm.js"></script>
     <script src="JS/configuration.js"></script>
 
     <!--== Font awesome ==-->

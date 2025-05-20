@@ -11,7 +11,7 @@ body {
     max-height: 100vh;
     position: relative;
     display: flex;
-    background: var(--color4);
+    background: linear-gradient(0deg, var(--color5) 0%, var(--color3) 100%);
     overflow: hidden;
     transition: all 300ms ease;
     animation: 2s bounce_initial ease forwards;

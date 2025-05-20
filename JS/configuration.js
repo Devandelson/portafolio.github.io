@@ -126,7 +126,7 @@ function marcador_configuracion() {
 }
 
 // funcionalidad de marcar la opcion seleccionada (fondos de pantalla)
-function marcador_configuracion() {
+function marcador_fondos() {
     let fondo_contenedor = document.querySelectorAll("#fondo_contenedor");
     fondo_contenedor.forEach((fondo_contenedor) => {
         for(let i = 0; i < fondo_contenedor.children.length; i++){
@@ -143,7 +143,7 @@ function marcador_configuracion() {
 }
 
 // funcionalidad de marcar la opcion seleccionada (animaciones)
-function marcador_configuracion() {
+function marcador_movimiento() {
     let fondo_contenedor = document.querySelectorAll("#contenedor_movimiento");
     fondo_contenedor.forEach((fondo_contenedor) => {
         for(let i = 0; i < fondo_contenedor.children.length; i++){

@@ -117,6 +117,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0px 30px;
+    justify-content: center;
     width: 100%;
     max-width: 950px;
     margin: 0 auto;
@@ -125,7 +126,7 @@
     position: relative;
 
     > h3{
-        font-size: 40px;
+        font-size: 50px;
         color: white;
         position: relative;
         display: block;

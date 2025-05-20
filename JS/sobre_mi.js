@@ -81,11 +81,19 @@ function mostrar_visualizador() {
             let vista_publicacion_sm = document.querySelectorAll("#vista_publicacion_sm");
             vista_publicacion_sm.forEach((vista) => {
                 let slider = vista.children[1].children[0].children[0];
-                // bucle para colocar las imagenes en cada una
-                for (let a = 0; a < slider.children.length; a++){1
-                    slider.children[a].src = direcciones[a];
-                }
+                slider.innerHTML = ""; // Limpiar el contenido existente
 
+                // bucle para colocar las imagenes en cada una
+                direcciones.map((valor) => {
+                    let contenedor_img = document.createElement("div");
+                    contenedor_img.classList.add("item_img");
+                    let img = document.createElement("img");
+                    img.src = valor;
+                    contenedor_img.appendChild(img);
+                    slider.appendChild(contenedor_img);
+                })
+
+                mover_imagenes_sobre_mi();
                 // animacion para que se vea
                 vista.classList.toggle("inactivo_vista_publicacion");
             });
@@ -124,8 +132,10 @@ function MostrarVistaLogro() {
 function mover_imagenes_sobre_mi() {
     // Selecciona todos los elementos de slider
     let sliders_img = document.querySelectorAll("#slider_img_sobre_mi");
+  
 
     sliders_img.forEach((slider) => {
+        slider.style.transform = `translateX(0%)`;
         // Obtén los botones dentro de cada slider
         let btn_slider_publicacion_izquierdo = slider.parentElement.querySelector("#btn_slider_publicacion_izquierdo");
         let btn_slider_publicacion_derecho = slider.parentElement.querySelector("#btn_slider_publicacion_derecho");
@@ -140,7 +150,7 @@ function mover_imagenes_sobre_mi() {
                 contador_movimiento_img++;
             }
             // Actualiza el margen izquierdo para mover el slider
-            slider.style.marginLeft = `-${contador_movimiento_img * 100}%`;
+            slider.style.transform = `translateX(-${contador_movimiento_img * 100}%)`;
         });
 
         // Evento para el botón izquierdo
@@ -150,7 +160,7 @@ function mover_imagenes_sobre_mi() {
                 contador_movimiento_img--;
             }
             // Actualiza el margen izquierdo para mover el slider
-            slider.style.marginLeft = `-${contador_movimiento_img * 100}%`;
+            slider.style.transform = `translateX(-${contador_movimiento_img * 100}%)`;
         });
     });
 }
