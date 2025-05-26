@@ -109,7 +109,7 @@ async function crearContenedor(id_contenedor, texto) {
 
     // primero crear la pestaña
     let verificacionContenedor = await verificarContenedor(texto);
-    console.log(verificacionContenedor);
+
     if (verificacionContenedor) {
         move_frm(indiceContenedorExistente);
     } else {
@@ -169,25 +169,33 @@ function gestionCarpetas(texto_frm_seleccionado) {
         let indice_pestaña = 0;
         modulosActivos.map((nombre, index) => {
             if (nombre.toLocaleLowerCase() == texto_frm_seleccionado.toLocaleLowerCase()) {
-                indice_pestaña = index + 1; // +1 por que esta el home.
+                indice_pestaña = 5 + index; // +1 por que esta el home.
             }
         })
 
         // -- seleccionado la pestaña para eliminar
         let pestaña_seleccionada = slider_modulus.children[indice_pestaña];
         li.classList.add("tab_animacion1");
+        move_frm(0);
         setTimeout(() => {
             opciones_pestañas.removeChild(li);
-        }, 200);
-        move_frm(0);
-        slider_modulus.removeChild(pestaña_seleccionada);
+            slider_modulus.removeChild(pestaña_seleccionada);
+        }, 300);
+
+        // -- eliminando el contenedor tambien del array de modulos activos.
+        if (indice_pestaña >= 0) {
+            modulosActivos.splice(indice_pestaña - 5, 1);
+        }
     });
 
     li.append(img1, p, img2);
     li.classList.add("tab_animacion1");
-    opciones_pestañas.appendChild(li);
     let indicador_movimiento = opciones_pestañas.children.length - 1;
-    li.onclick = () => { move_frm(indicador_movimiento) };
+    li.addEventListener('click', () => { move_frm(indicador_movimiento) });
+
+    opciones_pestañas.appendChild(li);
+
+
 
     setTimeout(() => {
         li.classList.remove("tab_animacion1");
