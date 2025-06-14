@@ -136,6 +136,7 @@ async function crearContenedor(id_contenedor, texto) {
             mostrar_visualizador();
             mover_imagenes_sobre_mi();
             MostrarVistaLogro();
+            moveSliderHistory();
         } else if (texto == "Configuración") {
             cambio_fondo();
             contenedor_temas();
@@ -169,17 +170,21 @@ function gestionCarpetas(texto_frm_seleccionado) {
         let indice_pestaña = 0;
         modulosActivos.map((nombre, index) => {
             if (nombre.toLocaleLowerCase() == texto_frm_seleccionado.toLocaleLowerCase()) {
-                indice_pestaña = 5 + index; // +1 por que esta el home.
+                indice_pestaña = 5 + index; // +1 por que esta el home y +4 por el metodo de copiar contenedores.
             }
         })
 
         // -- seleccionado la pestaña para eliminar
         let pestaña_seleccionada = slider_modulus.children[indice_pestaña];
         li.classList.add("tab_animacion1");
-        move_frm(0);
+
         setTimeout(() => {
-            opciones_pestañas.removeChild(li);
-            slider_modulus.removeChild(pestaña_seleccionada);
+            move_frm(0);
+
+            setTimeout(() => {
+                opciones_pestañas.removeChild(li);
+                slider_modulus.removeChild(pestaña_seleccionada);
+            }, 400);
         }, 300);
 
         // -- eliminando el contenedor tambien del array de modulos activos.
@@ -190,7 +195,7 @@ function gestionCarpetas(texto_frm_seleccionado) {
 
     li.append(img1, p, img2);
     li.classList.add("tab_animacion1");
-    let indicador_movimiento = opciones_pestañas.children.length - 1;
+    let indicador_movimiento = opciones_pestañas.children.length; // se deja asi por el home.
     li.addEventListener('click', () => { move_frm(indicador_movimiento) });
 
     opciones_pestañas.appendChild(li);

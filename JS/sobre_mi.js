@@ -164,3 +164,21 @@ function mover_imagenes_sobre_mi() {
         });
     });
 }
+
+
+// funcion para mover el slider de historia
+function moveSliderHistory() {
+    let Navbar_AboutMe = document.querySelectorAll("#Navbar_AboutMe");
+
+    Navbar_AboutMe.forEach((navbar) => {
+        let countChildrens = navbar.children.length;
+        let slider = navbar.closest('.publicacion').querySelector('.sliderItemContainer');
+        for (let i = 0; i < countChildrens; i++){
+            navbar.children[i].addEventListener('click' , () => {
+                navbar.children[(i == 0 ? 1 : 0)].classList.remove('active');
+                navbar.children[i].classList.add('active');
+                slider.children[0].style.marginLeft = `-${i}00%`; 
+            })
+        }
+    })
+}
