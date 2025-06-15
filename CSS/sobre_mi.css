@@ -749,6 +749,8 @@
                     height: 100%;
                     z-index: 2;
                     border: 2px solid var(--color3);
+                    display: grid;
+                    grid-template-rows: auto 1fr;
 
                     >h2 {
                         font-size: 30px;
@@ -762,12 +764,14 @@
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: center;
-                        gap: 20px;
+                        align-items: center;
+                        gap: 15px;
 
                         >.item_lenguaje {
                             position: relative;
                             width: 56px;
                             aspect-ratio: 1/1;
+                            height: max-content;
                             overflow: hidden;
 
                             >img {
@@ -778,7 +782,23 @@
                         }
 
                         > .tailwind{
-                            width: 80px!important;
+                            width: 100px!important;
+                            height: 60px!important;
+                        }
+
+                        > .oracle{
+                            width: 70px!important;
+                            height: 50px!important;
+                        }
+
+                        > .git{
+                            width: 60px!important;
+                        }
+
+                        > .rounded{
+                            > img{
+                                border-radius: 10px;
+                            }
                         }
 
                         >.contain {
