@@ -1,25 +1,53 @@
+.swal2-container {
+    justify-content: center;
+    align-items: center;
+
+    .swal2-icon {
+        margin: 0 auto;
+        margin-top: 16px;
+    }
+}
+
 /* Estructura */
 @media screen and (max-width: 776px) {
+
     /* header */
-    header{
+    header {
         position: absolute;
         top: 0;
         left: 0px;
         transform: translateX(-100%);
-        width: 250px; 
+        width: 250px;
         z-index: 15;
     }
 
-    .oculto_ani_btn_menu{
+    /* condicion para la capa */
+    body:has(> .ani_ancho) {
+
+        /* Capa de desplazamiento (Responsive) */
+        .capaDesplazamiento {
+            top: 0;
+            left: 250px;
+            height: 100vh;
+            width: calc(100% - 250px);
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 15;
+            transition: all 300ms ease;
+            display: initial;
+            pointer-events: initial;
+        }
+    }
+
+    .oculto_ani_btn_menu {
         transform: scale(1);
         opacity: 1;
         filter: blur(0px);
-        transition: all 250ms ease; 
+        transition: all 250ms ease;
         pointer-events: inherit;
     }
 
-    
-    .ani_ancho{
+
+    .ani_ancho {
         width: 250px;
         transform: translateX(0px);
         transition: all 350ms ease;

@@ -3,11 +3,11 @@ function movimiento_frm() {
     let contenedor_controles = document.querySelectorAll("#controles_frm_sm");
     contenedor_controles.forEach((frm) => {
         // agregando evento a cada uno de los controles. a traves de un bucle for.
-        for (let i = 0; i < frm.children.length; i++){
-            frm.children[i].addEventListener("click" , () => {
-                
+        for (let i = 0; i < frm.children.length; i++) {
+            frm.children[i].addEventListener("click", () => {
+
                 // quitando la seleccion a los otros controles
-                for (let b = 0; b < frm.children.length; b++){
+                for (let b = 0; b < frm.children.length; b++) {
                     frm.children[b].classList.remove("active");
                 }
 
@@ -17,18 +17,18 @@ function movimiento_frm() {
                 // moviendo
                 let ancla_movimiento = document.querySelectorAll("#historia_sm");
                 ancla_movimiento.forEach((ancla) => {
-                    ancla.style.marginLeft= `-${i}00%`;
+                    ancla.style.marginLeft = `-${i}00%`;
                 });
-            
+
 
                 // estableciendo altura
                 let contenedor_areas2 = document.querySelectorAll("#areas_sm");
                 contenedor_areas2.forEach((contenedor) => {
-                    for (let c = 0; c < contenedor.children.length; c++){
+                    for (let c = 0; c < contenedor.children.length; c++) {
                         contenedor.children[c].classList.remove("seleted");
                     }
                 });
-                
+
                 // contenedor seleccionado para agregarle el focus para establecer la altura
                 frm.parentElement.parentElement.children[3].children[i].classList.add("seleted");
                 altura_contenedor_area();
@@ -37,7 +37,7 @@ function movimiento_frm() {
     });
 }
 
-function altura_contenedor_area(){
+function altura_contenedor_area() {
     let contenedor_areas = document.querySelectorAll("#areas_sm");
 
     contenedor_areas.forEach((contenedor) => {
@@ -49,13 +49,13 @@ function altura_contenedor_area(){
             }
         }
     });
-    
+
 }
 
 function cerrar_visualizador() {
     let btn_cerrar_vista_publicacion_sm = document.querySelectorAll("#btn_cerrar_vista_publicacion_sm");
     btn_cerrar_vista_publicacion_sm.forEach((btn) => {
-        btn.addEventListener("click" , () => {
+        btn.addEventListener("click", () => {
             let vista_publicacion_sm2 = btn.parentElement;
             vista_publicacion_sm2.classList.toggle("inactivo_vista_publicacion");
         });
@@ -66,14 +66,14 @@ function cerrar_visualizador() {
 function mostrar_visualizador() {
     let btn_visualizar_sm = document.querySelectorAll("#btn_visualizar_sm");
     btn_visualizar_sm.forEach((btn) => {
-        btn.addEventListener("click" , () => {
+        btn.addEventListener("click", () => {
             // copiando el contenedor las rutas de las imagenes
-   
+
             let padre_slider_contenedor = btn.closest(".item_publicacion").children[1].querySelector(".slider_img");
 
             // direcciones
             let direcciones = [];
-            for (let i = 0; i < padre_slider_contenedor.children.length; i++){
+            for (let i = 0; i < padre_slider_contenedor.children.length; i++) {
                 direcciones.push(padre_slider_contenedor.children[i].src);
             }
 
@@ -107,9 +107,9 @@ function MostrarVistaLogro() {
     // mostrar imagen
     let btns_maximizar_img = document.querySelectorAll("#maximizar-img");
     btns_maximizar_img.forEach((btn) => {
-        btn.addEventListener("click" , () => {
+        btn.addEventListener("click", () => {
             let vista_logro = btn.closest(".sobre_mi").querySelector(".vista-logro");
-            
+
             let img_original = btn.closest(".item_logro").querySelector("img").src;
             vista_logro.querySelector("img").src = img_original;
             vista_logro.classList.toggle("inactivo-vista-logro");
@@ -119,7 +119,7 @@ function MostrarVistaLogro() {
     // ocultar imagen
     let btn_cerrar_vista = document.querySelectorAll("#btn-cerrar-vista");
     btn_cerrar_vista.forEach((btn) => {
-        btn.addEventListener("click" , () => {
+        btn.addEventListener("click", () => {
             let vista_logro = btn.closest(".sobre_mi").querySelector(".vista-logro");
 
             vista_logro.classList.toggle("inactivo-vista-logro");
@@ -132,7 +132,7 @@ function MostrarVistaLogro() {
 function mover_imagenes_sobre_mi() {
     // Selecciona todos los elementos de slider
     let sliders_img = document.querySelectorAll("#slider_img_sobre_mi");
-  
+
 
     sliders_img.forEach((slider) => {
         slider.style.transform = `translateX(0%)`;
@@ -173,11 +173,14 @@ function moveSliderHistory() {
     Navbar_AboutMe.forEach((navbar) => {
         let countChildrens = navbar.children.length;
         let slider = navbar.closest('.publicacion').querySelector('.sliderItemContainer');
-        for (let i = 0; i < countChildrens; i++){
-            navbar.children[i].addEventListener('click' , () => {
+        for (let i = 0; i < countChildrens; i++) {
+            navbar.children[i].addEventListener('click', () => {
+                // btns navbar
                 navbar.children[(i == 0 ? 1 : 0)].classList.remove('active');
                 navbar.children[i].classList.add('active');
-                slider.children[0].style.marginLeft = `-${i}00%`; 
+                
+                // mover slider
+                slider.children[0].style.marginLeft = `-${i}00%`;
             })
         }
     })

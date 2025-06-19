@@ -327,13 +327,14 @@ main {
       }
 
       > .indicador_movimiento{
-        transition: all 150ms linear;
+        /* transition: all 150ms linear;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
         font-size: 25px;
-        color: white;
+        color: white; */
+        display: none;
       }
     }
 
@@ -358,6 +359,7 @@ main {
     overflow: hidden;
     position: relative;
     transition: all 400ms ease;
+    perspective: 1000px;
 
     >.container_slider_modulus {
         width: 100%;
@@ -368,6 +370,7 @@ main {
         flex-wrap: nowrap;
         overflow: hidden;
         transition: all 300ms ease;   
+        transform-style: preserve-3d;
 
         >section {
             width: 100%;
@@ -398,7 +401,7 @@ main {
 
 /* estilos predefinidos */
 .none {
-    display: none;
+    opacity: 0!important;
 }
 
 .ani_ancho{
@@ -691,6 +694,8 @@ main {
     transition: all 250ms ease;
     height: 400px;
     overflow: hidden;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg);
 
     /* encabezado */
     > div{
@@ -721,7 +726,7 @@ main {
         height: 50%;
         z-index: 1;
         background: rgb(0,0,0);
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.473) 0%, rgba(0,0,0,0) 100%);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.692) 0%, rgba(0,0,0,0) 100%);
         transition: all 350ms ease;
       }
 
@@ -756,7 +761,7 @@ main {
       }
 
       > h2{
-        font-size: 40px;
+        font-size: 30px;
         color: white;
         text-align: left;
         font-weight: bold;
@@ -863,8 +868,8 @@ main {
 }
 
 .item_proyecto:hover {
-    transform: scale(1.020) translateY(-10px);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.514);
+    transform: scale(1.020) translateY(-10px) rotateX(5deg);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.514);
 
     > .front{
       > h2{
@@ -917,7 +922,7 @@ main {
 
 /* clases para funcionalidades */
 .none {
-    display: none;
+    opacity: 0!important;
 }
 
 .foco{

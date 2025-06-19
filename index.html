@@ -8,6 +8,8 @@
     <link rel="icon" href="IMG/logo_portafolio.png" type="image/x-png">
     <!--== CSS personalizado ==-->
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.all.min.js"></script>
+
     <link rel="stylesheet" href="CSS/configuration.css">
     <link rel="stylesheet" href="CSS/archivo.css">
     <link rel="stylesheet" href="CSS/proyecto.css">
@@ -26,6 +28,8 @@
     </video>
 
     <!--== Elementos oculto ==-->
+    <!-- Responsive (Para el menu) -->
+    <span class="capaDesplazamiento" id="btn_desplazamiento_menu2"></span>
 
     <!-- Contenedor oculto (vista de publicaciones - proyecto) -->
     <article class="vista_publicacion_proyecto inactivo_vista_publicacion_proyecto" id="vista_publicacion_p">
@@ -70,15 +74,18 @@
 
             <article>
                 <div class="item_img" id="btn_configuracion">
-                    <img src="IMG/Configuración.png" alt="" class="img_header_accion">
+                    <img src="IMG/Configuración.png" alt="Icono configuración de proyecto" class="img_header_accion"
+                        title="Configuración del proyecto">
                 </div>
 
                 <div class="item_img" id="btn_desplazamiento_menu">
-                    <img src="IMG/ventana.png" alt="" class="img_header_accion">
+                    <img src="IMG/ventana.png" alt="Icono del menu" class="img_header_accion"
+                        title="Desplazamiento del menú">
                 </div>
 
                 <div class="item_img" id="btn_actualizar">
-                    <img src="IMG/actualizar.png" alt="" class="img_header_accion">
+                    <img src="IMG/actualizar.png" alt="Icono de refrescar" class="img_header_accion"
+                        title="Refrescar la página">
                 </div>
             </article>
         </section>
@@ -113,7 +120,7 @@
 
         <div class="contenedor_info_flotante">
             <a href="https://github.com/Devandelson/" target="_blank">
-                <img src="IMG/github.png" alt="">
+                <img src="IMG/github.png" alt="icono Github" title="Github">
             </a>
             <span class="indicador_movimiento" id="indicador_movimiento">1</span>
         </div>
@@ -146,7 +153,8 @@
                         </article>
 
                         <article class="pages" id="pages">
-                            <div class="item_page" onclick="crearContenedor('Sobre_Mí', 'Sobre mí')">
+                            <div class="item_page"
+                                onclick="event.preventDefault(); crearContenedor('Sobre_Mí', 'Sobre Mí')">
                                 <div class="img">
                                     <img src="IMG/Sobre Mí.png" alt="">
                                 </div>
@@ -154,7 +162,8 @@
                                 <p>Sobre Mí</p>
                             </div>
 
-                            <div class="item_page" onclick="crearContenedor('Archivos', 'Archivos')">
+                            <div class="item_page"
+                                onclick="event.preventDefault(); crearContenedor('Archivos', 'Archivos')">
                                 <div class="img">
                                     <img src="IMG/Archivos.png" alt="">
                                 </div>
@@ -162,7 +171,8 @@
                                 <p>Archivos</p>
                             </div>
 
-                            <div class="item_page" onclick="crearContenedor('Proyectos', 'Proyectos')">
+                            <div class="item_page"
+                                onclick="event.preventDefault(); crearContenedor('Proyectos', 'Proyectos')">
                                 <div class="img">
                                     <img src="IMG/Proyectos.png" alt="">
                                 </div>
@@ -216,18 +226,31 @@
                         <!-- contenedor de btns de accion  -->
                         <article class="controles" id="controles_frm_sm">
                             <p class="active btn7">
+                                <span><i class="fa-solid fa-star"></i></span>
+                                <span><i class="fa-solid fa-star"></i></span>
+                                <span><i class="fa-solid fa-star"></i></span>
+
                                 <i class="fa-solid fa-timeline"></i>
                                 Historia
                             </p>
                             <p class="btn7">
+                                <span><i class="fa-solid fa-star"></i></span>
+                                <span><i class="fa-solid fa-star"></i></span>
+                                <span><i class="fa-solid fa-star"></i></span>
                                 <i class="fa-solid fa-star"></i>
                                 Logros
                             </p>
                             <p class="btn7">
+                                <span><i class="fa-solid fa-star"></i></span>
+                                <span><i class="fa-solid fa-star"></i></span>
+                                <span><i class="fa-solid fa-star"></i></span>
                                 <i class="fa-solid fa-microchip"></i>
                                 Tecnologías
                             </p>
                             <p class="btn7">
+                                <span><i class="fa-solid fa-star"></i></span>
+                                <span><i class="fa-solid fa-star"></i></span>
+                                <span><i class="fa-solid fa-star"></i></span>
                                 <i class="fa-solid fa-address-book"></i>
                                 Contacto
                             </p>
@@ -252,7 +275,7 @@
 
                                         // colocando sus propiedades random
                                         span.style.setProperty('--pos-x', Math.random()); // Posición horizontal aleatoria
-                                        span.style.setProperty('--duration', `${Math.random() * 2 + 0.5}s`); // Duración aleatoria entre 3-5 segundos
+                                        span.style.setProperty('--duration', `${Math.random() * 10 + 0.5}s`); // Duración aleatoria entre 3-5 segundos
                                         span.style.setProperty('--color', colors[Math.floor(Math.random() * colors.length)]); // Color aleatorio
 
                                         // para al final agregarlo
@@ -266,19 +289,20 @@
                             <article class="info">
                                 <h4>¿Quién soy?</h4>
                                 <p>
-                                    Soy Andelson Gonzalez Genao, un dev Front - End con habilidades adiciones de Back -
+                                    Soy un dev Front - End con habilidades adiciones de Back -
                                     End. Mi portafolio refleja un crecimiento constante y un compromiso firme con la
                                     innovación. Cada proyecto que realizo es una fusión entre tecnología y creatividad.
                                 </p>
                             </article>
 
                             <article class="publicacion">
-                                <h2>Publicaciones</h2>
-                                <hr>
+                                <div class="header">
+                                    <h2><i class="fa-solid fa-newspaper"></i> Publicaciones</h2>
 
-                                <div class="containerNavbar" id="Navbar_AboutMe">
-                                    <button class="btnNavbar active">1</button>
-                                    <button class="btnNavbar">2</button>
+                                    <div class="containerNavbar" id="Navbar_AboutMe">
+                                        <button class="btnNavbar active">1</button>
+                                        <button class="btnNavbar">2</button>
+                                    </div>
                                 </div>
 
                                 <div class="sliderItemContainer">
@@ -300,12 +324,15 @@
 
                                             <div class="detalle">
                                                 <p>
-                                                    ✨✨¡Con mucha emoción! Después de seis meses de arduo trabajo, hoy
+                                                    ✨✨¡Con mucha emoción! Después de seis meses de arduo trabajo,
+                                                    hoy
                                                     puedo
-                                                    decir con orgullo que he completado un curso muy importante en mi
+                                                    decir con orgullo que he completado un curso muy importante en
+                                                    mi
                                                     vida.
                                                     Me
-                                                    llena el corazón de alegría haber sido reconocido como uno de los
+                                                    llena el corazón de alegría haber sido reconocido como uno de
+                                                    los
                                                     estudiantes más destacados.
                                                     Agradezco de todo corazón a quienes confiaron y creyeron en mí.
                                                     ¡Todo es
@@ -333,7 +360,8 @@
 
                                             <div class="detalle">
                                                 <p>
-                                                    Un juego clásico llevado al siguiente nivel con un toque personal.
+                                                    Un juego clásico llevado al siguiente nivel con un toque
+                                                    personal.
                                                 </p>
 
                                                 <div class="slider_img">
@@ -363,9 +391,11 @@
                                                     estudiantes
                                                     interactuar con sus compañeros y profesores. Esta plataforma
                                                     facilita la
-                                                    comunicación y el intercambio de información entre los miembros de
+                                                    comunicación y el intercambio de información entre los miembros
+                                                    de
                                                     la
-                                                    comunidad educativa. Hecha con HTML, CSS , JavaScript, MYSQL, PHP y
+                                                    comunidad educativa. Hecha con HTML, CSS , JavaScript, MYSQL,
+                                                    PHP y
                                                     AJAX.
                                                 </p>
 
@@ -397,8 +427,10 @@
                                                     ¡Organiza tus tareas como nunca antes! 🚀 Presento mi primer
                                                     proyecto
                                                     con
-                                                    Oracle: un potente gestor de tareas desarrollado con PHP y Oracle.
-                                                    Clasifica, prioriza y gestiona cada actividad de forma eficiente e
+                                                    Oracle: un potente gestor de tareas desarrollado con PHP y
+                                                    Oracle.
+                                                    Clasifica, prioriza y gestiona cada actividad de forma eficiente
+                                                    e
                                                     intuitiva.
                                                 </p>
 
@@ -430,7 +462,8 @@
 
                                             <div class="detalle">
                                                 <p>
-                                                    Esta es mi primera aventura creando una página web con React. Estoy
+                                                    Esta es mi primera aventura creando una página web con React.
+                                                    Estoy
                                                     emocionado/a de compartir este proyecto contigo. ¡Es solo el
                                                     comienzo de
                                                     muchas más experiencias interactivas!
@@ -467,7 +500,8 @@
                                             <div class="detalle">
                                                 <p>
                                                     🌟 ¡Un logro que marca el inicio de grandes cosas! 🌟 <br>
-                                                    La informática no es solo código y pantallas, es creatividad, lógica
+                                                    La informática no es solo código y pantallas, es creatividad,
+                                                    lógica
                                                     y
                                                     la
                                                     capacidad de hacer que las ideas cobren vida. Hoy, sostengo con
@@ -479,17 +513,22 @@
 
                                                     Recibir este reconocimiento como el más destacado en el área de
                                                     informática
-                                                    en mi escuela politécnica no solo es un honor, sino una prueba de
+                                                    en mi escuela politécnica no solo es un honor, sino una prueba
+                                                    de
                                                     que
                                                     con
-                                                    disciplina y amor por lo que hacemos, podemos llegar lejos. 🚀 <br>
-
-                                                    A cada persona que sueña con crear, innovar y transformar el mundo a
-                                                    través
-                                                    de la tecnología: nunca dejes de aprender, nunca dejes de soñar. 💻✨
+                                                    disciplina y amor por lo que hacemos, podemos llegar lejos. 🚀
                                                     <br>
 
-                                                    #Informática #Logros #PasiónPorLaTecnología #NuncaParesDeAprender
+                                                    A cada persona que sueña con crear, innovar y transformar el
+                                                    mundo a
+                                                    través
+                                                    de la tecnología: nunca dejes de aprender, nunca dejes de soñar.
+                                                    💻✨
+                                                    <br>
+
+                                                    #Informática #Logros #PasiónPorLaTecnología
+                                                    #NuncaParesDeAprender
                                                 </p>
 
                                                 <div class="slider_img">
@@ -517,12 +556,15 @@
 
                                             <div class="detalle">
                                                 <p>
-                                                    Disfruta del clásico juego de Piedra, Papel o Tijera en su versión
+                                                    Disfruta del clásico juego de Piedra, Papel o Tijera en su
+                                                    versión
                                                     interactiva, desarrollado en JavaScript como parte del curso
                                                     Semillero
-                                                    Digital Intro (OPTIC). Juega solo contra la computadora o reta a un
+                                                    Digital Intro (OPTIC). Juega solo contra la computadora o reta a
+                                                    un
                                                     amigo en
-                                                    modo de dos jugadores. ¡Pon a prueba tu habilidad y estrategias en
+                                                    modo de dos jugadores. ¡Pon a prueba tu habilidad y estrategias
+                                                    en
                                                     cada
                                                     partida!
                                                 </p>
@@ -554,12 +596,14 @@
 
                                             <div class="detalle">
                                                 <p>
-                                                    Creé esta app de notas pensando en facilitar la organización de tus
+                                                    Creé esta app de notas pensando en facilitar la organización de
+                                                    tus
                                                     ideas y
                                                     tareas de una manera personalizada y práctica. Con ella, puedes
                                                     crear
                                                     notas
-                                                    de manera sencilla, personalizarlas a tu gusto, agregar imágenes,
+                                                    de manera sencilla, personalizarlas a tu gusto, agregar
+                                                    imágenes,
                                                     enlaces y
                                                     mucho más.
                                                 </p>
@@ -593,11 +637,13 @@
 
                                             <div class="detalle">
                                                 <p>
-                                                    ¡Hola a todos! ¡Les presento mi proyecto: una tienda en línea creada
+                                                    ¡Hola a todos! ¡Les presento mi proyecto: una tienda en línea
+                                                    creada
                                                     con
                                                     HTML, CSS y JavaScript! Diseñada con cuidado para brindar una
                                                     experiencia de
-                                                    compra increíblemente intuitiva. ¡Descubre la magia de cada clic en
+                                                    compra increíblemente intuitiva. ¡Descubre la magia de cada clic
+                                                    en
                                                     mi
                                                     portafolio! ¡Te invito a explorar y disfrutar de un carrito de
                                                     compras
@@ -633,7 +679,8 @@
 
                                             <div class="detalle">
                                                 <p>
-                                                    ¡Aprendí Tailwind y estoy emocionado por todo lo que puedo crear con
+                                                    ¡Aprendí Tailwind y estoy emocionado por todo lo que puedo crear
+                                                    con
                                                     él! 🚀.
                                                 </p>
 
@@ -656,8 +703,10 @@
 
                                             <div class="detalle">
                                                 <p>
-                                                    ¡Estoy súper emocionado! Logré hacer una interfaz de login completa
-                                                    sin ayuda de inteligencia artificial, usando Tailwind CSS. Ver el
+                                                    ¡Estoy súper emocionado! Logré hacer una interfaz de login
+                                                    completa
+                                                    sin ayuda de inteligencia artificial, usando Tailwind CSS. Ver
+                                                    el
                                                     resultado final y saber que lo hice por mi cuenta es una gran
                                                     satisfacción. ¡Vamos por más! 🚀✨
                                                 </p>
@@ -875,6 +924,7 @@
 
                         <!-- Contacto  -->
                         <article class="contacto" id="C">
+                            <img src="./IMG/manoAbajo.png" alt="">
                             <h2>Contactame aquí</h2>
 
                             <form class="form" method="post" action="https://formspree.io/f/mdorrlgp">
@@ -891,7 +941,7 @@
                                     name="mensaje" class="input1 t4" required></textarea>
 
                                 <div class="button-container">
-                                    <input class="btn3 t5" type="submit" value="Enviar"></input>
+                                    <button class="btn3 t5" type="submit"><i class="fa-solid fa-share"></i> Enviar</button>
                                 </div>
                             </form>
                         </article>
@@ -902,441 +952,487 @@
                 <section class="proyecto none" id="Proyectos">
                     <article class="banner">
                         <img src="IMG/fondo7_portafolio.jpg" alt="">
-                        <h2>Proyectos</h2>
+                        <h2>✨ Descubre lo que ✨ <br> he creado con pasión.</h2>
                     </article>
 
-                    <div class="titulo">
-                        <h3><i class="fa-solid fa-star"></i> Destacados</h3>
-                    </div>
+                    <div class="subcontenedorall">
+                        <div class="fondo">
+                            <!-- Generar spans con diferentes propiedades JS -->
+                        </div>
 
-                    <article class="destacado" id="D">
-                        <div class="item_proyecto item_destacado">
-                            <div class="front">
-                                <img src="IMG/rutafit1.png" alt="">
-                                <h2>RutaFit optimizador de rutas.</h2>
-                                <span></span>
-                            </div>
+                        <div class="titulo">
+                            <span></span>
+                            <h3>
+                                <i class="fa-solid fa-star fa-shake"></i> Destacados
+                            </h3>
+                            <span></span>
+                        </div>
 
-                            <div class="back">
-                                <p>Un proyecto innovador que calcula rutas automáticamente mediante una API y cuenta con
-                                    una excelente automatización. Fue desarrollado en el curso de la OGTIC (Semillero
-                                    Digital Intro) para la institución FITMOVIT, dedicada a fideos y comiso, donde tuve
-                                    el honor de liderar el equipo.</p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/html-5.png" alt="">
-                                    <img src="IMG/css.png" alt="">
-                                    <img src="IMG/js.png" alt="">
-                                    <img src="IMG/php.png" alt="">
-                                    <img src="IMG/mysql.png" alt="">
-                                    <img src="IMG/ajax.png" alt="" class="contain_img">
+                        <article class="destacado" id="D">
+                            <div class="item_proyecto item_destacado">
+                                <div class="front">
+                                    <img src="IMG/rutafit1.png" alt="">
+                                    <h2>RutaFit optimizador de rutas.</h2>
+                                    <span></span>
                                 </div>
 
-                                <div class="contenedor_img">
-                                    <img src="IMG/rutafit1.png" alt="">
-                                    <img src="IMG/rutafit2.png" alt="">
-                                    <img src="IMG/rutafit3.png" alt="">
-                                    <img src="IMG/rutafit4.png" alt="">
+                                <div class="back">
+                                    <p>Un proyecto innovador que calcula rutas automáticamente mediante una API y cuenta
+                                        con
+                                        una excelente automatización. Fue desarrollado en el curso de la OGTIC
+                                        (Semillero
+                                        Digital Intro) para la institución FITMOVIT, dedicada a fideos y comiso, donde
+                                        tuve
+                                        el honor de liderar el equipo.</p>
 
-                                    <button class="btn3"><a href="https://rutafit.free.nf/" target="_blank"><i
+                                    <div class="lenguajes">
+                                        <img src="IMG/html-5.png" alt="">
+                                        <img src="IMG/css.png" alt="">
+                                        <img src="IMG/js.png" alt="">
+                                        <img src="IMG/php.png" alt="">
+                                        <img src="IMG/mysql.png" alt="">
+                                        <img src="IMG/ajax.png" alt="" class="contain_img">
+                                    </div>
+
+                                    <div class="contenedor_img">
+                                        <img src="IMG/rutafit1.png" alt="">
+                                        <img src="IMG/rutafit2.png" alt="">
+                                        <img src="IMG/rutafit3.png" alt="">
+                                        <img src="IMG/rutafit4.png" alt="">
+
+                                        <button class="btn3"><a href="https://rutafit.free.nf/" target="_blank"><i
+                                                    class="fa-solid fa-link"></i> Visualizar</a></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item_proyecto item_destacado">
+                                <div class="front">
+                                    <img src="IMG/f1_clasroom.png" alt="">
+                                    <h2>Duplicado de Classroom</h2>
+                                    <span></span>
+                                </div>
+
+                                <div class="back">
+                                    <p>¡Explora este increíble proyecto inspirado en Classroom! Una plataforma donde los
+                                        estudiantes se conectan, comparten y crean asignaciones de forma interactiva.
+                                        ¡Desliza para ver cómo la educación cobra vida con cada funcionalidad!</p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/html-5.png" alt="">
+                                        <img src="IMG/css.png" alt="">
+                                        <img src="IMG/js.png" alt="">
+                                        <img src="IMG/php.png" alt="">
+                                        <img src="IMG/mysql.png" alt="">
+                                        <img src="IMG/ajax.png" alt="" class="contain_img">
+                                    </div>
+
+                                    <div class="contenedor_img">
+                                        <img src="IMG/f1_clasroom.png" alt="">
+                                        <img src="IMG/f2_clasroom.png" alt="">
+                                        <img src="IMG/f3_clasroom.png" alt="">
+                                        <img src="IMG/f4_clasroom.png" alt="">
+                                        <img src="IMG/f5_clasroom.png" alt="">
+
+                                        <button id="vista_img_proyecto" class="btn3"><i class="fa-solid fa-images"></i>
+                                            Ver
+                                            mas</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item_proyecto item_destacado">
+                                <div class="front">
+                                    <img src="IMG/ponse_img_proyecto.PNG" alt="">
+                                    <h2>Periódico escolar</h2>
+                                    <span></span>
+                                </div>
+
+                                <div class="back">
+                                    <p> Desarrollado por mí y un amigo, este proyecto fue creado para solucionar el
+                                        problema
+                                        de comunicación que existía en nuestra escuela al interactuar con el resto del
+                                        mundo. Además, te invito a visitar el portafolio de mi amigo en <a
+                                            style="color: rgb(255, 255, 255);"
+                                            href="https://ariscortico.github.io/portafolio/">ariscortico.com</a>.
+                                    </p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/html-5.png" alt="">
+                                        <img src="IMG/css.png" alt="">
+                                        <img src="IMG/js.png" alt="">
+                                        <img src="IMG/php.png" alt="">
+                                    </div>
+
+                                    <button class="btn3"><a href="http://ponse1001.free.nf/" target="_blank"><i
                                                 class="fa-solid fa-link"></i> Visualizar</a></button>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="item_proyecto item_destacado">
-                            <div class="front">
-                                <img src="IMG/f1_clasroom.png" alt="">
-                                <h2>Duplicado de Classroom</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>¡Explora este increíble proyecto inspirado en Classroom! Una plataforma donde los
-                                    estudiantes se conectan, comparten y crean asignaciones de forma interactiva.
-                                    ¡Desliza para ver cómo la educación cobra vida con cada funcionalidad!</p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/html-5.png" alt="">
-                                    <img src="IMG/css.png" alt="">
-                                    <img src="IMG/js.png" alt="">
-                                    <img src="IMG/php.png" alt="">
-                                    <img src="IMG/mysql.png" alt="">
-                                    <img src="IMG/ajax.png" alt="" class="contain_img">
+                            <div class="item_proyecto item_destacado">
+                                <div class="front">
+                                    <img src="IMG/fondo_app_nota.JPG" alt="">
+                                    <h2>App de notas</h2>
+                                    <span></span>
                                 </div>
 
-                                <div class="contenedor_img">
-                                    <img src="IMG/f1_clasroom.png" alt="">
-                                    <img src="IMG/f2_clasroom.png" alt="">
-                                    <img src="IMG/f3_clasroom.png" alt="">
-                                    <img src="IMG/f4_clasroom.png" alt="">
-                                    <img src="IMG/f5_clasroom.png" alt="">
+                                <div class="back">
+                                    <p>
+                                        Una app de notas personalizable y eficiente, desarrollada mientras curso
+                                        Semillero
+                                        Digital Intro de OGTIC, diseñada para crear, organizar y buscar notas de manera
+                                        flexible y efectiva.
+                                    </p>
 
-                                    <button id="vista_img_proyecto" class="btn3"><i class="fa-solid fa-images"></i> Ver
-                                        mas</button>
+                                    <div class="lenguajes">
+                                        <img src="IMG/html-5.png" alt="">
+                                        <img src="IMG/css.png" alt="">
+                                        <img src="IMG/js.png" alt="">
+                                        <img src="IMG/php.png" alt="">
+                                    </div>
+
+                                    <button class="btn3"><a href="https://flexo.infinityfreeapp.com/index.php"
+                                            target="_blank"> <i class="fa-solid fa-link"></i> Visualizar</a></button>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="item_proyecto item_destacado">
-                            <div class="front">
-                                <img src="IMG/ponse_img_proyecto.PNG" alt="">
-                                <h2>Periódico escolar</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p> Desarrollado por mí y un amigo, este proyecto fue creado para solucionar el problema
-                                    de comunicación que existía en nuestra escuela al interactuar con el resto del
-                                    mundo. Además, te invito a visitar el portafolio de mi amigo en <a
-                                        style="color: rgb(255, 255, 255);"
-                                        href="https://ariscortico.github.io/portafolio/">ariscortico.com</a>.
-                                </p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/html-5.png" alt="">
-                                    <img src="IMG/css.png" alt="">
-                                    <img src="IMG/js.png" alt="">
-                                    <img src="IMG/php.png" alt="">
+                             <div class="item_proyecto item_destacado">
+                                <div class="front">
+                                    <img src="IMG/claroClon.jpg" alt="">
+                                    <h2>Clon pagina claro</h2>
+                                    <span></span>
                                 </div>
 
-                                <button class="btn3"><a href="http://ponse1001.free.nf/" target="_blank"><i
-                                            class="fa-solid fa-link"></i> Visualizar</a></button>
+                                <div class="back">
+                                    <p>
+                                        landing page interactiva estilo Claro Negocios (<a href="https://www.claro.com.do/negocios/" title="link pagina del clon de claro" target="_blank">Link pagina</a>). Ha sido un reto técnico emocionante, especialmente al recrear la experiencia visual y de navegación de una página de alto nivel corporativo como la de Claro.
+                                    </p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/react.png" alt="">
+                                    </div>
+
+                                    <button class="btn3"><a href="https://devandelson.github.io/plantilla-de-claro/"
+                                            target="_blank"><i class="fa-solid fa-link"></i> Visualizar</a></button>
+                                </div>
                             </div>
+                        </article>
+
+                        <div class="titulo titulo2">
+                            <span></span>
+                            <h3><i class="fa-solid fa-pager fa-shake"></i> Proyectos</h3>
+                            <span></span>
                         </div>
 
-                        <div class="item_proyecto item_destacado">
-                            <div class="front">
-                                <img src="IMG/fondo_app_nota.JPG" alt="">
-                                <h2>App de notas</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>
-                                    Una app de notas personalizable y eficiente, desarrollada mientras curso Semillero
-                                    Digital Intro de OGTIC, diseñada para crear, organizar y buscar notas de manera
-                                    flexible y efectiva.
-                                </p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/html-5.png" alt="">
-                                    <img src="IMG/css.png" alt="">
-                                    <img src="IMG/js.png" alt="">
-                                    <img src="IMG/php.png" alt="">
+                        <article class="all_proyects" id="P">
+                            <div class="item_proyecto item_normal">
+                                <div class="front">
+                                    <img src="IMG/loginTailwind.png" alt="">
+                                    <h2>Login con tailwind</h2>
+                                    <span></span>
                                 </div>
 
-                                <button class="btn3"><a href="https://flexo.infinityfreeapp.com/index.php"
-                                        target="_blank"> <i class="fa-solid fa-link"></i> Visualizar</a></button>
+                                <div class="back">
+                                    <p>¡Increíble! Hice un login con Tailwind sin ayuda de AI y quedó genial. 🚀</p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/logoTailwind.png" alt="">
+                                    </div>
+
+                                    <button class="btn3"><a href="https://devandelson.github.io/LoginTailwind/"
+                                            target="_blank"><i class="fa-solid fa-link"></i> Ver detalles</a></button>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="item_proyecto item_destacado">
-                            <div class="front">
-                                <img src="IMG/react_firts.JPG" alt="">
-                                <h2>Primera pagina hecha con react</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>
-                                    Esta página está dedicada a proporcionar una descripción emocionante de
-                                    <strong>League of Legends</strong>, el juego de batalla en línea multijugador.
-                                </p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/react.png" alt="">
+                            <div class="item_proyecto item_normal">
+                                <div class="front">
+                                    <img src="IMG/react_firts.JPG" alt="">
+                                    <h2>Primera pagina hecha con react</h2>
+                                    <span></span>
                                 </div>
 
-                                <button class="btn3"><a href="https://devandelson.github.io/firts-proyect-react/"
-                                        target="_blank"><i class="fa-solid fa-link"></i> Visualizar</a></button>
-                            </div>
-                        </div>
-                    </article>
+                                <div class="back">
+                                    <p> Esta página está dedicada a proporcionar una descripción emocionante de
+                                        <strong>League of Legends</strong>, el juego de batalla en línea multijugador.</p>
 
-                    <div class="titulo titulo2">
-                        <h3><i class="fa-solid fa-pager"></i> Proyectos</h3>
+                                    <div class="lenguajes">
+                                        <img src="IMG/react.png" alt="">
+                                    </div>
+
+                                    <button class="btn3"><a href="https://devandelson.github.io/firts-proyect-react/"  target="_blank"><i class="fa-solid fa-link"></i> Ver detalles</a></button>
+                                </div>
+                            </div>
+
+                            <div class="item_proyecto item_normal">
+                                <div class="front">
+                                    <img src="IMG/Tictactoe2.png" alt="">
+                                    <h2>TIC TAC TOE 2</h2>
+                                    <span></span>
+                                </div>
+
+                                <div class="back">
+                                    <p>Tic-Tac-Toe un juego clasico desarrollado con React. Mejorado 🤯👨‍💻✨.</p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/react.png" alt="">
+                                    </div>
+
+                                    <button class="btn3"><a href="https://Devandelson.github.io/Tictatoe2"
+                                            target="_blank"><i class="fa-solid fa-link"></i> Ver detalles</a></button>
+                                </div>
+                            </div>
+
+                            <div class="item_proyecto item_normal">
+                                <div class="front">
+                                    <img src="IMG/fondo_tic_tac.png" alt="">
+                                    <h2>TIC TAC TOE</h2>
+                                    <span></span>
+                                </div>
+
+                                <div class="back">
+                                    <p>Tic-Tac-Toe un juego clasico desarrollado con React. Cuenta con una interfaz
+                                        sencilla
+                                        y dinámica, pensada para ofrecer una experiencia rápida y entretenida. Ideal
+                                        para
+                                        practicar mi lógica, mejorar habilidades en desarrollo frontend y divertirse un
+                                        rato.</p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/react.png" alt="">
+                                    </div>
+
+                                    <button class="btn3"><a href="https://github.com/Devandelson/TIC-TAC-TOE"
+                                            target="_blank"><i class="fa-brands fa-github"></i> Ver
+                                            detalles</a></button>
+                                </div>
+                            </div>
+
+                            <div class="item_proyecto item_normal">
+                                <div class="front">
+                                    <img src="IMG/juego-mano1.JPG" alt="">
+                                    <h2>Piedra, Papel o Tijera en JS</h2>
+                                    <span></span>
+                                </div>
+
+                                <div class="back">
+                                    <p>Juega al clásico Piedra, Papel o Tijera contra la computadora, creado en
+                                        JavaScript
+                                        durante el curso Semillero Digital Intro (OGTIC). ¡Desafía tus reflejos!</p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/html-5.png" alt="">
+                                        <img src="IMG/css.png" alt="">
+                                        <img src="IMG/js.png" alt="">
+                                    </div>
+
+                                    <button class="btn3"><a href="Paginas/Juego de manos/index.html" target="_blank"><i
+                                                class="fa-solid fa-link"></i> Visualizar</a></button>
+                                </div>
+                            </div>
+
+                            <div class="item_proyecto item_normal">
+                                <div class="front">
+                                    <img src="IMG/inicio_oracle.png" alt="">
+                                    <h2>Gestor de tareas</h2>
+                                    <span></span>
+                                </div>
+
+                                <div class="back">
+                                    <p>🚀 Simplifica tu día con este gestor de tareas en PHP y Oracle. Organiza,
+                                        prioriza y
+                                        gestiona todo de forma fácil y eficiente. ✅</p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/oracle.png" alt="" class="contain_img">
+                                        <img src="IMG/php.png" alt="">
+                                        <img src="IMG/css.png" alt="">
+                                        <img src="IMG/html-5.png" alt="">
+                                    </div>
+
+                                    <button class="btn3"><a href="https://github.com/Devandelson/Gestor-de-tareas"
+                                            target="_blank"><i class="fa-brands fa-github"></i> Visualizar</a></button>
+                                </div>
+                            </div>
+
+                            <div class="item_proyecto item_normal">
+                                <div class="front">
+                                    <img src="IMG/adivinansas.png" alt="">
+                                    <h2>Juego de adivinanzas</h2>
+                                    <span></span>
+                                </div>
+
+                                <div class="back">
+                                    <p>Creado durante un curso en el ITLA.</p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/html-5.png" alt="">
+                                        <img src="IMG/css.png" alt="">
+                                        <img src="IMG/js.png" alt="">
+                                    </div>
+
+                                    <button class="btn3"><a href="Paginas/Juego de adivinansas/index.html"
+                                            target="_blank"><i class="fa-solid fa-link"></i> Visualizar</a></button>
+                                </div>
+                            </div>
+
+                            <div class="item_proyecto item_normal">
+                                <div class="front">
+                                    <img src="IMG/sistema_F.png" alt="">
+                                    <h2>Sistema de farmacia</h2>
+                                    <span></span>
+                                </div>
+
+                                <div class="back">
+                                    <p>Desarrollé este sistema optimizar la gestión de inventario, ventas y otras
+                                        operaciones en farmacias. Si deseas conocer más detalles, ¡no dudes en
+                                        contactarme!
+                                    </p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/VB.png" alt="">
+                                        <img src="IMG/mysql3.png" alt="">
+                                    </div>
+
+                                    <div class="contenedor_img">
+                                        <img src="IMG/F_factura.png" alt="">
+                                        <img src="IMG/F_inicio.png" alt="">
+                                        <img src="IMG/F_registro.png" alt="">
+
+                                        <button id="vista_img_proyecto" class="btn3"><i class="fa-solid fa-images"></i>
+                                            Ver
+                                            mas</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item_proyecto item_normal">
+                                <div class="front">
+                                    <img src="IMG/RRHH.png" alt="">
+                                    <h2>Sistema de recursos humanos</h2>
+                                    <span></span>
+                                </div>
+
+                                <div class="back">
+                                    <p>Desarrollé este sistema optimizar la gestión de empleados, renumeración y otras
+                                        operaciones de recursos humanos. Si deseas conocer más detalles, ¡no dudes en
+                                        contactarme!.</p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/VB.png" alt="">
+                                        <img src="IMG/access.png" alt="">
+                                    </div>
+
+                                    <div class="contenedor_img">
+                                        <img src="IMG/R_inicio.png" alt="">
+                                        <img src="IMG/R_registro.png" alt="">
+                                        <img src="IMG/R_control.png" alt="">
+
+                                        <button id="vista_img_proyecto" class="btn3"><i class="fa-solid fa-images"></i>
+                                            Ver
+                                            mas</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item_proyecto item_normal">
+                                <div class="front">
+                                    <img src="IMG/Sistema_Escolar.png" alt="">
+                                    <h2>Sistema Escolar</h2>
+                                    <span></span>
+                                </div>
+
+                                <div class="back">
+                                    <p>Desarrollé este sistema optimizar la gestión de estudiantes, calificaciones ,
+                                        profesores , merito y otras operaciones escolares.</p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/VB.png" alt="">
+                                        <img src="IMG/base-de-datos.png" alt="">
+                                    </div>
+
+                                    <div class="contenedor_img">
+                                        <img src="IMG/I_calificacion.png" alt="">
+                                        <img src="IMG/I_estudiante.png" alt="">
+                                        <img src="IMG/I_NL.png" alt="">
+
+                                        <button id="vista_img_proyecto" class="btn3"><i class="fa-solid fa-images"></i>
+                                            Ver
+                                            mas</button>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="item_proyecto item_normal">
+                                <div class="front">
+                                    <img src="IMG/app_simulacion1.png" alt="">
+                                    <h2>APP Web simulación</h2>
+                                    <span></span>
+                                </div>
+
+                                <div class="back">
+                                    <p>Completamente funcional con js actuando como si fuera un lenguaje para base de
+                                        datos.
+                                    </p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/html-5.png" alt="">
+                                        <img src="IMG/css.png" alt="">
+                                        <img src="IMG/js.png" alt="">
+                                    </div>
+
+                                    <button class="btn3"><a href="Paginas/app web simulacion/index.html"
+                                            target="_blank"><i class="fa-solid fa-link"></i> Visualizar</a></button>
+                                </div>
+                            </div>
+
+                            <div class="item_proyecto item_normal">
+                                <div class="front">
+                                    <img src="IMG/store1.JPG" alt="">
+                                    <h2>Tienda de celulares</h2>
+                                    <span></span>
+                                </div>
+
+                                <div class="back">
+                                    <p>Hecho a través de Html, Css y Js. Donde cada detalle ofrecer una experiencia de
+                                        compra intuitiva y emocionante.</p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/html-5.png" alt="">
+                                        <img src="IMG/css.png" alt="">
+                                        <img src="IMG/js.png" alt="">
+                                    </div>
+
+                                    <button class="btn3"><a href="Paginas/Tienda celulares Anderson/index.html"
+                                            target="_blank"><i class="fa-solid fa-link"></i> Visualizar</a></button>
+                                </div>
+                            </div>
+
+                            <div class="item_proyecto item_normal">
+                                <div class="front">
+                                    <img src="IMG/transacciones.png" alt="">
+                                    <h2>Página de transacciones</h2>
+                                    <span></span>
+                                </div>
+
+                                <div class="back">
+                                    <p>Simulación de una página de transacciones inspirada por un youtuber, desarrollada
+                                        completamente por mí. ¡Descubre mi trabajo de principio a fin!</p>
+
+                                    <div class="lenguajes">
+                                        <img src="IMG/html-5.png" alt="">
+                                        <img src="IMG/css.png" alt="">
+                                        <img src="IMG/js.png" alt="">
+                                    </div>
+
+                                    <button class="btn3"><a href="Paginas/Transacciones/index.html" target="_blank"><i
+                                                class="fa-solid fa-link"></i> Visualizar</a></button>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-
-                    <article class="all_proyects" id="P">
-                        <div class="item_proyecto item_normal">
-                            <div class="front">
-                                <img src="IMG/loginTailwind.png" alt="">
-                                <h2>Login con tailwind</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>¡Increíble! Hice un login con Tailwind sin ayuda de AI y quedó genial. 🚀</p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/logoTailwind.png" alt="">
-                                </div>
-
-                                <button class="btn3"><a href="https://devandelson.github.io/LoginTailwind/"
-                                        target="_blank"><i class="fa-solid fa-link"></i> Ver detalles</a></button>
-                            </div>
-                        </div>
-
-                        <div class="item_proyecto item_normal">
-                            <div class="front">
-                                <img src="IMG/Tictactoe2.png" alt="">
-                                <h2>TIC TAC TOE 2</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>Tic-Tac-Toe un juego clasico desarrollado con React. Mejorado 🤯👨‍💻✨.</p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/react.png" alt="">
-                                </div>
-
-                                <button class="btn3"><a href="https://Devandelson.github.io/Tictatoe2"
-                                        target="_blank"><i class="fa-solid fa-link"></i> Ver detalles</a></button>
-                            </div>
-                        </div>
-
-                        <div class="item_proyecto item_normal">
-                            <div class="front">
-                                <img src="IMG/fondo_tic_tac.png" alt="">
-                                <h2>TIC TAC TOE</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>Tic-Tac-Toe un juego clasico desarrollado con React. Cuenta con una interfaz sencilla
-                                    y dinámica, pensada para ofrecer una experiencia rápida y entretenida. Ideal para
-                                    practicar mi lógica, mejorar habilidades en desarrollo frontend y divertirse un
-                                    rato.</p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/react.png" alt="">
-                                </div>
-
-                                <button class="btn3"><a href="https://github.com/Devandelson/TIC-TAC-TOE"
-                                        target="_blank"><i class="fa-brands fa-github"></i> Ver detalles</a></button>
-                            </div>
-                        </div>
-
-                        <div class="item_proyecto item_normal">
-                            <div class="front">
-                                <img src="IMG/juego-mano1.JPG" alt="">
-                                <h2>Piedra, Papel o Tijera en JS</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>Juega al clásico Piedra, Papel o Tijera contra la computadora, creado en JavaScript
-                                    durante el curso Semillero Digital Intro (OGTIC). ¡Desafía tus reflejos!</p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/html-5.png" alt="">
-                                    <img src="IMG/css.png" alt="">
-                                    <img src="IMG/js.png" alt="">
-                                </div>
-
-                                <button class="btn3"><a href="Paginas/Juego de manos/index.html" target="_blank"><i
-                                            class="fa-solid fa-link"></i> Visualizar</a></button>
-                            </div>
-                        </div>
-
-                        <div class="item_proyecto item_normal">
-                            <div class="front">
-                                <img src="IMG/inicio_oracle.png" alt="">
-                                <h2>Gestor de tareas</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>🚀 Simplifica tu día con este gestor de tareas en PHP y Oracle. Organiza, prioriza y
-                                    gestiona todo de forma fácil y eficiente. ✅</p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/oracle.png" alt="" class="contain_img">
-                                    <img src="IMG/php.png" alt="">
-                                    <img src="IMG/css.png" alt="">
-                                    <img src="IMG/html-5.png" alt="">
-                                </div>
-
-                                <button class="btn3"><a href="https://github.com/Devandelson/Gestor-de-tareas"
-                                        target="_blank"><i class="fa-brands fa-github"></i> Visualizar</a></button>
-                            </div>
-                        </div>
-
-                        <div class="item_proyecto item_normal">
-                            <div class="front">
-                                <img src="IMG/adivinansas.png" alt="">
-                                <h2>Juego de adivinanzas</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>Creado durante un curso en el ITLA.</p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/html-5.png" alt="">
-                                    <img src="IMG/css.png" alt="">
-                                    <img src="IMG/js.png" alt="">
-                                </div>
-
-                                <button class="btn3"><a href="Paginas/Juego de adivinansas/index.html"
-                                        target="_blank"><i class="fa-solid fa-link"></i> Visualizar</a></button>
-                            </div>
-                        </div>
-
-                        <div class="item_proyecto item_normal">
-                            <div class="front">
-                                <img src="IMG/sistema_F.png" alt="">
-                                <h2>Sistema de farmacia</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>Desarrollé este sistema optimizar la gestión de inventario, ventas y otras
-                                    operaciones en farmacias. Si deseas conocer más detalles, ¡no dudes en contactarme!
-                                </p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/VB.png" alt="">
-                                    <img src="IMG/mysql3.png" alt="">
-                                </div>
-
-                                <div class="contenedor_img">
-                                    <img src="IMG/F_factura.png" alt="">
-                                    <img src="IMG/F_inicio.png" alt="">
-                                    <img src="IMG/F_registro.png" alt="">
-
-                                    <button id="vista_img_proyecto" class="btn3"><i class="fa-solid fa-images"></i> Ver
-                                        mas</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item_proyecto item_normal">
-                            <div class="front">
-                                <img src="IMG/RRHH.png" alt="">
-                                <h2>Sistema de recursos humanos</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>Desarrollé este sistema optimizar la gestión de empleados, renumeración y otras
-                                    operaciones de recursos humanos. Si deseas conocer más detalles, ¡no dudes en
-                                    contactarme!.</p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/VB.png" alt="">
-                                    <img src="IMG/access.png" alt="">
-                                </div>
-
-                                <div class="contenedor_img">
-                                    <img src="IMG/R_inicio.png" alt="">
-                                    <img src="IMG/R_registro.png" alt="">
-                                    <img src="IMG/R_control.png" alt="">
-
-                                    <button id="vista_img_proyecto" class="btn3"><i class="fa-solid fa-images"></i> Ver
-                                        mas</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item_proyecto item_normal">
-                            <div class="front">
-                                <img src="IMG/Sistema_Escolar.png" alt="">
-                                <h2>Sistema Escolar</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>Desarrollé este sistema optimizar la gestión de estudiantes, calificaciones ,
-                                    profesores , merito y otras operaciones escolares.</p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/VB.png" alt="">
-                                    <img src="IMG/base-de-datos.png" alt="">
-                                </div>
-
-                                <div class="contenedor_img">
-                                    <img src="IMG/I_calificacion.png" alt="">
-                                    <img src="IMG/I_estudiante.png" alt="">
-                                    <img src="IMG/I_NL.png" alt="">
-
-                                    <button id="vista_img_proyecto" class="btn3"><i class="fa-solid fa-images"></i> Ver
-                                        mas</button>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-
-                        <div class="item_proyecto item_normal">
-                            <div class="front">
-                                <img src="IMG/app_simulacion1.png" alt="">
-                                <h2>APP Web simulación</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>Completamente funcional con js actuando como si fuera un lenguaje para base de datos.
-                                </p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/html-5.png" alt="">
-                                    <img src="IMG/css.png" alt="">
-                                    <img src="IMG/js.png" alt="">
-                                </div>
-
-                                <button class="btn3"><a href="Paginas/app web simulacion/index.html" target="_blank"><i
-                                            class="fa-solid fa-link"></i> Visualizar</a></button>
-                            </div>
-                        </div>
-
-                        <div class="item_proyecto item_normal">
-                            <div class="front">
-                                <img src="IMG/store1.JPG" alt="">
-                                <h2>Tienda de celulares</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>Hecho a través de Html, Css y Js. Donde cada detalle ofrecer una experiencia de
-                                    compra intuitiva y emocionante.</p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/html-5.png" alt="">
-                                    <img src="IMG/css.png" alt="">
-                                    <img src="IMG/js.png" alt="">
-                                </div>
-
-                                <button class="btn3"><a href="Paginas/Tienda celulares Anderson/index.html"
-                                        target="_blank"><i class="fa-solid fa-link"></i> Visualizar</a></button>
-                            </div>
-                        </div>
-
-                        <div class="item_proyecto item_normal">
-                            <div class="front">
-                                <img src="IMG/transacciones.png" alt="">
-                                <h2>Página de transacciones</h2>
-                                <span></span>
-                            </div>
-
-                            <div class="back">
-                                <p>Simulación de una página de transacciones inspirada por un youtuber, desarrollada
-                                    completamente por mí. ¡Descubre mi trabajo de principio a fin!</p>
-
-                                <div class="lenguajes">
-                                    <img src="IMG/html-5.png" alt="">
-                                    <img src="IMG/css.png" alt="">
-                                    <img src="IMG/js.png" alt="">
-                                </div>
-
-                                <button class="btn3"><a href="Paginas/Transacciones/index.html" target="_blank"><i
-                                            class="fa-solid fa-link"></i> Visualizar</a></button>
-                            </div>
-                        </div>
-                    </article>
                 </section>
 
                 <!--== Archivo ==-->
@@ -1367,9 +1463,9 @@
                             <tbody>
                                 <tr>
                                     <th>Curriculum</th>
-                                    <th>15/06/2025</th>
-                                    <th>696KB</th>
-                                    <th><a href="Archivos/Andelson gonzalez genao.pdf" download
+                                    <th>19/06/2025</th>
+                                    <th>1.04 MB</th>
+                                    <th><a href="Archivos/Cv dev-Andelson Gonzalez.pdf" download
                                             target="_blank">Descargar</a></th>
                                 </tr>
                             </tbody>
@@ -1381,48 +1477,69 @@
                 <section class="configuration_container none" id="configuration_container">
                     <div class="container_all">
                         <article class="header">
-                            <h2>Configuración del portafolio</h2>
+                            <h2><i class="fa-solid fa-gear fa-shake"></i> Configuración del <br> portafolio</h2>
                         </article>
 
-                        <article class="home_container">
-                            <h2><i class="fa-solid fa-image"></i> Fonde de pantalla de inicio</h2>
-                            <div class="home_subcontainer" id="fondo_contenedor">
-                                <div class="img select_fondo"><img src="IMG/fondo4_portafolio.jpg"
-                                        alt="img_fondo_inicio"></div>
-                                <div class="img"><img src="IMG/fondo6_portafolio.jpg" alt="img_fondo_inicio"></div>
-                                <div class="img"><img src="IMG/fondo3_portafolio.jpg" alt="img_fondo_inicio"></div>
-                                <div class="img"><img src="IMG/fondo2_portafolio.jpeg" alt="img_fondo_inicio"></div>
-                                <div class="img"><img src="IMG/fondo7_portafolio.jpg" alt="img_fondo_inicio"></div>
-                                <div class="img"><img src="IMG/fondo1_portafolio.jpeg" alt="img_fondo_inicio"></div>
-                            </div>
-                        </article>
-
-                        <article class="themes_container">
-                            <h2><i class="fa-solid fa-swatchbook"></i> Temas de colores</h2>
-                            <div class="themes_subcontainer" id="contenedor_temas">
-                                <span class="select_color"></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </article>
-
-                        <article class="movimiento_container">
-                            <h2>Tipo de movimiento</h2>
-                            <div class="movimiento_subcontainer" id="contenedor_movimiento">
-                                <span class="select_ani" onclick="cambio_movimiento(1)">
+                        <div class="areasContainer">
+                            <article class="themes_container">
+                                <h2><i class="fa-solid fa-swatchbook"></i> Temas de colores</h2>
+                                <div class="themes_subcontainer" id="contenedor_temas">
+                                    <span class="select_color"></span>
                                     <span></span>
-                                </span>
-                                <span onclick="cambio_movimiento(2)"><span></span></span>
-                                <span onclick="cambio_movimiento(3)"><span></span></span>
-                                <span onclick="cambio_movimiento(4)"><span></span></span>
-                                <span onclick="cambio_movimiento(5)"><span></span></span>
-                                <span onclick="cambio_movimiento(6)"><span></span></span>
-                                <span onclick="cambio_movimiento(7)"><span></span></span>
-                            </div>
-                        </article>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </article>
+
+                            <article class="home_container">
+                                <h2><i class="fa-solid fa-image"></i> Fonde de pantalla de inicio</h2>
+                                <div class="containerImgSelect" id="backgroundSeled">
+                                    <div class="img select_fondo">
+                                        <img src="IMG/fondo4_portafolio.jpg" alt="img_fondo_inicio">
+                                    </div>
+                                </div>
+
+                                <div class="OtherImg" id="fondo_contenedor">
+                                    <span>
+                                        <i class="fa-solid fa-chevron-left ani1-icon"></i>
+                                    </span>
+
+                                    <div class="sliderImg">
+                                        <div class="img"><img src="IMG/fondo6_portafolio.jpg" alt="img_fondo_inicio">
+                                        </div>
+                                        <div class="img"><img src="IMG/fondo3_portafolio.jpg" alt="img_fondo_inicio">
+                                        </div>
+                                        <div class="img"><img src="IMG/fondo2_portafolio.jpeg" alt="img_fondo_inicio">
+                                        </div>
+                                        <div class="img"><img src="IMG/fondo7_portafolio.jpg" alt="img_fondo_inicio">
+                                        </div>
+                                        <div class="img"><img src="IMG/fondo1_portafolio.jpeg" alt="img_fondo_inicio">
+                                        </div>
+                                    </div>
+
+                                    <span>
+                                        <i class="fa-solid fa-chevron-right ani1-icon"></i>
+                                    </span>
+                                </div>
+                            </article>
+
+                            <article class="movimiento_container">
+                                <h2><i class="fa-solid fa-sliders"></i> Tipo de movimiento</h2>
+                                <div class="movimiento_subcontainer" id="contenedor_movimiento">
+                                    <span class="select_ani" onclick="cambio_movimiento(1)">
+                                        <span></span>
+                                    </span>
+                                    <span onclick="cambio_movimiento(2)"><span></span></span>
+                                    <span onclick="cambio_movimiento(3)"><span></span></span>
+                                    <span onclick="cambio_movimiento(4)"><span></span></span>
+                                    <span onclick="cambio_movimiento(5)"><span></span></span>
+                                    <span onclick="cambio_movimiento(6)"><span></span></span>
+                                    <span onclick="cambio_movimiento(7)"><span></span></span>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                 </section>
                 <!--== fin contenedor_de_configuracion ==-->
@@ -1439,6 +1556,7 @@
     <script src="JS/animaciones.js"></script>
     <script src="JS/gestion_frm.js"></script>
     <script src="JS/configuration.js"></script>
+    <script src="JS/proyecto.js"></script>
 
     <!--== Font awesome ==-->
     <script src="https://kit.fontawesome.com/7881bda97f.js" crossorigin="anonymous"></script>

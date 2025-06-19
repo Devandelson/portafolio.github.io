@@ -1,13 +1,12 @@
 // funcionalidad para mover los frm
 // variables
+let animacion_activa = 0;
+let animacion_activa2 = 0;
+let animacion_activa3 = 0;
+
 function move_frm(indice_movimiento) {
     let ancla_modulo = document.getElementById("home");
     let slider_modulus = document.getElementById("slider_modulus");
-    let animacion_activa = 0;
-    let animacion_activa2 = 0;
-    let animacion_activa3 = 0;
-
-
     let indicador_movimiento = document.getElementById("indicador_movimiento");
 
     if (indicador_movimiento.innerHTML == "1") {
@@ -35,12 +34,13 @@ function move_frm(indice_movimiento) {
     if (indicador_movimiento.innerHTML == "4") {
         ancla_modulo.style.marginLeft = `-${indice_movimiento}00%`;
 
-        if (animacion_activa == 0) {
+        console.log(animacion_activa);
+        animacion_activa = (animacion_activa == 0 ? 1 : 0);
+
+        if (animacion_activa == 1) {
             slider_modulus.style.transform = "rotateX(360deg) rotateY(360deg)";
-            animacion_activa = 1;
-        } else if (animacion_activa == 1) {
+        } else if (animacion_activa == 0) {
             slider_modulus.style.transform = "rotateX(0deg) rotateY(0deg)";
-            animacion_activa = 0;
         }
     }
 
@@ -50,9 +50,11 @@ function move_frm(indice_movimiento) {
         if (animacion_activa2 == 0) {
             slider_modulus.style.transform = "rotateY(360deg)";
             animacion_activa2 = 1;
+            return;
         } else if (animacion_activa2 == 1) {
             slider_modulus.style.transform = "rotateY(0deg)";
             animacion_activa2 = 0;
+            return;
         }
     }
 
@@ -62,9 +64,11 @@ function move_frm(indice_movimiento) {
         if (animacion_activa3 == 0) {
             slider_modulus.style.transform = "rotateX(360deg)";
             animacion_activa3 = 1;
+            return;
         } else if (animacion_activa3 == 1) {
             slider_modulus.style.transform = "rotateX(0deg)";
             animacion_activa3 = 0;
+            return;
         }
     }
 
@@ -84,52 +88,80 @@ function move_frm(indice_movimiento) {
 
 // varialbles
 let opciones_pestañas = document.getElementById("lista_opciones_frm");
-let modulosActivos = [];
 
 // -- funcion verificar contenedor existente
 let indiceContenedorExistente = 0;
 async function verificarContenedor(texto) {
-    let check = false;
-    modulosActivos.map((nombre, index) => {
-        if (nombre == texto) {
-            check = true;
-            indiceContenedorExistente = index + 1; // +1 por que esta el home.
-        }
-    })
-    if (check) {
+    let checkIndex = await IndiceItemFrmSeleccionado(texto);
+    if (checkIndex > 0) {
+        indiceContenedorExistente = checkIndex;
         return true;
     } else {
+        // No se encontró el contenedor
+        indiceContenedorExistente = 0;
         return false;
+    }
+}
+
+async function IndiceItemFrmSeleccionado(id_contenedor, typeBusqueda = "id", checkItemDisable = true) {
+    let slider_modulus = document.getElementById("slider_modulus");
+    let indice = 0;
+
+    for (let i = 0; i < slider_modulus.children.length; i++) {
+        let elemento = slider_modulus.children[i];
+        if (elemento.classList.contains('none') && checkItemDisable) continue; // Condición para omitir o no elementos deshabilitados
+
+        let idItemSlider = elemento.id;
+        if (typeBusqueda === "dif") {
+            let normalizadoSlider = idItemSlider.toLowerCase().replace(/_/g, ' ').trim();
+            let normalizadoEntrada = id_contenedor.toLowerCase().trim();
+            console.log(normalizadoSlider, normalizadoEntrada);
+
+            if (normalizadoSlider === normalizadoEntrada) {
+                indice = i;
+                break; // Salir del bucle una vez encontrado
+            } else {continue;} // Continuar buscando
+        } else {
+            if (idItemSlider.toLowerCase() === id_contenedor.toLowerCase()) {
+                indice = i;
+                break; // Salir del bucle una vez encontrado
+            } else {continue;} // Continuar buscando
+        }
+    }
+
+    if (indice == 0) {
+        // No se encontró
+        return 0;
+    } else {
+        // Se encontró, retornar el índice
+        return indice;
     }
 }
 
 // funcion para crear el contenedor
 async function crearContenedor(id_contenedor, texto) {
-    let slider_modulus = document.getElementById("slider_modulus");
+    // condicion para verificar si el contenedor ya existe
+    let verificacionContenedor = await verificarContenedor(id_contenedor);
 
-    // primero crear la pestaña
-    let verificacionContenedor = await verificarContenedor(texto);
 
     if (verificacionContenedor) {
         move_frm(indiceContenedorExistente);
     } else {
-        gestionCarpetas(texto);
-        modulosActivos.push(texto);
-        let indice_movimiento = modulosActivos.length;
+        let indice_movimiento = await IndiceItemFrmSeleccionado(id_contenedor, "id", false);
+        gestionCarpetas(texto, indice_movimiento);
 
-        // luego el contenedor (de tal manera que se copia del original y se pegue en el dom).
+        // Habilitando el contenedor seleccionado
         let frm_seleccionado = document.getElementById(`${id_contenedor}`);
-        let copia_frm = frm_seleccionado.cloneNode(true);
-        copia_frm.id = `${texto}2`;
-        slider_modulus.appendChild(copia_frm);
-        copia_frm.classList.remove("none");
+        frm_seleccionado.classList.remove("none");
 
         move_frm(indice_movimiento);
-
-        if (texto == "Proyectos") {
+        texto = texto.toLowerCase().trim();
+        // -- verificando el texto para ejecutar las funciones correspondiente
+        if (texto == "proyectos") {
             card_proyecto();
+            fondoProyecto();
             mostrar_visualizador_proyecto();
-        } else if (texto == "Sobre mí") {
+        } else if (texto.toLowerCase().trim() == "sobre mí") {
             movimiento_frm();
             altura_contenedor_area();
             cerrar_visualizador();
@@ -137,18 +169,18 @@ async function crearContenedor(id_contenedor, texto) {
             mover_imagenes_sobre_mi();
             MostrarVistaLogro();
             moveSliderHistory();
-        } else if (texto == "Configuración") {
-            cambio_fondo();
+        } else if (texto == "configuración") {
             contenedor_temas();
             marcador_configuracion();
-            marcador_fondos();
+            cambio_fondo();
             marcador_movimiento();
         }
+        return;
     }
 };
 
-// funcion de la gestion de la carpetas
-function gestionCarpetas(texto_frm_seleccionado) {
+// funcion de la gestion de la carpetas 
+async function gestionCarpetas(texto_frm_seleccionado, indice) {
     // -- creando carpeta
     // - variables
     let li = document.createElement("li");
@@ -156,26 +188,20 @@ function gestionCarpetas(texto_frm_seleccionado) {
     let img1 = document.createElement("img");
     let img2 = document.createElement("img");
     let opciones_pestañas = document.getElementById("lista_opciones_frm");
-    let slider_modulus = document.getElementById("slider_modulus");
 
     li.title = texto_frm_seleccionado;
-
     p.innerHTML = texto_frm_seleccionado;
     img1.src = `IMG/${texto_frm_seleccionado}.png`;
     img2.src = "IMG/x.png";
 
     // -- creando funcion de eliminar pestaña
-    img2.addEventListener("click", () => {
+    img2.addEventListener("click", async (e) => {
+        e.preventDefault();
         // -- capturando indice de la pestaña
-        let indice_pestaña = 0;
-        modulosActivos.map((nombre, index) => {
-            if (nombre.toLocaleLowerCase() == texto_frm_seleccionado.toLocaleLowerCase()) {
-                indice_pestaña = 5 + index; // +1 por que esta el home y +4 por el metodo de copiar contenedores.
-            }
-        })
+        let slider_modulus = document.getElementById("slider_modulus");
 
         // -- seleccionado la pestaña para eliminar
-        let pestaña_seleccionada = slider_modulus.children[indice_pestaña];
+        let pestaña_seleccionada = slider_modulus.children[indice];
         li.classList.add("tab_animacion1");
 
         setTimeout(() => {
@@ -183,25 +209,23 @@ function gestionCarpetas(texto_frm_seleccionado) {
 
             setTimeout(() => {
                 opciones_pestañas.removeChild(li);
-                slider_modulus.removeChild(pestaña_seleccionada);
+                pestaña_seleccionada.classList.add("none");
             }, 400);
         }, 300);
-
-        // -- eliminando el contenedor tambien del array de modulos activos.
-        if (indice_pestaña >= 0) {
-            modulosActivos.splice(indice_pestaña - 5, 1);
-        }
     });
 
     li.append(img1, p, img2);
     li.classList.add("tab_animacion1");
-    let indicador_movimiento = opciones_pestañas.children.length; // se deja asi por el home.
-    li.addEventListener('click', () => { move_frm(indicador_movimiento) });
+
+    // buscando el indice de la pestaña y agregando el evento de click
+    li.addEventListener('click', (e) => {  
+        e.preventDefault(); 
+        move_frm(indice);
+    });
 
     opciones_pestañas.appendChild(li);
 
-
-
+    // -- animacion de la pestaña
     setTimeout(() => {
         li.classList.remove("tab_animacion1");
     }, 200);
@@ -213,37 +237,80 @@ function gestionCarpetas(texto_frm_seleccionado) {
 /* funcionalidad de buscar (pagina de inicio btn buscar) */
 let btn_buscar = document.getElementById("btn_buscar");
 
-btn_buscar.addEventListener("click", () => {
+btn_buscar.addEventListener("click", async () => {
     let texto_busqueda = document.getElementById("page_select");
+    // -- si no hay texto en el input
     if (texto_busqueda.value == null || texto_busqueda.value == "") {
-        alert("debe escribir algo.");
+        Swal.fire({
+            title: "¡Uy! Nada por aquí...",
+            text: "No escribiste nada en el buscador. Por favor, digita algo para empezar la búsqueda.",
+            icon: "info"
+        });
+        return;
     } else {
         let name_modulu = texto_busqueda.value;
-        let texto = name_modulu;
-        if (name_modulu == 'Sobre_Mí') {
-            texto = 'Sobre mí';
-        }
-
-        crearContenedor(name_modulu, texto);
-    }
-});
-
-
-/* funcionalidad de buscar (barra de url) */
-let url_input = document.getElementById("url_input");
-url_input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        let texto_busqueda = document.getElementById("url_input");
-        if (texto_busqueda.value == null || texto_busqueda.value == "") {
-            alert("debe escribir algo.");
-        } else {
-            let name_modulu = texto_busqueda.value;
+        let checkItem = await IndiceItemFrmSeleccionado(name_modulu, "id", false);
+        // -- si hay texto en el input
+        // -- verificando si el modulo existe
+        if (checkItem > 0) {
             let texto = name_modulu;
             if (name_modulu == 'Sobre_Mí') {
                 texto = 'Sobre mí';
             }
 
             crearContenedor(name_modulu, texto);
+        } else {
+            // -- si el modulo no existe
+            // -- mostrando alerta de que no existe el modulo
+            Swal.fire({
+                title: "¡Uy! Nada por aquí...",
+                text: "Lo que escribiste no está en el portafolio de Andelson González. Intenta con otra palabra.",
+                icon: "info"
+            });
+            return;
+        }
+    }
+});
+
+
+/* funcionalidad de buscar (barra de url) */
+let url_input = document.getElementById("url_input");
+url_input.addEventListener("keydown", async (e) => {
+
+    if (e.key === "Enter") {
+
+        e.preventDefault();
+
+        let texto_busqueda = document.getElementById("url_input");
+        if (texto_busqueda.value == null || texto_busqueda.value == "") {
+            // -- si no hay texto en el input
+            Swal.fire({
+                title: "¡Uy! Nada por aquí...",
+                text: "No escribiste nada en el buscador. Por favor, digita algo para empezar la búsqueda.",
+                icon: "info"
+            });
+            return;
+        } else {
+            let name_modulu = texto_busqueda.value;
+            let checkItem = await IndiceItemFrmSeleccionado(name_modulu, "id", false);
+            // -- si hay texto en el input
+            // -- verificando si el modulo existe
+            if (checkItem > 0) {
+                let texto = name_modulu;
+                if (name_modulu == 'Sobre_Mí') {
+                    texto = 'Sobre mí';
+                }
+
+                crearContenedor(name_modulu, texto);
+            } else {
+                // -- si el modulo no existe
+                // -- mostrando alerta de que no existe el modulo
+                Swal.fire({
+                    title: "¡Uy! Nada por aquí...",
+                    text: "Lo que escribiste no está en el portafolio de Andelson González. Intenta con otra palabra.",
+                    icon: "info"
+                });
+            }
         }
     }
 });

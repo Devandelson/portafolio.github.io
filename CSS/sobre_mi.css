@@ -1,5 +1,4 @@
 /* --------------- estilos de sobre mi ----------------------------- */
-
 @keyframes ani1_img {
     0% {
         background-position: top left;
@@ -114,11 +113,89 @@
             font-size: 25px;
             background: #ffffff7e;
             text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.753);
+            position: relative;
+            z-index: 2;
+
+            >span {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: -1;
+                font-size: 20px;
+                text-shadow: 0px 0px 10px color-mix(in srgb, var(--color6) 70%, transparent);
+                transition: all 150ms ease;
+                transform: translateX(-50%) translateY(-50%);
+                opacity: 0;
+                color: var(--color7);
+                pointer-events: none;
+            }
+
+            &:hover {
+                background: var(--color6);
+                transform: scale(1.050) translateY(-2px) rotate(-4deg);
+
+                >span {
+                    opacity: 1;
+                }
+
+                >span:nth-child(1) {
+                    left: 50%;
+                    top: -50px;
+                    transform: translateX(-50%);
+                }
+
+                >span:nth-child(2) {
+                    left: 20%;
+                    top: -40px;
+                    transform: translateX(-50%) rotate(350deg);
+                }
+
+                >span:nth-child(3) {
+                    left: 80%;
+                    top: -40px;
+                    transform: translateX(-50%) rotate(-350deg);
+                }
+            }
+
+            &:active {
+                background: var(--color6);
+                transform: scale(0.95) translateY(0px) rotate(0deg);
+
+                >span {
+                    top: 50% !important;
+                    left: 50% !important;
+                    transform: translateX(-50%) translateY(-50%) !important;
+                    opacity: 0;
+                }
+            }
         }
 
         .active {
             background: var(--color4);
             color: white;
+
+            >span {
+                opacity: 1 !important;
+            }
+
+            >span:nth-child(1) {
+                left: 50% !important;
+                top: -50px !important;
+                transform: translateX(-50%) !important;
+            }
+
+            >span:nth-child(2) {
+                left: 20% !important;
+                top: -40px !important;
+                transform: translateX(-50%) rotate(350deg) !important;
+            }
+
+            >span:nth-child(3) {
+                left: 80% !important;
+                top: -40px !important;
+                transform: translateX(-50%) rotate(-350deg) !important;
+            }
         }
     }
 }
@@ -319,9 +396,10 @@
             height: auto;
             position: relative;
             color: white;
+            text-align: center;
 
             >h4 {
-                font-size: 30px;
+                font-size: 35px;
                 color: var(--color6);
             }
 
@@ -342,37 +420,85 @@
         /* Publicacion */
         >.publicacion {
             width: 100%;
-            height: auto;
+            height: max-content;
             position: relative;
             margin-top: 40px;
             z-index: 2;
             background: transparent;
+            gap: 10px;
 
-            >h2 {
-                padding: 0;
-                margin-bottom: 5px;
-                font-size: 35px;
-                color: var(--color6);
-            }
-
-            >hr {
-                background: var(--color6);
+            >.header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
                 width: 100%;
-                height: 2px;
-                border-radius: 5px;
-                margin-bottom: 20px;
+                height: auto;
+                flex-wrap: wrap;
+                margin-bottom: 15px;
+                text-align: center;
+
+                >h2 {
+                    padding: 0;
+                    font-size: 35px;
+                    color: var(--color6);
+                    text-align: center;
+                }
+
+                >.containerNavbar {
+                    width: max-content;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    justify-content: end;
+                    flex-wrap: wrap;
+                    padding: 5px;
+                    border-radius: 7px;
+
+                    >.btnNavbar {
+                        --bg: var(--color6);
+                        --hover-bg: var(--color7);
+                        --hover-text: #000;
+                        color: black;
+                        cursor: pointer;
+                        border: 1px solid var(--bg);
+                        border-radius: 4px;
+                        padding: 12px 16px;
+                        background: var(--bg);
+                        transition: 0.1s ease;
+                        font-size: 18px;
+
+                        &:hover {
+                            color: white;
+                            transform: translate(-0.25rem, -0.25rem);
+                            background: var(--hover-bg);
+                            box-shadow: 0.25rem 0.25rem var(--bg);
+                        }
+
+                        &:active {
+                            transform: translate(0);
+                            box-shadow: none;
+                        }
+                    }
+
+                    >.active {
+                        --hover-bg: var(--color7);
+                        background: var(--hover-bg) !important;
+                        color: white;
+                    }
+                }
             }
 
             >.sliderItemContainer {
                 width: 100%;
-                height: auto;
+                height: max-content;
                 position: relative;
                 display: flex;
                 overflow: hidden;
 
                 >.containerItems {
                     width: 100%;
-                    height: auto;
+                    height: max-content;
                     position: relative;
                     flex-shrink: 0;
                     transition: all 150ms ease;
@@ -388,6 +514,9 @@
                         border-radius: 7px;
                         background: rgb(255, 255, 255, 0.1);
                         padding: 20px;
+                        overflow: hidden;
+                        transition: all 100ms ease;
+                        interpolate-size: allow-keywords;
 
                         /* encabezado */
                         >.encabezado {
@@ -497,10 +626,10 @@
                         }
                     }
 
-                    > .new{
+                    >.new {
                         border: 2px solid var(--color6);
 
-                        &::after{
+                        &::after {
                             content: "Nuevo";
                             position: absolute;
                             top: 0;
@@ -515,50 +644,6 @@
                     }
                 }
             }
-
-            >.containerNavbar {
-                width: 100%;
-                height: auto;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                justify-content: start;
-                flex-wrap: wrap;
-                margin-bottom: 20px;
-                position: relative;
-
-                >.btnNavbar {
-                    --bg: var(--color6);
-                    --hover-bg: var(--color7);
-                    --hover-text: #000;
-                    color: black;
-                    cursor: pointer;
-                    border: 1px solid var(--bg);
-                    border-radius: 4px;
-                    padding: 12px 16px;
-                    background: var(--bg);
-                    transition: 0.1s ease;
-                    font-size: 18px;
-
-                    &:hover {
-                        color: var(--hover-text);
-                        transform: translate(-0.25rem, -0.25rem);
-                        background: var(--hover-bg);
-                        box-shadow: 0.25rem 0.25rem var(--bg);
-                    }
-
-                    &:active {
-                        transform: translate(0);
-                        box-shadow: none;
-                    }
-                }
-
-                > .active{
-                    --hover-bg: var(--color7);
-                    background: var(--hover-bg)!important;
-                    color: black;
-                }
-            }
         }
 
         /* Confetti diseño */
@@ -569,6 +654,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            filter: blur(5px);
             z-index: -5;
         }
 
@@ -781,22 +867,22 @@
                             }
                         }
 
-                        > .tailwind{
-                            width: 100px!important;
-                            height: 60px!important;
+                        >.tailwind {
+                            width: 100px !important;
+                            height: 60px !important;
                         }
 
-                        > .oracle{
-                            width: 70px!important;
-                            height: 50px!important;
+                        >.oracle {
+                            width: 70px !important;
+                            height: 50px !important;
                         }
 
-                        > .git{
-                            width: 60px!important;
+                        >.git {
+                            width: 60px !important;
                         }
 
-                        > .rounded{
-                            > img{
+                        >.rounded {
+                            >img {
                                 border-radius: 10px;
                             }
                         }
@@ -880,6 +966,16 @@
 }
 
 /* estilos para el formulario de contacto de sobre mi */
+.contacto {
+    > img{
+        width: 150px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        display: block;
+    }
+}
 
 .contacto>h2 {
     font-size: 50px;
@@ -905,11 +1001,25 @@
     margin-top: 0px;
     gap: 20px;
 
+    > textarea{
+        resize: none;
+        width: 100%;
+        height: 250px;
+    }
+
 
     >.button-container {
-        >input {
-            font-size: 25px;
-            transition: 100ms linear;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        grid-column: span 2;
+
+        >button {
+            border-radius: 7px;
+            font-size: 22px;
+            padding: 10px 25px;
+            transition: 50ms linear;
         }
     }
 }
