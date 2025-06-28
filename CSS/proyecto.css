@@ -114,11 +114,13 @@
 
 .proyecto>.banner {
     width: 100%;
-    height: 50vh;
+    min-height: 50vh;
+    height: auto;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 
     >img {
         position: absolute;
@@ -130,7 +132,7 @@
     }
 
     >h2 {
-        font-size: 70px;
+        font-size: clamp(1.5rem, 6vw, 10rem);
         text-align: center;
         color: white;
         z-index: 2;
@@ -183,7 +185,7 @@
         gap: 10px;
         position: relative;
 
-        > span{
+        >span {
             display: block;
             position: relative;
             height: 3px;
@@ -198,7 +200,7 @@
             text-align: center;
             border-radius: 7px;
 
-            > span{
+            >span {
                 display: block;
                 position: relative;
                 height: 3px;
