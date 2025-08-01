@@ -30,7 +30,7 @@ function movimiento_frm() {
                 });
 
                 // contenedor seleccionado para agregarle el focus para establecer la altura
-                frm.parentElement.parentElement.children[3].children[i].classList.add("seleted");
+                frm.parentElement.parentElement.children[1].children[i].classList.add("seleted");
                 altura_contenedor_area();
             });
         }
@@ -78,25 +78,23 @@ function mostrar_visualizador() {
             }
 
             // colocando imagenes en el visualizador
-            let vista_publicacion_sm = document.querySelectorAll("#vista_publicacion_sm");
-            vista_publicacion_sm.forEach((vista) => {
-                let slider = vista.children[1].children[0].children[0];
-                slider.innerHTML = ""; // Limpiar el contenido existente
+            let vista_publicacion_sm = document.getElementById("vista_publicacion_sm");
+            let slider = vista_publicacion_sm.children[1].children[0].children[0];
+            slider.innerHTML = ""; // Limpiar el contenido existente
 
-                // bucle para colocar las imagenes en cada una
-                direcciones.map((valor) => {
-                    let contenedor_img = document.createElement("div");
-                    contenedor_img.classList.add("item_img");
-                    let img = document.createElement("img");
-                    img.src = valor;
-                    contenedor_img.appendChild(img);
-                    slider.appendChild(contenedor_img);
-                })
+            // bucle para colocar las imagenes en cada una
+            direcciones.map((valor) => {
+                let contenedor_img = document.createElement("div");
+                contenedor_img.classList.add("item_img");
+                let img = document.createElement("img");
+                img.src = valor;
+                contenedor_img.appendChild(img);
+                slider.appendChild(contenedor_img);
+            })
 
-                mover_imagenes_sobre_mi();
-                // animacion para que se vea
-                vista.classList.toggle("inactivo_vista_publicacion");
-            });
+            mover_imagenes_sobre_mi();
+            // animacion para que se vea
+            vista_publicacion_sm.classList.toggle("inactivo_vista_publicacion");
         });
     });
 }
@@ -108,7 +106,7 @@ function MostrarVistaLogro() {
     let btns_maximizar_img = document.querySelectorAll("#maximizar-img");
     btns_maximizar_img.forEach((btn) => {
         btn.addEventListener("click", () => {
-            let vista_logro = btn.closest(".sobre_mi").querySelector(".vista-logro");
+           let vista_logro = document.getElementById("vista-logro");
 
             let img_original = btn.closest(".item_logro").querySelector("img").src;
             vista_logro.querySelector("img").src = img_original;
@@ -120,8 +118,7 @@ function MostrarVistaLogro() {
     let btn_cerrar_vista = document.querySelectorAll("#btn-cerrar-vista");
     btn_cerrar_vista.forEach((btn) => {
         btn.addEventListener("click", () => {
-            let vista_logro = btn.closest(".sobre_mi").querySelector(".vista-logro");
-
+            let vista_logro = document.getElementById("vista-logro");
             vista_logro.classList.toggle("inactivo-vista-logro");
         });
     });
@@ -178,7 +175,7 @@ function moveSliderHistory() {
                 // btns navbar
                 navbar.children[(i == 0 ? 1 : 0)].classList.remove('active');
                 navbar.children[i].classList.add('active');
-                
+
                 // mover slider
                 slider.children[0].style.marginLeft = `-${i}00%`;
             })

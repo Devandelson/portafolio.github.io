@@ -7,15 +7,20 @@
 
 body {
   width: 100%;
-  height: 100vh;
-  max-height: 100vh;
   position: relative;
   display: flex;
   background: linear-gradient(0deg, var(--color5) 0%, var(--color3) 100%);
-  overflow: hidden;
   transition: all 300ms ease;
-  animation: 2s bounce_initial ease forwards;
-  animation-delay: 3.5s;
+  z-index: 10;
+  height: auto;
+
+  /* condicion de auto altura */
+  >main {
+    .container_all_modulus .container_slider_modulus .noneS {
+      height: 0px !important;
+      opacity: 0;
+    }
+  }
 }
 
 @keyframes bounce_initial {
@@ -30,16 +35,23 @@ body {
 
 /* btn musica */
 .btn_musica {
-  position: absolute;
+  position: fixed;
+  backdrop-filter: blur(10px);
+  z-index: 20;
+  cursor: pointer;
+  width: max-content;
+  height: auto;
   bottom: 25px;
   right: 25px;
-  width: 35px;
-  aspect-ratio: 1/1;
-  border-radius: 7px;
-  backdrop-filter: blur(10px);
-  transition: all 100ms linear;
-  z-index: 5;
-  cursor: pointer;
+
+  >span {
+    display: block;
+    content: '';
+    width: 35px;
+    aspect-ratio: 1/1;
+    border-radius: 7px;
+    transition: all 100ms linear;
+  }
 }
 
 .btn_musica:hover {
@@ -54,17 +66,21 @@ body {
 
 /* imagenes */
 .btn_musica_start {
-  background: #ffffff1a url(../IMG/start.png);
-  background-size: 70%;
-  background-repeat: no-repeat;
-  background-position: center center;
+  >span {
+    background: #ffffff1a url(../IMG/start.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 }
 
 .btn_musica_pause {
-  background: #ffffff1a url(../IMG/pausa.png);
-  background-size: 70%;
-  background-repeat: no-repeat;
-  background-position: center center;
+  >span {
+    background: #ffffff1a url(../IMG/pausa.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 }
 
 #musica {
@@ -100,7 +116,7 @@ body {
 .contenedor_carga {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   z-index: 20;
@@ -279,12 +295,94 @@ body {
 }
 
 /* fin contenedor carga */
+.fondoParticulas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: transparent;
+  overflow: hidden;
+  z-index: 25;
+  transition: all 300ms ease;
+
+  >span,
+  img {
+    position: absolute;
+    top: 0;
+    left: calc(var(--pos-x) * 100%);
+    animation: var(--animationParticle) var(--duration) linear infinite;
+    opacity: 0.8;
+  }
+
+  >.nieve {
+    width: 32px;
+    aspect-ratio: 1/1;
+  }
+
+  >.codigo {
+    width: 45%;
+    height: auto;
+    left: calc(var(--position) * 55%) !important;
+  }
+
+  >span {
+    width: 15px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--color);
+  }
+}
+
+.fondoParticulasNieve {
+  background: linear-gradient(#b6d7f5af, #dceffc91) !important;
+  /* fondo frío */
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0px 0px 30px black;
+  transform: scale(1.5);
+}
+
+@keyframes subir {
+  0% {
+    top: -20%;
+    opacity: 1;
+  }
+
+  100% {
+    top: 110%;
+    opacity: 0.5;
+  }
+}
+
+@keyframes subir2 {
+  0% {
+    top: -20%;
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0.8;
+  }
+
+  100% {
+    top: 110%;
+    opacity: 0.8;
+  }
+}
 
 main {
   width: 100%;
   position: relative;
-  overflow: hidden;
+  height: auto;
   transition: all 5.3s ease;
+  overflow: hidden;
+  animation: 2s bounce_initial ease forwards;
+  animation-delay: 3.5s;
 
   >span:nth-child(1) {
     width: 40px;
@@ -317,53 +415,132 @@ main {
   >span:nth-child(1):active {
     transform: scale(0.9);
   }
+}
 
-  >.contenedor_info_flotante {
-    position: absolute;
-    border-radius: 5px;
-    top: 20px;
-    right: 20px;
-    backdrop-filter: blur(16px) saturate(120%);
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    width: max-content;
-    height: auto;
-    padding: 10px;
+.contenedor_info_flotante {
+  position: fixed;
+  border-radius: 5px;
+  top: 20px;
+  right: 20px;
+  backdrop-filter: blur(16px) saturate(120%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: max-content;
+  height: auto;
+  padding: 10px 15px;
 
-    >a {
-      text-decoration: none;
-      color: white;
+  >a {
+    text-decoration: none;
+    color: white;
 
+    >img {
+      width: 38px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      transition: all 70ms linear;
+      border-radius: 100%;
+      background: rgb(27, 35, 51);
 
-      >img {
-        width: 38px;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-        transition: all 70ms linear;
-        border-radius: 100%;
-
-        &:hover {
-          transform: translateY(-4px) scale(1.020);
-          box-shadow: 0px 0px 5px rgb(18, 56, 94);
-          cursor: pointer;
-        }
-      }
-    }
-
-    >.indicador_movimiento {
-      /* transition: all 150ms linear;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      &:hover {
+        transform: translateY(-4px) scale(1.020);
+        box-shadow: 0px 5px 10px rgb(18, 56, 94);
         cursor: pointer;
-        font-size: 25px;
-        color: white; */
-      display: none;
+      }
     }
   }
 
+  .btnCambioParticula {
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    padding: 0;
+    color: white;
+    transition: all 100ms ease;
+    color: red;
+
+    >p {
+      position: absolute;
+      top: 105%;
+      right: 0;
+      background: rgba(255, 255, 255, 0.651);
+      font-size: 14px;
+      padding: 7px;
+      border-radius: 7px;
+      color: black;
+      width: 150px;
+      pointer-events: none;
+      top: 80%;
+      opacity: 0;
+      filter: blur(10px);
+      transition: all 300ms ease;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+      text-shadow: 0px 0px 10px black !important;
+
+      >p {
+        animation: 4s infoFlotante ease forwards;
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+      cursor: pointer;
+    }
+
+    /* Cambio de color de cambio de particula (dependiendo del icono) */
+    &:has(> .fa-snowflake) {
+      /* Nieve */
+      color: #4fc3f7;
+      text-shadow: 0px 0px 2px rgba(201, 196, 196, 0.788);
+    }
+
+    &:has(> .fa-circle) {
+      /* bola */
+      color: #df8e31;
+      text-shadow: 0px 0px 2px rgba(201, 196, 196, 0.788);
+    }
+
+    &:has(> .fa-bars-staggered) {
+      /* Codigo */
+      color: #207044;
+    }
+  }
+
+
+  >.indicador_movimiento {
+    display: none;
+  }
+}
+
+@keyframes infoFlotante {
+  0% {
+    top: 80%;
+    opacity: 0;
+    filter: blur(10px);
+  }
+
+  10% {
+    top: 150%;
+    opacity: 1;
+    filter: blur(0px);
+  }
+
+  90% {
+    top: 150%;
+    opacity: 1;
+    filter: blur(0px);
+  }
+
+  100% {
+    top: 80%;
+    opacity: 0;
+    filter: blur(10px);
+  }
 }
 
 .oculto_ani_btn_menu {
@@ -382,7 +559,7 @@ main {
 /* container_all_modulus and container_slider_modulus */
 .container_all_modulus {
   width: 100%;
-  height: 100%;
+  height: auto;
   overflow: hidden;
   position: relative;
   transition: all 400ms ease;
@@ -390,26 +567,26 @@ main {
 
   >.container_slider_modulus {
     width: 100%;
-    height: 100%;
+    height: auto;
     position: relative;
     display: flex;
     align-items: top;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    transition: all 300ms ease;
+    transition: all 600ms ease;
     transform-style: preserve-3d;
 
     >section {
       width: 100%;
-      height: 100%;
       flex-shrink: 0;
+      min-height: 100vh;
+      height: auto;
       position: relative;
-      overflow-y: scroll;
-      opacity: 1;
-      scrollbar-width: none;
       transition: all 500ms ease;
-      backface-visibility: hidden;
+      /* backface-visibility: hidden; */
     }
+
+    /* .noneS {
+      height: 0px!important;
+    } */
 
     >section::after {
       position: fixed;
@@ -894,7 +1071,7 @@ main {
     }
   }
 
-  &::after{
+  &::after {
     content: "";
     display: block;
     position: absolute;
@@ -940,7 +1117,7 @@ main {
     pointer-events: inherit;
   }
 
-  &::after{
+  &::after {
     top: 100%;
   }
 }

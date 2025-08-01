@@ -12,8 +12,8 @@
 
     <link rel="stylesheet" href="CSS/configuration.css">
     <link rel="stylesheet" href="CSS/archivo.css">
-    <link rel="stylesheet" href="CSS/proyecto.css">
     <link rel="stylesheet" href="CSS/sobre_mi.css">
+    <link rel="stylesheet" href="CSS/proyecto.css">
     <link rel="stylesheet" href="CSS/home.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/general.css">
@@ -22,7 +22,9 @@
 </head>
 
 <body>
-    <span id="btn_musica" class="btn_musica btn_musica_pause"></span>
+    <span id="btn_musica" class="btn_musica btn_musica_pause">
+        <span></span>
+    </span>
     <video id="musica" controls>
         <source src="musica_ambiente1.mp3" type="audio/mp3">
     </video>
@@ -57,11 +59,55 @@
     </article>
     <!-- fin contenedor oculto (vista de publicaciones)  -->
 
-
     <!--== contenedor de carga ==-->
     <section class="contenedor_carga carga" id="carga">
         <span class="bola_carga"></span>
     </section>
+
+    <!-- Opciones de arriba -->
+    <div class="contenedor_info_flotante">
+        <a href="https://github.com/Devandelson/" target="_blank">
+            <img src="IMG/github.png" alt="icono Github" title="Github">
+        </a>
+        <button class="btnCambioParticula" id="btnCambioParticula">
+            <i class="fa-solid fa-ban"></i>
+            <p>Partículas al hacer clic — Activar/Desactivar</p>
+        </button>
+        <span class="indicador_movimiento" id="indicador_movimiento">1</span>
+    </div>
+
+    <!-- Fondo de particulas -->
+    <section class="fondoParticulas" id="fondoParticulas">
+    </section>
+
+    <!--== Sobre mi  ==-->
+    <!-- Contenedor oculto (vista de publicaciones) -->
+    <article class="vista_publicacion inactivo_vista_publicacion" id="vista_publicacion_sm">
+        <span class="btn7" id="btn_cerrar_vista_publicacion_sm">X</span>
+
+        <div class="item_publicacion">
+            <div class="contenedor_slider">
+                <div class="slider" id="slider_img_sobre_mi">
+                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
+                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
+                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
+                </div>
+
+                <i class="fa-solid fa-chevron-left" id="btn_slider_publicacion_izquierdo"></i>
+
+                <i class="fa-solid fa-chevron-right" id="btn_slider_publicacion_derecho"></i>
+            </div>
+        </div>
+    </article>
+
+    <!-- vista de logro -->
+    <div class="vista-logro inactivo-vista-logro" id="vista-logro">
+        <img src="IMG/app_simulacion1.png">
+        <span class="btn7" id="btn-cerrar-vista">X</span>
+    </div>
+
+
+    <!--== Fin Elementos oculto ==-->
 
     <!--== header ==-->
     <header>
@@ -98,7 +144,7 @@
             </article>
         </section>
 
-        <section class="enlaces_paginas">
+        <section class="enlaces_paginas" id="enlaces_paginas">
             <nav>
                 <ul id="lista_opciones_frm">
                     <li title="Inicio" id="inicio_frm_btn" onclick="move_frm(0)">
@@ -114,22 +160,14 @@
 
     <!--== main ==-->
     <main>
-
         <span id="btn_desplazamiento_menu2" class="oculto_ani_btn_menu"><img src="IMG/ventana.png" alt=""
                 class="img_header_accion"></span>
-
-        <div class="contenedor_info_flotante">
-            <a href="https://github.com/Devandelson/" target="_blank">
-                <img src="IMG/github.png" alt="icono Github" title="Github">
-            </a>
-            <span class="indicador_movimiento" id="indicador_movimiento">1</span>
-        </div>
 
         <div class="container_all_modulus">
             <div class="container_slider_modulus" id="slider_modulus">
                 <!--== Pantalla de inicio ==-->
                 <section class="home" id="home">
-                    <div class="fondo" id="fondo_home"><img src="IMG/fondo4_portafolio.jpg" alt=""></div>
+                    <div class="fondo" id="fondo_home"><img src="IMG/fondo2_portafolio.jpeg" alt=""></div>
 
                     <div class="contenedor_contenido">
                         <div class="avatar_programador">
@@ -184,32 +222,7 @@
                 </section>
 
                 <!--== Sobre mi ==-->
-                <section class="sobre_mi none" id="Sobre_Mí">
-                    <!-- Contenedor oculto (vista de publicaciones) -->
-                    <article class="vista_publicacion inactivo_vista_publicacion" id="vista_publicacion_sm">
-                        <span class="btn7" id="btn_cerrar_vista_publicacion_sm">X</span>
-
-                        <div class="item_publicacion">
-                            <div class="contenedor_slider">
-                                <div class="slider" id="slider_img_sobre_mi">
-                                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
-                                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
-                                    <img src="IMG/fondo1_portafolio.jpeg" alt="">
-                                </div>
-
-                                <i class="fa-solid fa-chevron-left" id="btn_slider_publicacion_izquierdo"></i>
-
-                                <i class="fa-solid fa-chevron-right" id="btn_slider_publicacion_derecho"></i>
-                            </div>
-                        </div>
-                    </article>
-
-                    <div class="vista-logro inactivo-vista-logro" id="vista-logro">
-                        <img src="IMG/app_simulacion1.png">
-                        <span class="btn7" id="btn-cerrar-vista">X</span>
-                    </div>
-                    <!-- fin contenedor oculto (vista de publicaciones)  -->
-
+                <section class="sobre_mi noneS" id="Sobre_Mí">
                     <!-- Banner  -->
                     <article class="banner">
                         <span></span>
@@ -261,31 +274,6 @@
                     <div class="contenedor_areas" id="areas_sm">
                         <!-- Historia  -->
                         <article class="historia seleted" id="historia_sm">
-                            <div class="fondo">
-                                <!-- Generar spans con diferentes propiedades -->
-                                <script>
-                                    // variables
-                                    let fondo = document.querySelectorAll('.fondo');
-                                    const colors = ['#FF5733', '#FFC300', '#DAF7A6', '#581845', '#33FFCE', '#C70039', '#900C3F', '#FF5733'];
-
-                                    // bucle para generar los cuadros en posiciones random
-                                    for (let i = 0; i < 50; i++) {
-                                        // creando el elemento
-                                        const span = document.createElement('span');
-
-                                        // colocando sus propiedades random
-                                        span.style.setProperty('--pos-x', Math.random()); // Posición horizontal aleatoria
-                                        span.style.setProperty('--duration', `${Math.random() * 10 + 0.5}s`); // Duración aleatoria entre 3-5 segundos
-                                        span.style.setProperty('--color', colors[Math.floor(Math.random() * colors.length)]); // Color aleatorio
-
-                                        // para al final agregarlo
-                                        fondo.forEach((fnd) => {
-                                            fnd.appendChild(span);
-                                        })
-                                    }
-                                </script>
-                            </div>
-
                             <article class="info">
                                 <h4>¿Quién soy?</h4>
                                 <p>
@@ -299,10 +287,10 @@
                                 <div class="header">
                                     <h2><i class="fa-solid fa-newspaper"></i> Publicaciones</h2>
 
-                                    <div class="containerNavbar" id="Navbar_AboutMe">
+                                    <!-- <div class="containerNavbar" id="Navbar_AboutMe">
                                         <button class="btnNavbar active">1</button>
                                         <button class="btnNavbar">2</button>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="sliderItemContainer">
@@ -345,141 +333,6 @@
                                                     <img src="./IMG/graduacion-certificado.jpg" alt="">
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="item_publicacion">
-                                            <div class="encabezado">
-                                                <div class="contenedor_info">
-                                                    <img src="IMG/Sobre Mí.png" alt="">
-                                                    <div class="info">
-                                                        <p>Andelson</p>
-                                                        <p>25/4/2025</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="detalle">
-                                                <p>
-                                                    Un juego clásico llevado al siguiente nivel con un toque
-                                                    personal.
-                                                </p>
-
-                                                <div class="slider_img">
-                                                    <img src="./IMG/fondo_tic_tac.png" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="item_publicacion">
-                                            <div class="encabezado">
-                                                <div class="contenedor_info">
-                                                    <img src="IMG/Sobre Mí.png" alt="">
-                                                    <div class="info">
-                                                        <p>Andelson</p>
-                                                        <p>8/4/2025</p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="controles">
-                                                    <img src="IMG/maximize.png" alt="" id="btn_visualizar_sm">
-                                                </div>
-                                            </div>
-
-                                            <div class="detalle">
-                                                <p>
-                                                    Duplicado de classrroom, una página web que permite a los
-                                                    estudiantes
-                                                    interactuar con sus compañeros y profesores. Esta plataforma
-                                                    facilita la
-                                                    comunicación y el intercambio de información entre los miembros
-                                                    de
-                                                    la
-                                                    comunidad educativa. Hecha con HTML, CSS , JavaScript, MYSQL,
-                                                    PHP y
-                                                    AJAX.
-                                                </p>
-
-                                                <div class="slider_img">
-                                                    <img src="./IMG/f1_clasroom.png" alt="">
-                                                    <img src="./IMG/f2_clasroom.png" alt="">
-                                                    <img src="./IMG/f3_clasroom.png" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="item_publicacion">
-                                            <div class="encabezado">
-                                                <div class="contenedor_info">
-                                                    <img src="IMG/Sobre Mí.png" alt="">
-                                                    <div class="info">
-                                                        <p>Andelson</p>
-                                                        <p>2/4/2025</p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="controles">
-                                                    <img src="IMG/maximize.png" alt="" id="btn_visualizar_sm">
-                                                </div>
-                                            </div>
-
-                                            <div class="detalle">
-                                                <p>
-                                                    ¡Organiza tus tareas como nunca antes! 🚀 Presento mi primer
-                                                    proyecto
-                                                    con
-                                                    Oracle: un potente gestor de tareas desarrollado con PHP y
-                                                    Oracle.
-                                                    Clasifica, prioriza y gestiona cada actividad de forma eficiente
-                                                    e
-                                                    intuitiva.
-                                                </p>
-
-                                                <div class="slider_img">
-                                                    <img src="IMG/inicio_oracle.png" alt="">
-                                                    <img src="IMG/eliminacion_oracle.png" alt="">
-                                                    <img src="IMG/modificacion_oracle.png" alt="">
-                                                </div>
-                                            </div>
-
-                                            <button class="btn3">
-                                                <a href="https://github.com/Devandelson/Gestor-de-tareas"
-                                                    target="_blank">
-                                                    <i class="fa-brands fa-github"></i> Ver mas
-                                                </a>
-                                            </button>
-                                        </div>
-
-                                        <div class="item_publicacion">
-                                            <div class="encabezado">
-                                                <div class="contenedor_info">
-                                                    <img src="IMG/Sobre Mí.png" alt="">
-                                                    <div class="info">
-                                                        <p>Andelson</p>
-                                                        <p>30/3/2025</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="detalle">
-                                                <p>
-                                                    Esta es mi primera aventura creando una página web con React.
-                                                    Estoy
-                                                    emocionado/a de compartir este proyecto contigo. ¡Es solo el
-                                                    comienzo de
-                                                    muchas más experiencias interactivas!
-                                                </p>
-
-                                                <div class="slider_img">
-                                                    <img src="IMG/react_firts.JPG" alt="">
-                                                </div>
-                                            </div>
-
-                                            <button class="btn3">
-                                                <a href="https://devandelson.github.io/firts-proyect-react/"
-                                                    target="_blank">
-                                                    <i class="fa-solid fa-link"></i> Ver mas
-                                                </a>
-                                            </button>
                                         </div>
 
                                         <div class="item_publicacion">
@@ -545,133 +398,6 @@
                                                     <img src="IMG/Sobre Mí.png" alt="">
                                                     <div class="info">
                                                         <p>Andelson</p>
-                                                        <p>18/1/2025</p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="controles">
-                                                    <img src="IMG/maximize.png" alt="" id="btn_visualizar_sm">
-                                                </div>
-                                            </div>
-
-                                            <div class="detalle">
-                                                <p>
-                                                    Disfruta del clásico juego de Piedra, Papel o Tijera en su
-                                                    versión
-                                                    interactiva, desarrollado en JavaScript como parte del curso
-                                                    Semillero
-                                                    Digital Intro (OPTIC). Juega solo contra la computadora o reta a
-                                                    un
-                                                    amigo en
-                                                    modo de dos jugadores. ¡Pon a prueba tu habilidad y estrategias
-                                                    en
-                                                    cada
-                                                    partida!
-                                                </p>
-
-                                                <div class="slider_img">
-                                                    <img src="IMG/juego-mano2.png" alt="">
-                                                    <img src="IMG/juego-mano1.JPG" alt="">
-                                                    <img src="IMG/juego-mano3.png" alt="">
-                                                </div>
-                                            </div>
-
-                                            <button class="btn3">
-                                                <a href="Paginas/Juego de manos/index.html" target="_blank">
-                                                    <i class="fa-solid fa-link"></i> Ver mas
-                                                </a>
-                                            </button>
-                                        </div>
-
-                                        <div class="item_publicacion">
-                                            <div class="encabezado">
-                                                <div class="contenedor_info">
-                                                    <img src="IMG/Sobre Mí.png" alt="">
-                                                    <div class="info">
-                                                        <p>Andelson</p>
-                                                        <p>13/12/2024</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="detalle">
-                                                <p>
-                                                    Creé esta app de notas pensando en facilitar la organización de
-                                                    tus
-                                                    ideas y
-                                                    tareas de una manera personalizada y práctica. Con ella, puedes
-                                                    crear
-                                                    notas
-                                                    de manera sencilla, personalizarlas a tu gusto, agregar
-                                                    imágenes,
-                                                    enlaces y
-                                                    mucho más.
-                                                </p>
-
-                                                <div class="slider_img">
-                                                    <img src="IMG/noticia_flexo.png" alt="">
-                                                </div>
-                                            </div>
-
-                                            <button class="btn3">
-                                                <a href="https://flexo.infinityfreeapp.com/" target="_blank">
-                                                    <i class="fa-solid fa-link"></i> Ver mas
-                                                </a>
-                                            </button>
-                                        </div>
-
-                                        <div class="item_publicacion">
-                                            <div class="encabezado">
-                                                <div class="contenedor_info">
-                                                    <img src="IMG/Sobre Mí.png" alt="">
-                                                    <div class="info">
-                                                        <p>Andelson</p>
-                                                        <p>6/6/2024</p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="controles">
-                                                    <img src="IMG/maximize.png" alt="" id="btn_visualizar_sm">
-                                                </div>
-                                            </div>
-
-                                            <div class="detalle">
-                                                <p>
-                                                    ¡Hola a todos! ¡Les presento mi proyecto: una tienda en línea
-                                                    creada
-                                                    con
-                                                    HTML, CSS y JavaScript! Diseñada con cuidado para brindar una
-                                                    experiencia de
-                                                    compra increíblemente intuitiva. ¡Descubre la magia de cada clic
-                                                    en
-                                                    mi
-                                                    portafolio! ¡Te invito a explorar y disfrutar de un carrito de
-                                                    compras
-                                                    funcional y sorprendente!.
-                                                </p>
-
-                                                <div class="slider_img">
-                                                    <img src="IMG/store1.JPG" alt="">
-                                                    <img src="IMG/store2.PNG" alt="">
-                                                    <img src="IMG/store3.JPG" alt="">
-                                                </div>
-                                            </div>
-
-                                            <button class="btn3">
-                                                <a href="Paginas/Tienda celulares Anderson/index.html" target="_blank">
-                                                    <i class="fa-solid fa-link"></i> Ver mas
-                                                </a>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="containerItems">
-                                        <div class="item_publicacion new">
-                                            <div class="encabezado">
-                                                <div class="contenedor_info">
-                                                    <img src="IMG/Sobre Mí.png" alt="">
-                                                    <div class="info">
-                                                        <p>Andelson</p>
                                                         <p>14/6/2025</p>
                                                     </div>
                                                 </div>
@@ -690,7 +416,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="item_publicacion new">
+                                        <div class="item_publicacion">
                                             <div class="encabezado">
                                                 <div class="contenedor_info">
                                                     <img src="IMG/Sobre Mí.png" alt="">
@@ -723,6 +449,8 @@
                                             </button>
                                         </div>
                                     </div>
+
+                                    <!-- <div class="containerItems"></div> -->
                                 </div>
                             </article>
                         </article>
@@ -825,96 +553,98 @@
                                 proyectos impactantes.
                             </p>
 
-                            <div class="contenedor_lenguajes">
-                                <div class="item_l front_end">
-                                    <span></span>
+                            <div class="contenedor_img_info">
+                                <div class="img">
+                                    <img src="./IMG/semicirculo.png" alt="">
+                                </div>
 
-                                    <div class="subcontenedor_info">
-                                        <h2>Front - End</h2>
+                                <div class="contenedor_lenguajes">
+                                    <div class="item_l front_end">
+                                        <span></span>
 
-                                        <div class="contenedor_items">
-                                            <div class="item_lenguaje">
-                                                <img src="IMG/css.png" alt="CSS" />
-                                            </div>
+                                        <div class="subcontenedor_info">
+                                            <h2>Front - End</h2>
 
-                                            <div class="item_lenguaje contain">
-                                                <img src="IMG/boostrap_icono.png" alt="Boostrap" />
-                                            </div>
+                                            <div class="contenedor_items">
+                                                <div class="item_lenguaje">
+                                                    <img src="IMG/css.png" alt="CSS" />
+                                                </div>
 
-                                            <div class="item_lenguaje">
-                                                <img src="IMG/html-5.png" alt="HTML" />
-                                            </div>
+                                                <div class="item_lenguaje contain">
+                                                    <img src="IMG/boostrap_icono.png" alt="Boostrap" />
+                                                </div>
 
-                                            <div class="item_lenguaje rounded">
-                                                <img src="IMG/js.png" alt="JS" />
-                                            </div>
+                                                <div class="item_lenguaje">
+                                                    <img src="IMG/html-5.png" alt="HTML" />
+                                                </div>
 
-                                            <div class="item_lenguaje contain">
-                                                <img src="IMG/react.png" alt="REACT" />
-                                            </div>
+                                                <div class="item_lenguaje rounded">
+                                                    <img src="IMG/js.png" alt="JS" />
+                                                </div>
 
-                                            <div class="item_lenguaje contain tailwind">
-                                                <img src="IMG/Ntailwind-css.svg" alt="Tailwind" />
+                                                <div class="item_lenguaje contain">
+                                                    <img src="IMG/react.png" alt="REACT" />
+                                                </div>
+
+                                                <div class="item_lenguaje contain tailwind">
+                                                    <img src="IMG/Ntailwind-css.svg" alt="Tailwind" />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="item_l back_end">
-                                    <span></span>
+                                    <div class="item_l back_end">
+                                        <span></span>
 
-                                    <div class="subcontenedor_info">
-                                        <h2>Back - End</h2>
+                                        <div class="subcontenedor_info">
+                                            <h2>Back - End</h2>
 
-                                        <div class="contenedor_items">
-                                            <div class="item_lenguaje">
-                                                <img src="IMG/VB.png" alt="VB" />
-                                            </div>
+                                            <div class="contenedor_items">
+                                                <div class="item_lenguaje">
+                                                    <img src="IMG/VB.png" alt="VB" />
+                                                </div>
 
-                                            <div class="item_lenguaje">
-                                                <img src="IMG/base-de-datos.png" alt="SQL" />
-                                            </div>
+                                                <div class="item_lenguaje">
+                                                    <img src="IMG/base-de-datos.png" alt="SQL" />
+                                                </div>
 
-                                            <div class="item_lenguaje">
-                                                <img src="IMG/mysql.png" alt="My Sql" />
-                                            </div>
+                                                <div class="item_lenguaje">
+                                                    <img src="IMG/mysql.png" alt="My Sql" />
+                                                </div>
 
-                                            <div class="item_lenguaje">
-                                                <img src="IMG/xampp.png" alt="Xampp" />
-                                            </div>
+                                                <div class="item_lenguaje">
+                                                    <img src="IMG/xampp.png" alt="Xampp" />
+                                                </div>
 
-                                            <div class="item_lenguaje">
-                                                <img src="IMG/php.png" alt="PHP" />
-                                            </div>
+                                                <div class="item_lenguaje">
+                                                    <img src="IMG/php.png" alt="PHP" />
+                                                </div>
 
-                                            <div class="item_lenguaje contain oracle">
-                                                <img src="IMG/oracle.png" alt="Oracle" />
-                                            </div>
-
-                                            <div class="item_lenguaje contain">
-                                                <img src="IMG/ajax.png" alt="" alt="AJAX">
+                                                <div class="item_lenguaje contain">
+                                                    <img src="IMG/ajax.png" alt="" alt="AJAX">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="item_l herramientas">
-                                    <span></span>
+                                    <div class="item_l herramientas">
+                                        <span></span>
 
-                                    <div class="subcontenedor_info">
-                                        <h2>Herramientas</h2>
+                                        <div class="subcontenedor_info">
+                                            <h2>Herramientas</h2>
 
-                                        <div class="contenedor_items">
-                                            <div class="item_lenguaje">
-                                                <img src="IMG/figma.png" alt="Figma" />
-                                            </div>
+                                            <div class="contenedor_items">
+                                                <div class="item_lenguaje">
+                                                    <img src="IMG/figma.png" alt="Figma" />
+                                                </div>
 
-                                            <div class="item_lenguaje contain git">
-                                                <img src="IMG/git.png" alt="Git" />
-                                            </div>
+                                                <div class="item_lenguaje contain git">
+                                                    <img src="IMG/git.png" alt="Git" />
+                                                </div>
 
-                                            <div class="item_lenguaje rounded">
-                                                <img src="IMG/github2.png" alt="Github" />
+                                                <div class="item_lenguaje rounded">
+                                                    <img src="IMG/github2.png" alt="Github" />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -941,7 +671,8 @@
                                     name="mensaje" class="input1 t4" required></textarea>
 
                                 <div class="button-container">
-                                    <button class="btn3 t5" type="submit"><i class="fa-solid fa-share"></i> Enviar</button>
+                                    <button class="btn3 t5" type="submit"><i class="fa-solid fa-share"></i>
+                                        Enviar</button>
                                 </div>
                             </form>
                         </article>
@@ -949,17 +680,13 @@
                 </section>
 
                 <!--== Proyecto ==-->
-                <section class="proyecto none" id="Proyectos">
+                <section class="proyecto noneS" id="Proyectos">
                     <article class="banner">
                         <img src="IMG/fondo7_portafolio.jpg" alt="">
                         <h2>✨ Descubre lo que ✨ <br> he creado con pasión.</h2>
                     </article>
 
                     <div class="subcontenedorall">
-                        <div class="fondo">
-                            <!-- Generar spans con diferentes propiedades JS -->
-                        </div>
-
                         <div class="titulo">
                             <span></span>
                             <h3>
@@ -1096,7 +823,7 @@
                                 </div>
                             </div>
 
-                             <div class="item_proyecto item_destacado">
+                            <div class="item_proyecto item_destacado">
                                 <div class="front">
                                     <img src="IMG/claroClon.jpg" alt="">
                                     <h2>Clon pagina claro</h2>
@@ -1105,7 +832,11 @@
 
                                 <div class="back">
                                     <p>
-                                        landing page interactiva estilo Claro Negocios (<a href="https://www.claro.com.do/negocios/" title="link pagina del clon de claro" target="_blank">Link pagina</a>). Ha sido un reto técnico emocionante, especialmente al recrear la experiencia visual y de navegación de una página de alto nivel corporativo como la de Claro.
+                                        landing page interactiva estilo Claro Negocios (<a
+                                            href="https://www.claro.com.do/negocios/"
+                                            title="link pagina del clon de claro" target="_blank">Link pagina</a>). Ha
+                                        sido un reto técnico emocionante, especialmente al recrear la experiencia visual
+                                        y de navegación de una página de alto nivel corporativo como la de Claro.
                                     </p>
 
                                     <div class="lenguajes">
@@ -1133,7 +864,10 @@
                                 </div>
 
                                 <div class="back">
-                                    <p>¡🚀 Wordly te desafía a adivinar la palabra oculta en solo unos intentos! 🧩 Cada pista de letra y posición pone a prueba tu ingenio y vocabulario. Para darle vida, desarrollé una API REST local que elige dinámicamente la palabra secreta, logrando una experiencia ágil y 100 % personalizable. 🎉</p>
+                                    <p>¡🚀 Wordly te desafía a adivinar la palabra oculta en solo unos intentos! 🧩 Cada
+                                        pista de letra y posición pone a prueba tu ingenio y vocabulario. Para darle
+                                        vida, desarrollé una API REST local que elige dinámicamente la palabra secreta,
+                                        logrando una experiencia ágil y 100 % personalizable. 🎉</p>
 
                                     <div class="lenguajes">
                                         <img src="IMG/react.png" alt="">
@@ -1173,13 +907,15 @@
 
                                 <div class="back">
                                     <p> Esta página está dedicada a proporcionar una descripción emocionante de
-                                        <strong>League of Legends</strong>, el juego de batalla en línea multijugador.</p>
+                                        <strong>League of Legends</strong>, el juego de batalla en línea multijugador.
+                                    </p>
 
                                     <div class="lenguajes">
                                         <img src="IMG/react.png" alt="">
                                     </div>
 
-                                    <button class="btn3"><a href="https://devandelson.github.io/firts-proyect-react/"  target="_blank"><i class="fa-solid fa-link"></i> Ver detalles</a></button>
+                                    <button class="btn3"><a href="https://devandelson.github.io/firts-proyect-react/"
+                                            target="_blank"><i class="fa-solid fa-link"></i> Ver detalles</a></button>
                                 </div>
                             </div>
 
@@ -1456,7 +1192,7 @@
                 </section>
 
                 <!--== Archivo ==-->
-                <section class="archivo none" id="Archivos">
+                <section class="archivo noneS" id="Archivos">
                     <div class="header">
                         <div class="logo">
                             <img src="IMG/Archivos.png" alt="">
@@ -1494,7 +1230,7 @@
                 </section>
 
                 <!--== contenedor_de_configuracion ==-->
-                <section class="configuration_container none" id="configuration_container">
+                <section class="configuration_container noneS" id="configuration_container">
                     <div class="container_all">
                         <article class="header">
                             <h2><i class="fa-solid fa-gear fa-shake"></i> Configuración del <br> portafolio</h2>
@@ -1517,7 +1253,7 @@
                                 <h2><i class="fa-solid fa-image"></i> Fonde de pantalla de inicio</h2>
                                 <div class="containerImgSelect" id="backgroundSeled">
                                     <div class="img select_fondo">
-                                        <img src="IMG/fondo4_portafolio.jpg" alt="img_fondo_inicio">
+                                        <img src="IMG/fondo2_portafolio.jpeg" alt="img_fondo_inicio">
                                     </div>
                                 </div>
 
@@ -1531,7 +1267,7 @@
                                         </div>
                                         <div class="img"><img src="IMG/fondo3_portafolio.jpg" alt="img_fondo_inicio">
                                         </div>
-                                        <div class="img"><img src="IMG/fondo2_portafolio.jpeg" alt="img_fondo_inicio">
+                                        <div class="img"><img src="IMG/fondo4_portafolio.jpg" alt="img_fondo_inicio">
                                         </div>
                                         <div class="img"><img src="IMG/fondo7_portafolio.jpg" alt="img_fondo_inicio">
                                         </div>
@@ -1555,16 +1291,14 @@
                                     <span onclick="cambio_movimiento(3)"><span></span></span>
                                     <span onclick="cambio_movimiento(4)"><span></span></span>
                                     <span onclick="cambio_movimiento(5)"><span></span></span>
-                                    <span onclick="cambio_movimiento(6)"><span></span></span>
-                                    <span onclick="cambio_movimiento(7)"><span></span></span>
+                                    <!-- <span onclick="cambio_movimiento(6)"><span></span></span>
+                                    <span onclick="cambio_movimiento(7)"><span></span></span> -->
                                 </div>
                             </article>
                         </div>
                     </div>
                 </section>
                 <!--== fin contenedor_de_configuracion ==-->
-
-
             </div>
         </div>
     </main>
@@ -1576,7 +1310,7 @@
     <script src="JS/animaciones.js"></script>
     <script src="JS/gestion_frm.js"></script>
     <script src="JS/configuration.js"></script>
-    <script src="JS/proyecto.js"></script>
+    <script src="JS/particulas.js"></script>
 
     <!--== Font awesome ==-->
     <script src="https://kit.fontawesome.com/7881bda97f.js" crossorigin="anonymous"></script>

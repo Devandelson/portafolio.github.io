@@ -15,17 +15,39 @@
 }
 
 .vista_publicacion_proyecto {
-    position: absolute;
+    position: fixed;
     width: 80%;
     height: 80vh;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    border: 7px solid var(--color3);
-    z-index: 10;
-    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    z-index: 16;
     transition: all 500ms ease;
-    max-width: 1000px;
+    display: grid;
+    animation: 700ms vistaFrente ease;
+    border: 5px solid var(--color1);
+    border-radius: 7px;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url(../IMG/diseno-fondo-color.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform-style: preserve-3d;
+        transform: scale(1);
+        border-radius: 10px;
+        z-index: -1;
+        border-radius: 20%;
+        transition: all 500ms ease;
+        top: 0;
+        left: 0;
+
+        animation: 800ms vistaDetras ease;
+    }
 
     >span {
         position: absolute;
@@ -40,7 +62,6 @@
         width: 100%;
         height: 100%;
         position: relative;
-        border-radius: 7px;
         overflow: hidden;
 
         /* slider */
@@ -105,11 +126,23 @@
     }
 }
 
+body:has(> .inactivo_vista_publicacion_proyecto) {
+    .vista_publicacion_proyecto {
+        animation: 1s hola ease;
+
+        &::before {
+            animation: 800ms hola2 ease;
+        }
+    }
+}
+
 .inactivo_vista_publicacion_proyecto {
     pointer-events: none;
-    filter: blur(10px);
     opacity: 0;
-    top: -100% !important;
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%) scale(0) !important;
+    animation: 0ms hola ease;
+    transition: all 500ms ease;
 }
 
 .proyecto>.banner {

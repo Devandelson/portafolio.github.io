@@ -52,4 +52,26 @@
         transform: translateX(0px);
         transition: all 350ms ease;
     }
+
+    @keyframes entradaHeader {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        50% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .btnCambioParticula {
+        &:hover {
+            /* >p {
+               animation: 2s infoFlotante ease forwards;
+            } */
+        }
+    }
 }

@@ -2,7 +2,7 @@
     position: relative;
     transition: all 300ms ease;
     gap: 20px;
-    height: 100vh;
+    height: auto;
 }
 
 
@@ -409,7 +409,7 @@
 
                 display: grid;
                 grid-template-columns: repeat(3, minmax(auto, 1fr));
-                grid-template-rows: repeat(3, minmax(auto, 1fr));
+                grid-template-rows: repeat(2, minmax(auto, 1fr));
                 gap: 20px;
                 border-radius: 5px;
 
@@ -491,55 +491,26 @@
 
                 >span:nth-child(4) {
                     >span {
-                        transform: scale(0) rotateY(360deg) rotateX(360deg);
-                    }
-                }
-
-                >span:nth-child(4):hover {
-                    >span {
-                        transform: scale(1) rotateY(0deg) rotateX(0deg);
-                    }
-                }
-
-
-                >span:nth-child(5) {
-                    >span {
                         transform: scale(0) rotateY(360deg);
                     }
                 }
 
-                >span:nth-child(5):hover {
+                >span:nth-child(4):hover {
                     >span {
                         transform: scale(1) rotateY(0deg);
                     }
                 }
 
 
-                >span:nth-child(6) {
-                    grid-column: span 2;
-
+                >span:nth-child(5) {
                     >span {
                         transform: scale(0) rotateX(360deg);
                     }
                 }
 
-                >span:nth-child(6):hover {
+                >span:nth-child(5):hover {
                     >span {
                         transform: scale(1) rotateX(0deg);
-                    }
-                }
-
-                >span:nth-child(7) {
-                    >span {
-                        transform: scale(0);
-                        border-radius: 100%;
-                    }
-                }
-
-                >span:nth-child(7):hover {
-                    >span {
-                        transform: scale(1);
-                        border-radius: 10px;
                     }
                 }
 

@@ -3,14 +3,33 @@
 let animacion_activa = 0;
 let animacion_activa2 = 0;
 let animacion_activa3 = 0;
+let enlaces_paginas = document.getElementById('enlaces_paginas');
 
 function move_frm(indice_movimiento) {
     let ancla_modulo = document.getElementById("home");
     let slider_modulus = document.getElementById("slider_modulus");
     let indicador_movimiento = document.getElementById("indicador_movimiento");
 
-    if (indicador_movimiento.innerHTML == "1") {
+    // cambiando el focus al contenedor seleccionado (para establecer la altura del body).
+    function cambioFocus(time) {
+        enlaces_paginas.classList.add('enlaceInac'); // inavilitando botones hasta que se complete el proceso
+
+        setTimeout(() => {
+            for (let i = 0; i < slider_modulus.children.length; i++) {
+                if (indice_movimiento == i) {
+                    slider_modulus.children[i].classList.remove('noneS');
+                } else {
+                    slider_modulus.children[i].classList.add('noneS');
+                }
+            }
+
+            enlaces_paginas.classList.remove('enlaceInac');
+        }, time)
+    }
+
+    if (indicador_movimiento.innerHTML.toLocaleLowerCase().trim() == "1") {
         ancla_modulo.style.marginLeft = `-${indice_movimiento}00%`;
+        cambioFocus(100);
     }
 
     if (indicador_movimiento.innerHTML == "2") {
@@ -19,6 +38,7 @@ function move_frm(indice_movimiento) {
         slider_modulus.style.transform = "scale(2)";
         setTimeout(() => {
             slider_modulus.style.transform = "scale(1)";
+            cambioFocus(50);
         }, 500)
     }
 
@@ -28,59 +48,42 @@ function move_frm(indice_movimiento) {
         slider_modulus.style.filter = "blur(100px)";
         setTimeout(() => {
             slider_modulus.style.filter = "blur(0px)";
+            cambioFocus(50);
         }, 500)
     }
 
     if (indicador_movimiento.innerHTML == "4") {
         ancla_modulo.style.marginLeft = `-${indice_movimiento}00%`;
 
-        console.log(animacion_activa);
-        animacion_activa = (animacion_activa == 0 ? 1 : 0);
-
-        if (animacion_activa == 1) {
-            slider_modulus.style.transform = "rotateX(360deg) rotateY(360deg)";
-        } else if (animacion_activa == 0) {
-            slider_modulus.style.transform = "rotateX(0deg) rotateY(0deg)";
+        if (animacion_activa2 == 0) {
+            slider_modulus.style.transform = "rotateY(360deg)";
+            animacion_activa2 = 1;
+            cambioFocus(50);
+            return;
+        } else if (animacion_activa2 == 1) {
+            slider_modulus.style.transform = "rotateY(0deg)";
+            animacion_activa2 = 0;
+            cambioFocus(50);
+            return;
         }
+
     }
 
     if (indicador_movimiento.innerHTML == "5") {
         ancla_modulo.style.marginLeft = `-${indice_movimiento}00%`;
 
-        if (animacion_activa2 == 0) {
-            slider_modulus.style.transform = "rotateY(360deg)";
-            animacion_activa2 = 1;
-            return;
-        } else if (animacion_activa2 == 1) {
-            slider_modulus.style.transform = "rotateY(0deg)";
-            animacion_activa2 = 0;
-            return;
-        }
-    }
-
-    if (indicador_movimiento.innerHTML == "6") {
-        ancla_modulo.style.marginLeft = `-${indice_movimiento}00%`;
-
         if (animacion_activa3 == 0) {
             slider_modulus.style.transform = "rotateX(360deg)";
             animacion_activa3 = 1;
+            cambioFocus(50);
             return;
         } else if (animacion_activa3 == 1) {
             slider_modulus.style.transform = "rotateX(0deg)";
             animacion_activa3 = 0;
+            cambioFocus(50);
             return;
         }
-    }
 
-    if (indicador_movimiento.innerHTML == "7") {
-        ancla_modulo.style.marginLeft = `-${indice_movimiento}00%`;
-
-        slider_modulus.style.transform = "scale(0.5)";
-        slider_modulus.style.borderRadius = "100%";
-        setTimeout(() => {
-            slider_modulus.style.transform = "scale(1)";
-            slider_modulus.style.borderRadius = "0%";
-        }, 500)
     }
 }
 
@@ -109,7 +112,7 @@ async function IndiceItemFrmSeleccionado(id_contenedor, typeBusqueda = "id", che
 
     for (let i = 0; i < slider_modulus.children.length; i++) {
         let elemento = slider_modulus.children[i];
-        if (elemento.classList.contains('none') && checkItemDisable) continue; // Condición para omitir o no elementos deshabilitados
+        if (elemento.classList.contains('noneS') && checkItemDisable) continue; // Condición para omitir o no elementos deshabilitados
 
         let idItemSlider = elemento.id;
         if (typeBusqueda === "dif") {
@@ -120,12 +123,12 @@ async function IndiceItemFrmSeleccionado(id_contenedor, typeBusqueda = "id", che
             if (normalizadoSlider === normalizadoEntrada) {
                 indice = i;
                 break; // Salir del bucle una vez encontrado
-            } else {continue;} // Continuar buscando
+            } else { continue; } // Continuar buscando
         } else {
-            if (idItemSlider.toLowerCase() === id_contenedor.toLowerCase()) {
+            if (idItemSlider.toLowerCase().trim() === id_contenedor.toLowerCase().trim()) {
                 indice = i;
                 break; // Salir del bucle una vez encontrado
-            } else {continue;} // Continuar buscando
+            } else { continue; } // Continuar buscando
         }
     }
 
@@ -148,18 +151,18 @@ async function crearContenedor(id_contenedor, texto) {
         move_frm(indiceContenedorExistente);
     } else {
         let indice_movimiento = await IndiceItemFrmSeleccionado(id_contenedor, "id", false);
+
         gestionCarpetas(texto, indice_movimiento);
 
         // Habilitando el contenedor seleccionado
-        let frm_seleccionado = document.getElementById(`${id_contenedor}`);
-        frm_seleccionado.classList.remove("none");
+        // let frm_seleccionado = document.getElementById(`${id_contenedor}`);
+        // frm_seleccionado.classList.remove("none");
 
         move_frm(indice_movimiento);
         texto = texto.toLowerCase().trim();
         // -- verificando el texto para ejecutar las funciones correspondiente
         if (texto == "proyectos") {
             card_proyecto();
-            fondoProyecto();
             mostrar_visualizador_proyecto();
         } else if (texto.toLowerCase().trim() == "sobre mí") {
             movimiento_frm();
@@ -218,8 +221,8 @@ async function gestionCarpetas(texto_frm_seleccionado, indice) {
     li.classList.add("tab_animacion1");
 
     // buscando el indice de la pestaña y agregando el evento de click
-    li.addEventListener('click', (e) => {  
-        e.preventDefault(); 
+    li.addEventListener('click', (e) => {
+        e.preventDefault();
         move_frm(indice);
     });
 

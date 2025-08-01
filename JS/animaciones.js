@@ -4,9 +4,6 @@ setTimeout(() => {
     contenedor_carga.style.animation = "ani_cierre 1s ease forwards";
 }, 3800);
 
-
-
-
 /* actualizar la pagina */
 let btn_actualizar = document.getElementById("btn_actualizar");
 btn_actualizar.addEventListener("click", () => {
